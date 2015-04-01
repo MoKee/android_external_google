@@ -24,15 +24,20 @@
         android:persistent="true"
         android:summary="@string/summary_media_list_url_pref"
         android:title="@string/media_list_url_pref" />
-    <EditTextPreference
+    <com.google.android.gms.cast.samples.democastplayer.ReceiverAppsListPreference
         android:dialogTitle="@string/dialog_title_receiver_application_id_pref"
-        android:digits="0123456789ABCDEF"
-        android:inputType="textCapCharacters|textNoSuggestions"
         android:key="receiver_application_id_pref"
         android:persistent="true"
         android:summary="@string/summary_receiver_application_id_pref"
         android:title="@string/receiver_application_id_pref" />
-
+    <EditTextPreference
+        android:defaultValue="@string/additional_receiver_apps"
+        android:dialogTitle="@string/dialog_title_additional_receiver_apps_pref"
+        android:inputType="text"
+        android:key="additional_receiver_apps_pref"
+        android:persistent="true"
+        android:summary="@string/summary_additional_receiver_apps_pref"
+        android:title="@string/additional_receiver_apps_pref" />
     <CheckBoxPreference
         android:defaultValue="false"
         android:key="relaunch_app_pref"

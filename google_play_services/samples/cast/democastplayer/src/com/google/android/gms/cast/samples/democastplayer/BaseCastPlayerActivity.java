@@ -67,6 +67,7 @@ abstract class BaseCastPlayerActivity extends ActionBarActivity
     private ImageView mMediaArtImageView;
     protected Button mSelectMediaButton;
     protected Button mSelectTracksButton;
+    protected Button mLoadMediaButton;
     protected Button mLaunchAppButton;
     protected Button mJoinAppButton;
     protected Button mLeaveAppButton;
@@ -157,6 +158,7 @@ abstract class BaseCastPlayerActivity extends ActionBarActivity
 
         mSelectMediaButton = (Button) findViewById(R.id.select_media_button);
         mSelectTracksButton = (Button) findViewById(R.id.select_tracks_button);
+        mLoadMediaButton = (Button) findViewById(R.id.load_media_button);
         mPlayPauseButton = (Button) findViewById(R.id.pause_play);
         mStopButton = (Button) findViewById(R.id.stop);
         mAutoplayCheckbox = (CheckBox) findViewById(R.id.autoplay_checkbox);
@@ -337,7 +339,7 @@ abstract class BaseCastPlayerActivity extends ActionBarActivity
 
     private void startDiscovery() {
         mMediaRouter.addCallback(mMediaRouteSelector, mMediaRouterCallback,
-            MediaRouter.CALLBACK_FLAG_PERFORM_ACTIVE_SCAN);
+            MediaRouter.CALLBACK_FLAG_REQUEST_DISCOVERY);
         mDiscoveryActive = true;
     }
 
@@ -357,7 +359,7 @@ abstract class BaseCastPlayerActivity extends ActionBarActivity
             mMediaSelectionDialog = new MediaSelectionDialog(this) {
                 @Override
                 protected void onItemSelected(final MediaInfo item) {
-                    onPlayMedia(item);
+                    onMediaSelected(item);
                 }
             };
         }
@@ -396,6 +398,7 @@ abstract class BaseCastPlayerActivity extends ActionBarActivity
     }
 
     protected abstract void onVolumeChange(double delta);
+    protected abstract void onMediaSelected(MediaInfo media);
     protected abstract void onPlayMedia(MediaInfo media);
 
     protected void onLaunchAppClicked() { }
@@ -654,6 +657,10 @@ abstract class BaseCastPlayerActivity extends ActionBarActivity
         mMediaTrackAdapter.setSelectedTracks(mediaTrackIds);
     }
 
+    protected final long[] getSelectedMediaTracks() {
+        return mMediaTrackAdapter.getSelectedTracks();
+    }
+
     /**
      *
      * @param position The stream position, or 0 if no media is currently loaded, or -1 to leave
@@ -752,6 +759,14 @@ abstract class BaseCastPlayerActivity extends ActionBarActivity
         mAutoplayCheckbox.setVisibility(visible ? View.VISIBLE : View.GONE);
     }
 
+    protected final void setSelectTracksVisible(boolean visible) {
+        mSelectTracksButton.setVisibility(visible ? View.VISIBLE : View.GONE);
+    }
+
+    protected final void setLoadMediaVisible(boolean visible) {
+        mLoadMediaButton.setVisibility(visible ? View.VISIBLE : View.GONE);
+    }
+
     protected final int getSeekBehavior() {
         return mSeekBehaviorSpinner.getSelectedItemPosition();
     }
@@ -781,6 +796,11 @@ abstract class BaseCastPlayerActivity extends ActionBarActivity
             Log.d(TAG, "onRouteUnselected: route=" + route);
             mRouteSelected = false;
             BaseCastPlayerActivity.this.onRouteUnselected(route);
+        }
+
+        @Override
+        public void onRouteVolumeChanged(MediaRouter router, RouteInfo route) {
+            refreshDeviceVolume(route.getVolume() / MAX_VOLUME_LEVEL, false);
         }
     }
 

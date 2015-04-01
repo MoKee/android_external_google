@@ -5,6 +5,7 @@ package com.example.mapdemo;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnMapLoadedCallback;
 import com.google.android.gms.maps.GoogleMap.SnapshotReadyCallback;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 
 import android.graphics.Bitmap;
@@ -17,7 +18,7 @@ import android.widget.ImageView;
 /**
  * This shows how to take a snapshot of the map.
  */
-public class SnapshotDemoActivity extends FragmentActivity {
+public class SnapshotDemoActivity extends FragmentActivity implements OnMapReadyCallback {
 
     /**
      * Note that this may be null if the Google Play services APK is not available.
@@ -32,23 +33,14 @@ public class SnapshotDemoActivity extends FragmentActivity {
         setContentView(R.layout.snapshot_demo);
         mWaitForMapLoadCheckBox = (CheckBox) findViewById(R.id.wait_for_map_load);
 
-        createMapIfReady();
+        SupportMapFragment mapFragment =
+                (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        createMapIfReady();
-    }
-
-    private void createMapIfReady() {
-        // Do a null check to confirm that we have not already instantiated the map.
-        if (mMap == null) {
-            // Try to obtain the map from the SupportMapFragment.
-            SupportMapFragment mapFragment =
-                    (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-            mMap = mapFragment.getMap();
-        }
+    public void onMapReady(GoogleMap map) {
+        mMap = map;
     }
 
     /**

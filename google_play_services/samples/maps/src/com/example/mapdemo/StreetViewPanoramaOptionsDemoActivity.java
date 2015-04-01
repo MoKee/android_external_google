@@ -1,5 +1,6 @@
 package com.example.mapdemo;
 
+import com.google.android.gms.maps.OnStreetViewPanoramaReadyCallback;
 import com.google.android.gms.maps.StreetViewPanorama;
 import com.google.android.gms.maps.SupportStreetViewPanoramaFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -18,7 +19,7 @@ public class StreetViewPanoramaOptionsDemoActivity extends FragmentActivity {
     // Cole St, San Fran
     private static final LatLng SAN_FRAN = new LatLng(37.765927, -122.449972);
 
-    private StreetViewPanorama mSvp;
+    private StreetViewPanorama mStreetViewPanorama;
 
     private CheckBox mStreetNameCheckbox;
     private CheckBox mNavigationCheckbox;
@@ -26,7 +27,7 @@ public class StreetViewPanoramaOptionsDemoActivity extends FragmentActivity {
     private CheckBox mPanningCheckbox;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.street_view_panorama_options_demo);
 
@@ -35,35 +36,30 @@ public class StreetViewPanoramaOptionsDemoActivity extends FragmentActivity {
         mZoomCheckbox = (CheckBox) findViewById(R.id.zoom);
         mPanningCheckbox = (CheckBox) findViewById(R.id.panning);
 
-        setUpStreetViewPanoramaIfNeeded(savedInstanceState);
-    }
+        SupportStreetViewPanoramaFragment streetViewPanoramaFragment =
+                (SupportStreetViewPanoramaFragment)
+                        getSupportFragmentManager().findFragmentById(R.id.streetviewpanorama);
+        streetViewPanoramaFragment.getStreetViewPanoramaAsync(
+            new OnStreetViewPanoramaReadyCallback() {
+                @Override
+                public void onStreetViewPanoramaReady(StreetViewPanorama panorama) {
+                    mStreetViewPanorama = panorama;
+                    mStreetViewPanorama.setStreetNamesEnabled(mStreetNameCheckbox.isChecked());
+                    mStreetViewPanorama.setUserNavigationEnabled(mNavigationCheckbox.isChecked());
+                    mStreetViewPanorama.setZoomGesturesEnabled(mZoomCheckbox.isChecked());
+                    mStreetViewPanorama.setPanningGesturesEnabled(mPanningCheckbox.isChecked());
 
-    private void setUpStreetViewPanoramaIfNeeded(Bundle savedInstanceState) {
-        if (mSvp == null) {
-            mSvp = ((SupportStreetViewPanoramaFragment)
-                getSupportFragmentManager().findFragmentById(R.id.streetviewpanorama))
-                    .getStreetViewPanorama();
-            if (mSvp != null) {
-                if (savedInstanceState == null) {
-                    mSvp.setPosition(SAN_FRAN);
+                    // Only set the panorama to SAN_FRAN on startup (when no panoramas have been
+                    // loaded which is when the savedInstanceState is null).
+                    if (savedInstanceState == null) {
+                        mStreetViewPanorama.setPosition(SAN_FRAN);
+                    }
                 }
-            }
-        }
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if (mSvp != null) {
-            mSvp.setStreetNamesEnabled(mStreetNameCheckbox.isChecked());
-            mSvp.setUserNavigationEnabled(mNavigationCheckbox.isChecked());
-            mSvp.setZoomGesturesEnabled(mZoomCheckbox.isChecked());
-            mSvp.setPanningGesturesEnabled(mPanningCheckbox.isChecked());
-        }
+            });
     }
 
     private boolean checkReady() {
-        if (mSvp == null) {
+        if (mStreetViewPanorama == null) {
             Toast.makeText(this, R.string.map_not_ready, Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -74,27 +70,27 @@ public class StreetViewPanoramaOptionsDemoActivity extends FragmentActivity {
         if (!checkReady()) {
             return;
         }
-        mSvp.setStreetNamesEnabled(mStreetNameCheckbox.isChecked());
+        mStreetViewPanorama.setStreetNamesEnabled(mStreetNameCheckbox.isChecked());
     }
 
     public void onNavigationToggled(View view) {
         if (!checkReady()) {
             return;
         }
-        mSvp.setUserNavigationEnabled(mNavigationCheckbox.isChecked());
+        mStreetViewPanorama.setUserNavigationEnabled(mNavigationCheckbox.isChecked());
     }
 
     public void onZoomToggled(View view) {
         if (!checkReady()) {
             return;
         }
-        mSvp.setZoomGesturesEnabled(mZoomCheckbox.isChecked());
+        mStreetViewPanorama.setZoomGesturesEnabled(mZoomCheckbox.isChecked());
     }
 
     public void onPanningToggled(View view) {
         if (!checkReady()) {
             return;
         }
-        mSvp.setPanningGesturesEnabled(mPanningCheckbox.isChecked());
+        mStreetViewPanorama.setPanningGesturesEnabled(mPanningCheckbox.isChecked());
     }
 }

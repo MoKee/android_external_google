@@ -84,6 +84,20 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <html>
 <head>
 
@@ -99,7 +113,7 @@
 href="http://fonts.googleapis.com/css?family=Roboto+Condensed">
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:light,regular,medium,thin,italic,mediumitalic,bold"
   title="roboto">
-<link href="../../../../../../../assets/css/default.css?v=2" rel="stylesheet" type="text/css">
+<link href="../../../../../../../assets/css/default.css?v=5" rel="stylesheet" type="text/css">
 
 
 <!-- FULLSCREEN STYLESHEET -->
@@ -115,7 +129,9 @@ type="text/css">
   var metaTags = [];
   var devsite = false;
 </script>
-<script src="../../../../../../../assets/js/docs.js?v=2" type="text/javascript"></script>
+<script src="../../../../../../../assets/js/docs.js?v=3" type="text/javascript"></script>
+
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -132,16 +148,66 @@ type="text/css">
 </head>
 
 <body class="gc-documentation 
-  develop" itemscope itemtype="http://schema.org/Article">
+  develop reference" itemscope itemtype="http://schema.org/Article">
   <div id="doc-api-level" class="" style="display:none"></div>
   <a name="top"></a>
 
 
 <a name="top"></a>
 
+<!-- dialog to prompt lang pref change when loaded from hardcoded URL 
+<div id="langMessage" style="display:none">
+  <div>
+    <div class="lang en">
+      <p>You requested a page in English, would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang es">
+      <p>You requested a page in Spanish (Español), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ja">
+      <p>You requested a page in Japanese (日本語), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ko">
+      <p>You requested a page in Korean (한국어), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ru">
+      <p>You requested a page in Russian (Русский), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang zh-cn">
+      <p>You requested a page in Simplified Chinese (简体中文), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang zh-tw">
+      <p>You requested a page in Traditional Chinese (繁體中文), would you like to proceed with this language setting?</p>
+    </div>
+    <a href="#" class="button yes" onclick="return false;">
+      <span class="lang en">Yes</span>
+      <span class="lang es">Sí</span>
+      <span class="lang ja">Yes</span>
+      <span class="lang ko">Yes</span>
+      <span class="lang ru">Yes</span>
+      <span class="lang zh-cn">是的</span>
+      <span class="lang zh-tw">没有</span>
+    </a>
+    <a href="#" class="button" onclick="$('#langMessage').hide();return false;">
+      <span class="lang en">No</span>
+      <span class="lang es">No</span>
+      <span class="lang ja">No</span>
+      <span class="lang ko">No</span>
+      <span class="lang ru">No</span>
+      <span class="lang zh-cn">没有</span>
+      <span class="lang zh-tw">没有</span>
+    </a>
+  </div>
+</div> -->
+
+
   <!-- Header -->
   <div id="header-wrapper">
     <div id="header">
+
+    
+
+
       <div class="wrap" id="header-wrap">
         <div class="col-3 logo">
           <a href="../../../../../../../index.html">
@@ -331,6 +397,7 @@ type="text/css">
                 <li><a href="../../../../../../../distribute/users/index.html">Get Users</a></li>
                 <li><a href="../../../../../../../distribute/engage/index.html">Engage &amp; Retain</a></li>
                 <li><a href="../../../../../../../distribute/monetize/index.html">Monetize</a></li>
+                <li><a href="../../../../../../../distribute/analyze/index.html">Analyze</a></li>
                 <li><a href="../../../../../../../distribute/tools/index.html">Tools &amp; Reference</a></li>
                 <li><a href="../../../../../../../distribute/stories/index.html">Developer Stories</a></li>
               </ul>
@@ -343,7 +410,12 @@ type="text/css">
   
     <!-- Secondary x-nav -->
     <div id="nav-x">
-        <div class="wrap">
+        <div class="wrap" style="position:relative;z-index:1">
+
+        
+        
+        
+
             <ul class="nav-x col-9 develop" style="width:100%">
                 <li class="training"><a href="../../../../../../../training/index.html"
                   zh-tw-lang="訓練課程"
@@ -467,8 +539,6 @@ type="text/css">
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/auth/package-summary.html">com.google.android.gms.auth</a></li>
     <li class="api apilevel-">
-  <a href="../../../../../../../reference/com/google/android/gms/auth/api/package-summary.html">com.google.android.gms.auth.api</a></li>
-    <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/cast/package-summary.html">com.google.android.gms.cast</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/common/package-summary.html">com.google.android.gms.common</a></li>
@@ -529,9 +599,17 @@ type="text/css">
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/location/package-summary.html">com.google.android.gms.location</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../../../reference/com/google/android/gms/location/places/package-summary.html">com.google.android.gms.location.places</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../reference/com/google/android/gms/location/places/ui/package-summary.html">com.google.android.gms.location.places.ui</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/maps/package-summary.html">com.google.android.gms.maps</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/maps/model/package-summary.html">com.google.android.gms.maps.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../reference/com/google/android/gms/nearby/package-summary.html">com.google.android.gms.nearby</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../reference/com/google/android/gms/nearby/connection/package-summary.html">com.google.android.gms.nearby.connection</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/panorama/package-summary.html">com.google.android.gms.panorama</a></li>
     <li class="api apilevel-">
@@ -540,6 +618,8 @@ type="text/css">
   <a href="../../../../../../../reference/com/google/android/gms/plus/model/moments/package-summary.html">com.google.android.gms.plus.model.moments</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/plus/model/people/package-summary.html">com.google.android.gms.plus.model.people</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../reference/com/google/android/gms/safetynet/package-summary.html">com.google.android.gms.safetynet</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/security/package-summary.html">com.google.android.gms.security</a></li>
     <li class="api apilevel-">
@@ -656,13 +736,6 @@ type="text/css">
   
   
 
-  
-  
-   
-  
-  
-  
-
 
 <div class="sum-details-links">
 
@@ -728,10 +801,13 @@ Summary:
   
       implements 
       
-        SafeParcelable 
+        <a href="http://developer.android.com/reference/android/os/Parcelable.html">Parcelable</a> 
       
   
   
+
+
+    
 
 
 </div><!-- end header -->
@@ -848,45 +924,24 @@ android.os.Parcelable
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">CONTENTS_FILE_DESCRIPTOR</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">PARCELABLE_WRITE_RETURN_VALUE</td>
-        <td class="jd-descrcol" width="100%"></td>
-    </tr>
-    
-    
-</table>
-  </div>
-</div>
-</td></tr>
-
-
-
-<tr class="api apilevel-" >
-<td colspan="12">
-
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-constants-com.google.android.gms.common.internal.safeparcel.SafeParcelable" class="jd-expando-trigger closed"
-          ><img id="inherited-constants-com.google.android.gms.common.internal.safeparcel.SafeParcelable-trigger"
-          src="../../../../../../../assets/images/triangle-closed.png"
-          class="jd-expando-trigger-img" /></a>From interface
-com.google.android.gms.common.internal.safeparcel.SafeParcelable
-<div id="inherited-constants-com.google.android.gms.common.internal.safeparcel.SafeParcelable">
-  <div id="inherited-constants-com.google.android.gms.common.internal.safeparcel.SafeParcelable-list"
-        class="jd-inheritedlinks">
-  </div>
-  <div id="inherited-constants-com.google.android.gms.common.internal.safeparcel.SafeParcelable-summary" style="display: none;">
-    <table class="jd-sumtable-expando">
+        <td class="jd-descrcol" width="100%">
+          
+          
     
 
-    
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol">NULL</td>
-        <td class="jd-descrcol" width="100%"></td>
+        </td>
     </tr>
     
     
@@ -913,7 +968,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
           final
           <a href="http://developer.android.com/reference/android/os/Parcelable.Creator.html">Creator</a>&lt;<a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html">WalletFragmentStyle</a>&gt;</nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html#CREATOR">CREATOR</a></td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -989,7 +1049,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html#setBuyButtonAppearance(int)">setBuyButtonAppearance</a></span>(int buyButtonAppearance)</nobr>
         
-        <div class="jd-descrdiv">Sets the appearance of the buy button.</div>
+        <div class="jd-descrdiv">
+          Sets the appearance of the buy button.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1007,7 +1072,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html#setBuyButtonHeight(int)">setBuyButtonHeight</a></span>(int height)</nobr>
         
-        <div class="jd-descrdiv">Specifies a height for the buy button.</div>
+        <div class="jd-descrdiv">
+          Specifies a height for the buy button.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1025,7 +1095,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html#setBuyButtonHeight(int, float)">setBuyButtonHeight</a></span>(int unit, float height)</nobr>
         
-        <div class="jd-descrdiv">Specifies a height for the buy button.</div>
+        <div class="jd-descrdiv">
+          Specifies a height for the buy button.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1043,7 +1118,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html#setBuyButtonText(int)">setBuyButtonText</a></span>(int buyButtonText)</nobr>
         
-        <div class="jd-descrdiv">Sets text for the buy button.</div>
+        <div class="jd-descrdiv">
+          Sets text for the buy button.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1061,7 +1141,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html#setBuyButtonWidth(int)">setBuyButtonWidth</a></span>(int width)</nobr>
         
-        <div class="jd-descrdiv">Specifies a width for the buy button.</div>
+        <div class="jd-descrdiv">
+          Specifies a width for the buy button.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1079,7 +1164,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html#setBuyButtonWidth(int, float)">setBuyButtonWidth</a></span>(int unit, float width)</nobr>
         
-        <div class="jd-descrdiv">Specifies a width for the buy button.</div>
+        <div class="jd-descrdiv">
+          Specifies a width for the buy button.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1097,7 +1187,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html#setMaskedWalletDetailsBackgroundColor(int)">setMaskedWalletDetailsBackgroundColor</a></span>(int color)</nobr>
         
-        <div class="jd-descrdiv">Sets the color for the masked wallet details view background.</div>
+        <div class="jd-descrdiv">
+          Sets the color for the masked wallet details view background.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1115,7 +1210,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html#setMaskedWalletDetailsBackgroundResource(int)">setMaskedWalletDetailsBackgroundResource</a></span>(int resourceId)</nobr>
         
-        <div class="jd-descrdiv">Sets the drawable resource id for the masked wallet details view background.</div>
+        <div class="jd-descrdiv">
+          Sets the drawable resource id for the masked wallet details view background.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1133,7 +1233,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html#setMaskedWalletDetailsButtonBackgroundColor(int)">setMaskedWalletDetailsButtonBackgroundColor</a></span>(int color)</nobr>
         
-        <div class="jd-descrdiv">Sets the color for the masked wallet details "Change" button background.</div>
+        <div class="jd-descrdiv">
+          Sets the color for the masked wallet details "Change" button background.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1151,7 +1256,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html#setMaskedWalletDetailsButtonBackgroundResource(int)">setMaskedWalletDetailsButtonBackgroundResource</a></span>(int resourceId)</nobr>
         
-        <div class="jd-descrdiv">Sets the drawable resource id for the masked wallet details "Change" button background.</div>
+        <div class="jd-descrdiv">
+          Sets the drawable resource id for the masked wallet details "Change" button background.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1169,7 +1279,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html#setMaskedWalletDetailsButtonTextAppearance(int)">setMaskedWalletDetailsButtonTextAppearance</a></span>(int resourceId)</nobr>
         
-        <div class="jd-descrdiv">Sets the text appearance for the masked wallet details "Change" button text.</div>
+        <div class="jd-descrdiv">
+          Sets the text appearance for the masked wallet details "Change" button text.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1187,7 +1302,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html#setMaskedWalletDetailsHeaderTextAppearance(int)">setMaskedWalletDetailsHeaderTextAppearance</a></span>(int resourceId)</nobr>
         
-        <div class="jd-descrdiv">Sets text appearance for the headers describing masked wallet details.</div>
+        <div class="jd-descrdiv">
+          Sets text appearance for the headers describing masked wallet details.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1205,7 +1325,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html#setMaskedWalletDetailsLogoImageType(int)">setMaskedWalletDetailsLogoImageType</a></span>(int imageType)</nobr>
         
-        <div class="jd-descrdiv">Sets the type of the wallet image logo in masked wallet details view.</div>
+        <div class="jd-descrdiv">
+          Sets the type of the wallet image logo in masked wallet details view.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1223,7 +1348,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html#setMaskedWalletDetailsLogoTextColor(int)">setMaskedWalletDetailsLogoTextColor</a></span>(int color)</nobr>
         
-        <div class="jd-descrdiv">Sets the color for the masked wallet details logo text.</div>
+        <div class="jd-descrdiv">
+          Sets the color for the masked wallet details logo text.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1241,7 +1371,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html#setMaskedWalletDetailsTextAppearance(int)">setMaskedWalletDetailsTextAppearance</a></span>(int resourceId)</nobr>
         
-        <div class="jd-descrdiv">Sets text appearance for the masked wallet details.</div>
+        <div class="jd-descrdiv">
+          Sets text appearance for the masked wallet details.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1259,7 +1394,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html#setStyleResourceId(int)">setStyleResourceId</a></span>(int id)</nobr>
         
-        <div class="jd-descrdiv">Sets resource id of the style which will be used to customize wallet fragment UI.</div>
+        <div class="jd-descrdiv">
+          Sets resource id of the style which will be used to customize wallet fragment UI.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1554,8 +1694,6 @@ From interface
 </td></tr>
 
 
-
-
 </table>
 
 
@@ -1608,6 +1746,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     
@@ -1647,6 +1788,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
@@ -1692,6 +1836,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
@@ -1720,6 +1867,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Sets the appearance of the buy button.
  See <code><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/BuyButtonAppearance.html">BuyButtonAppearance</a></code> for the list of possible values.
@@ -1768,6 +1918,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Specifies a height for the buy button. The height includes a padding of 8dp (4dp on each
  side). The padding is used for a border around the button in pressed and focused states.
  The range of height supported is 40dp~72dp.
@@ -1811,6 +1964,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Specifies a height for the buy button. The height includes a padding of 8dp (4dp on each
  side). The padding is used for a border around the button in pressed and focused states.
@@ -1860,6 +2016,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Sets text for the buy button.
  This will override the buy button text defined in any style passed in
  <code><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html#setStyleResourceId(int)">setStyleResourceId(int)</a></code>.
@@ -1907,6 +2066,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Specifies a width for the buy button. The width includes a padding of 8dp (4dp on each
  side). The padding is used for a border around the button in pressed and focused states.
  A minimum width is enforced, and is computed from the height of the button and the width
@@ -1951,6 +2113,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Specifies a width for the buy button. The width includes a padding of 8dp (4dp on each
  side). The padding is used for a border around the button in pressed and focused states.
@@ -2001,6 +2166,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Sets the color for the masked wallet details view background.
  This will override the color defined in any style passed in
  <code><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html#setStyleResourceId(int)">setStyleResourceId(int)</a></code> and background drawable which was previously set.</p></div>
@@ -2042,6 +2210,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Sets the drawable resource id for the masked wallet details view background.
  This will override the drawable defined in any style passed in
  <code><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html#setStyleResourceId(int)">setStyleResourceId(int)</a></code> and background color which was previously set.</p></div>
@@ -2082,6 +2253,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Sets the color for the masked wallet details "Change" button background.
  This will override the background defined in any style passed in
@@ -2125,6 +2299,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Sets the drawable resource id for the masked wallet details "Change" button background.
  This will override the background defined in any style passed in
  <code><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html#setStyleResourceId(int)">setStyleResourceId(int)</a></code> and color previously set for the button background.</p></div>
@@ -2165,6 +2342,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Sets the text appearance for the masked wallet details "Change" button text.
  This will override the text appearance defined in any style passed in
@@ -2207,6 +2387,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Sets text appearance for the headers describing masked wallet details.
  This will override the text appearance defined in any style passed in
  <code><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html#setStyleResourceId(int)">setStyleResourceId(int)</a></code>.</p></div>
@@ -2247,6 +2430,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Sets the type of the wallet image logo in masked wallet details view.
  See <code><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletLogoImageType.html">WalletLogoImageType</a></code> for the list of possible values.
@@ -2295,6 +2481,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Sets the color for the masked wallet details logo text.
  This will override the text color defined in any style passed in
  <code><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html#setStyleResourceId(int)">setStyleResourceId(int)</a></code>.</p></div>
@@ -2336,6 +2525,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Sets text appearance for the masked wallet details.
  This will override the text appearance defined in any style passed in
  <code><a href="../../../../../../../reference/com/google/android/gms/wallet/fragment/WalletFragmentStyle.html#setStyleResourceId(int)">setStyleResourceId(int)</a></code>.</p></div>
@@ -2376,6 +2568,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Sets resource id of the style which will be used to customize wallet fragment UI.
  If not set explicitly the default style
@@ -2420,6 +2615,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
@@ -2448,7 +2646,7 @@ From interface
   </div>
   <div id="build_info">
     
-    Android GmsCore 1501030&nbsp;r &mdash; 
+    Android GmsCore 1784785&nbsp;r &mdash; 
 <script src="../../../../../../../timestamp.js" type="text/javascript"></script>
 <script>document.write(BUILD_TIMESTAMP)</script>
 

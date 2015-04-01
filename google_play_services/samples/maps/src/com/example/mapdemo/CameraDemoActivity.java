@@ -20,6 +20,7 @@ import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.CancelableCallback;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
@@ -34,7 +35,7 @@ import android.widget.Toast;
 /**
  * This shows how to change the camera position for the map.
  */
-public class CameraDemoActivity extends FragmentActivity {
+public class CameraDemoActivity extends FragmentActivity implements OnMapReadyCallback {
 
     /**
      * The amount by which to scroll the camera. Note that this amount is in raw pixels, not dp
@@ -73,27 +74,21 @@ public class CameraDemoActivity extends FragmentActivity {
 
         updateEnabledState();
 
-        setUpMapIfNeeded();
+        SupportMapFragment mapFragment =
+            (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         updateEnabledState();
-        setUpMapIfNeeded();
     }
 
-    private void setUpMapIfNeeded() {
-        if (mMap == null) {
-            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
-                    .getMap();
-            if (mMap != null) {
-                setUpMap();
-            }
-        }
-    }
+    @Override
+    public void onMapReady(GoogleMap map) {
+        mMap = map;
 
-    private void setUpMap() {
         // We will provide our own zoom controls.
         mMap.getUiSettings().setZoomControlsEnabled(false);
 
@@ -184,6 +179,10 @@ public class CameraDemoActivity extends FragmentActivity {
      * Called when the tilt more button (the one with the /) is clicked.
      */
     public void onTiltMore(View view) {
+        if (!checkReady()) {
+            return;
+        }
+
         CameraPosition currentCameraPosition = mMap.getCameraPosition();
         float currentTilt = currentCameraPosition.tilt;
         float newTilt = currentTilt + 10;
@@ -200,6 +199,10 @@ public class CameraDemoActivity extends FragmentActivity {
      * Called when the tilt less button (the one with the \) is clicked.
      */
     public void onTiltLess(View view) {
+        if (!checkReady()) {
+            return;
+        }
+
         CameraPosition currentCameraPosition = mMap.getCameraPosition();
 
         float currentTilt = currentCameraPosition.tilt;

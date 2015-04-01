@@ -84,6 +84,20 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <html>
 <head>
 
@@ -99,7 +113,7 @@
 href="http://fonts.googleapis.com/css?family=Roboto+Condensed">
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:light,regular,medium,thin,italic,mediumitalic,bold"
   title="roboto">
-<link href="../../../../../../../assets/css/default.css?v=2" rel="stylesheet" type="text/css">
+<link href="../../../../../../../assets/css/default.css?v=5" rel="stylesheet" type="text/css">
 
 
 <!-- FULLSCREEN STYLESHEET -->
@@ -115,7 +129,9 @@ type="text/css">
   var metaTags = [];
   var devsite = false;
 </script>
-<script src="../../../../../../../assets/js/docs.js?v=2" type="text/javascript"></script>
+<script src="../../../../../../../assets/js/docs.js?v=3" type="text/javascript"></script>
+
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -132,16 +148,66 @@ type="text/css">
 </head>
 
 <body class="gc-documentation 
-  develop" itemscope itemtype="http://schema.org/Article">
+  develop reference" itemscope itemtype="http://schema.org/Article">
   <div id="doc-api-level" class="" style="display:none"></div>
   <a name="top"></a>
 
 
 <a name="top"></a>
 
+<!-- dialog to prompt lang pref change when loaded from hardcoded URL 
+<div id="langMessage" style="display:none">
+  <div>
+    <div class="lang en">
+      <p>You requested a page in English, would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang es">
+      <p>You requested a page in Spanish (Español), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ja">
+      <p>You requested a page in Japanese (日本語), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ko">
+      <p>You requested a page in Korean (한국어), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ru">
+      <p>You requested a page in Russian (Русский), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang zh-cn">
+      <p>You requested a page in Simplified Chinese (简体中文), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang zh-tw">
+      <p>You requested a page in Traditional Chinese (繁體中文), would you like to proceed with this language setting?</p>
+    </div>
+    <a href="#" class="button yes" onclick="return false;">
+      <span class="lang en">Yes</span>
+      <span class="lang es">Sí</span>
+      <span class="lang ja">Yes</span>
+      <span class="lang ko">Yes</span>
+      <span class="lang ru">Yes</span>
+      <span class="lang zh-cn">是的</span>
+      <span class="lang zh-tw">没有</span>
+    </a>
+    <a href="#" class="button" onclick="$('#langMessage').hide();return false;">
+      <span class="lang en">No</span>
+      <span class="lang es">No</span>
+      <span class="lang ja">No</span>
+      <span class="lang ko">No</span>
+      <span class="lang ru">No</span>
+      <span class="lang zh-cn">没有</span>
+      <span class="lang zh-tw">没有</span>
+    </a>
+  </div>
+</div> -->
+
+
   <!-- Header -->
   <div id="header-wrapper">
     <div id="header">
+
+    
+
+
       <div class="wrap" id="header-wrap">
         <div class="col-3 logo">
           <a href="../../../../../../../index.html">
@@ -331,6 +397,7 @@ type="text/css">
                 <li><a href="../../../../../../../distribute/users/index.html">Get Users</a></li>
                 <li><a href="../../../../../../../distribute/engage/index.html">Engage &amp; Retain</a></li>
                 <li><a href="../../../../../../../distribute/monetize/index.html">Monetize</a></li>
+                <li><a href="../../../../../../../distribute/analyze/index.html">Analyze</a></li>
                 <li><a href="../../../../../../../distribute/tools/index.html">Tools &amp; Reference</a></li>
                 <li><a href="../../../../../../../distribute/stories/index.html">Developer Stories</a></li>
               </ul>
@@ -343,7 +410,12 @@ type="text/css">
   
     <!-- Secondary x-nav -->
     <div id="nav-x">
-        <div class="wrap">
+        <div class="wrap" style="position:relative;z-index:1">
+
+        
+        
+        
+
             <ul class="nav-x col-9 develop" style="width:100%">
                 <li class="training"><a href="../../../../../../../training/index.html"
                   zh-tw-lang="訓練課程"
@@ -467,8 +539,6 @@ type="text/css">
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/auth/package-summary.html">com.google.android.gms.auth</a></li>
     <li class="api apilevel-">
-  <a href="../../../../../../../reference/com/google/android/gms/auth/api/package-summary.html">com.google.android.gms.auth.api</a></li>
-    <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/cast/package-summary.html">com.google.android.gms.cast</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/common/package-summary.html">com.google.android.gms.common</a></li>
@@ -529,9 +599,17 @@ type="text/css">
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/location/package-summary.html">com.google.android.gms.location</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../../../reference/com/google/android/gms/location/places/package-summary.html">com.google.android.gms.location.places</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../reference/com/google/android/gms/location/places/ui/package-summary.html">com.google.android.gms.location.places.ui</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/maps/package-summary.html">com.google.android.gms.maps</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/maps/model/package-summary.html">com.google.android.gms.maps.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../reference/com/google/android/gms/nearby/package-summary.html">com.google.android.gms.nearby</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../reference/com/google/android/gms/nearby/connection/package-summary.html">com.google.android.gms.nearby.connection</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/panorama/package-summary.html">com.google.android.gms.panorama</a></li>
     <li class="api apilevel-">
@@ -540,6 +618,8 @@ type="text/css">
   <a href="../../../../../../../reference/com/google/android/gms/plus/model/moments/package-summary.html">com.google.android.gms.plus.model.moments</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/plus/model/people/package-summary.html">com.google.android.gms.plus.model.people</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../reference/com/google/android/gms/safetynet/package-summary.html">com.google.android.gms.safetynet</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/security/package-summary.html">com.google.android.gms.security</a></li>
     <li class="api apilevel-">
@@ -650,13 +730,6 @@ type="text/css">
   
   
 
-  
-  
-   
-  
-  
-  
-
 
 <div class="sum-details-links">
 
@@ -725,10 +798,13 @@ Summary:
   
       implements 
       
-        SafeParcelable 
+        <a href="http://developer.android.com/reference/android/os/Parcelable.html">Parcelable</a> 
       
   
   
+
+
+    
 
 
 </div><!-- end header -->
@@ -848,7 +924,12 @@ Summary:
         
         class</nobr></td>
       <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/fitness/data/Session.Builder.html">Session.Builder</a></td>
-      <td class="jd-descrcol" width="100%">Builder used to create new Sessions.&nbsp;</td>
+      <td class="jd-descrcol" width="100%">
+        Builder used to create new Sessions.&nbsp;
+        
+    
+
+      </td>
     </tr>
     
     
@@ -873,14 +954,24 @@ Summary:
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/fitness/data/Session.html#EXTRA_SESSION">EXTRA_SESSION</a></td>
-        <td class="jd-descrcol" width="100%">Name for the parcelable intent extra containing a session.</td>
+        <td class="jd-descrcol" width="100%">
+          Name for the parcelable intent extra containing a session.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/fitness/data/Session.html#MIME_TYPE_PREFIX">MIME_TYPE_PREFIX</a></td>
-        <td class="jd-descrcol" width="100%">The common prefix for session MIME types.</td>
+        <td class="jd-descrcol" width="100%">
+          The common prefix for session MIME types.
+          
+    
+
+        </td>
     </tr>
     
     
@@ -919,45 +1010,24 @@ android.os.Parcelable
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">CONTENTS_FILE_DESCRIPTOR</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">PARCELABLE_WRITE_RETURN_VALUE</td>
-        <td class="jd-descrcol" width="100%"></td>
-    </tr>
-    
-    
-</table>
-  </div>
-</div>
-</td></tr>
-
-
-
-<tr class="api apilevel-" >
-<td colspan="12">
-
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-constants-com.google.android.gms.common.internal.safeparcel.SafeParcelable" class="jd-expando-trigger closed"
-          ><img id="inherited-constants-com.google.android.gms.common.internal.safeparcel.SafeParcelable-trigger"
-          src="../../../../../../../assets/images/triangle-closed.png"
-          class="jd-expando-trigger-img" /></a>From interface
-com.google.android.gms.common.internal.safeparcel.SafeParcelable
-<div id="inherited-constants-com.google.android.gms.common.internal.safeparcel.SafeParcelable">
-  <div id="inherited-constants-com.google.android.gms.common.internal.safeparcel.SafeParcelable-list"
-        class="jd-inheritedlinks">
-  </div>
-  <div id="inherited-constants-com.google.android.gms.common.internal.safeparcel.SafeParcelable-summary" style="display: none;">
-    <table class="jd-sumtable-expando">
+        <td class="jd-descrcol" width="100%">
+          
+          
     
 
-    
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol">NULL</td>
-        <td class="jd-descrcol" width="100%"></td>
+        </td>
     </tr>
     
     
@@ -984,7 +1054,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
           final
           <a href="http://developer.android.com/reference/android/os/Parcelable.Creator.html">Creator</a>&lt;<a href="../../../../../../../reference/com/google/android/gms/fitness/data/Session.html">Session</a>&gt;</nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/fitness/data/Session.html#CREATOR">CREATOR</a></td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1051,11 +1126,16 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/fitness/data/Session.html#extract(android.content.Intent)">extract</a></span>(<a href="http://developer.android.com/reference/android/content/Intent.html">Intent</a> intent)</nobr>
         
-        <div class="jd-descrdiv">Extracts the session extra from the given intent, such as a callback intent received
+        <div class="jd-descrdiv">
+          Extracts the session extra from the given intent, such as a callback intent received
  after
- <code><a href="../../../../../../../reference/com/google/android/gms/fitness/SessionsApi.html#registerForSessions(com.google.android.gms.common.api.GoogleApiClient, android.app.PendingIntent)">registering</a></code>
+ <a href="../../../../../../../reference/com/google/android/gms/fitness/SessionsApi.html#registerForSessions(com.google.android.gms.common.api.GoogleApiClient, android.app.PendingIntent)">registering</a></a>
  to session start/end notifications, or an intent to
- <code><a href="../../../../../../../reference/com/google/android/gms/fitness/SessionsApi.ViewIntentBuilder.html">view a session</a></code>.</div>
+ <a href="../../../../../../../reference/com/google/android/gms/fitness/SessionsApi.ViewIntentBuilder.html">view a session</a></a>.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1073,7 +1153,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/fitness/data/Session.html#getActivity()">getActivity</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Returns the activity associated with this session, if set.</div>
+        <div class="jd-descrdiv">
+          Returns the activity associated with this session, if set.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1091,7 +1176,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/fitness/data/Session.html#getAppPackageName()">getAppPackageName</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Returns the package name for the application responsible for adding the session.</div>
+        <div class="jd-descrdiv">
+          Returns the package name for the application responsible for adding the session.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1109,7 +1199,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/fitness/data/Session.html#getDescription()">getDescription</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Returns the description for this session, if set.</div>
+        <div class="jd-descrdiv">
+          Returns the description for this session, if set.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1127,7 +1222,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/fitness/data/Session.html#getEndTime(java.util.concurrent.TimeUnit)">getEndTime</a></span>(<a href="http://developer.android.com/reference/java/util/concurrent/TimeUnit.html">TimeUnit</a> timeUnit)</nobr>
         
-        <div class="jd-descrdiv">Returns the end time for the session, in the given unit since epoch.</div>
+        <div class="jd-descrdiv">
+          Returns the end time for the session, in the given unit since epoch.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1145,7 +1245,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/fitness/data/Session.html#getIdentifier()">getIdentifier</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Returns the identifier for this session, if set.</div>
+        <div class="jd-descrdiv">
+          Returns the identifier for this session, if set.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1163,7 +1268,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/fitness/data/Session.html#getMimeType(java.lang.String)">getMimeType</a></span>(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> activity)</nobr>
         
-        <div class="jd-descrdiv">Returns the MIME type which describes a Session for a particular activity.</div>
+        <div class="jd-descrdiv">
+          Returns the MIME type which describes a Session for a particular activity.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1181,7 +1291,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/fitness/data/Session.html#getName()">getName</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Returns the name for this session.</div>
+        <div class="jd-descrdiv">
+          Returns the name for this session.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1199,7 +1314,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/fitness/data/Session.html#getStartTime(java.util.concurrent.TimeUnit)">getStartTime</a></span>(<a href="http://developer.android.com/reference/java/util/concurrent/TimeUnit.html">TimeUnit</a> timeUnit)</nobr>
         
-        <div class="jd-descrdiv">Returns the start time for the session, in the given time unit since epoch.</div>
+        <div class="jd-descrdiv">
+          Returns the start time for the session, in the given time unit since epoch.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1233,7 +1353,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/fitness/data/Session.html#isOngoing()">isOngoing</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Returns whether the session is ongoing.</div>
+        <div class="jd-descrdiv">
+          Returns whether the session is ongoing.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1544,8 +1669,6 @@ From interface
 </td></tr>
 
 
-
-
 </table>
 
 
@@ -1595,6 +1718,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Name for the parcelable intent extra containing a session.  It can be
  extracted using <code><a href="../../../../../../../reference/com/google/android/gms/fitness/data/Session.html#extract(android.content.Intent)">extract(Intent)</a></code>.
 </p></div>
@@ -1633,6 +1759,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The common prefix for session MIME types.  The MIME type for a particular
  session will be this prefix followed by the session's activity name.  Examples:
@@ -1689,6 +1818,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     
@@ -1737,6 +1869,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
@@ -1765,6 +1900,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
@@ -1795,11 +1933,14 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Extracts the session extra from the given intent, such as a callback intent received
  after
- <code><a href="../../../../../../../reference/com/google/android/gms/fitness/SessionsApi.html#registerForSessions(com.google.android.gms.common.api.GoogleApiClient, android.app.PendingIntent)">registering</a></code>
+ <a href="../../../../../../../reference/com/google/android/gms/fitness/SessionsApi.html#registerForSessions(com.google.android.gms.common.api.GoogleApiClient, android.app.PendingIntent)">registering</a></a>
  to session start/end notifications, or an intent to
- <code><a href="../../../../../../../reference/com/google/android/gms/fitness/SessionsApi.ViewIntentBuilder.html">view a session</a></code>.</p></div>
+ <a href="../../../../../../../reference/com/google/android/gms/fitness/SessionsApi.ViewIntentBuilder.html">view a session</a></a>.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
       <ul class="nolist"><li>the extracted Session, or <code>null</code> if the given intent does not contain a
@@ -1834,6 +1975,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Returns the activity associated with this session, if set.  Else returns
  <code><a href="../../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#UNKNOWN">UNKNOWN</a></code>.
 </p></div>
@@ -1864,6 +2008,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Returns the package name for the application responsible for adding the session.
  or <code>null</code> if unset/unknown.  The <code><a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">PackageManager</a></code> can be used to query
@@ -1897,6 +2044,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Returns the description for this session, if set.
 </p></div>
 
@@ -1926,6 +2076,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Returns the end time for the session, in the given unit since epoch.  If the session is
  ongoing (it hasn't ended yet), this will return 0.
@@ -1958,6 +2111,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Returns the identifier for this session, if set.
 </p></div>
 
@@ -1988,8 +2144,11 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Returns the MIME type which describes a Session for a particular activity.  The MIME type
- is used in intents such as the <code><a href="../../../../../../../reference/com/google/android/gms/fitness/SessionsApi.ViewIntentBuilder.html">session view</a></code>
+ is used in intents such as the <a href="../../../../../../../reference/com/google/android/gms/fitness/SessionsApi.ViewIntentBuilder.html">session view</a></a>
  intent.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
@@ -2029,6 +2188,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Returns the name for this session.  A non-empty name is always set.
 </p></div>
 
@@ -2058,6 +2220,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Returns the start time for the session, in the given time unit since epoch.  A valid start
  time is always set.
@@ -2090,6 +2255,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
@@ -2118,6 +2286,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Returns whether the session is ongoing.  If the session has ended, this will return false.
 </p></div>
@@ -2149,6 +2320,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
@@ -2178,6 +2352,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
@@ -2206,7 +2383,7 @@ From interface
   </div>
   <div id="build_info">
     
-    Android GmsCore 1501030&nbsp;r &mdash; 
+    Android GmsCore 1784785&nbsp;r &mdash; 
 <script src="../../../../../../../timestamp.js" type="text/javascript"></script>
 <script>document.write(BUILD_TIMESTAMP)</script>
 

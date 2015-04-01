@@ -84,6 +84,20 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <html>
 <head>
 
@@ -99,7 +113,7 @@
 href="http://fonts.googleapis.com/css?family=Roboto+Condensed">
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:light,regular,medium,thin,italic,mediumitalic,bold"
   title="roboto">
-<link href="../../../../../../../assets/css/default.css?v=2" rel="stylesheet" type="text/css">
+<link href="../../../../../../../assets/css/default.css?v=5" rel="stylesheet" type="text/css">
 
 
 <!-- FULLSCREEN STYLESHEET -->
@@ -115,7 +129,9 @@ type="text/css">
   var metaTags = [];
   var devsite = false;
 </script>
-<script src="../../../../../../../assets/js/docs.js?v=2" type="text/javascript"></script>
+<script src="../../../../../../../assets/js/docs.js?v=3" type="text/javascript"></script>
+
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -132,16 +148,66 @@ type="text/css">
 </head>
 
 <body class="gc-documentation 
-  develop" itemscope itemtype="http://schema.org/Article">
+  develop reference" itemscope itemtype="http://schema.org/Article">
   <div id="doc-api-level" class="" style="display:none"></div>
   <a name="top"></a>
 
 
 <a name="top"></a>
 
+<!-- dialog to prompt lang pref change when loaded from hardcoded URL 
+<div id="langMessage" style="display:none">
+  <div>
+    <div class="lang en">
+      <p>You requested a page in English, would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang es">
+      <p>You requested a page in Spanish (Español), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ja">
+      <p>You requested a page in Japanese (日本語), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ko">
+      <p>You requested a page in Korean (한국어), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ru">
+      <p>You requested a page in Russian (Русский), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang zh-cn">
+      <p>You requested a page in Simplified Chinese (简体中文), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang zh-tw">
+      <p>You requested a page in Traditional Chinese (繁體中文), would you like to proceed with this language setting?</p>
+    </div>
+    <a href="#" class="button yes" onclick="return false;">
+      <span class="lang en">Yes</span>
+      <span class="lang es">Sí</span>
+      <span class="lang ja">Yes</span>
+      <span class="lang ko">Yes</span>
+      <span class="lang ru">Yes</span>
+      <span class="lang zh-cn">是的</span>
+      <span class="lang zh-tw">没有</span>
+    </a>
+    <a href="#" class="button" onclick="$('#langMessage').hide();return false;">
+      <span class="lang en">No</span>
+      <span class="lang es">No</span>
+      <span class="lang ja">No</span>
+      <span class="lang ko">No</span>
+      <span class="lang ru">No</span>
+      <span class="lang zh-cn">没有</span>
+      <span class="lang zh-tw">没有</span>
+    </a>
+  </div>
+</div> -->
+
+
   <!-- Header -->
   <div id="header-wrapper">
     <div id="header">
+
+    
+
+
       <div class="wrap" id="header-wrap">
         <div class="col-3 logo">
           <a href="../../../../../../../index.html">
@@ -331,6 +397,7 @@ type="text/css">
                 <li><a href="../../../../../../../distribute/users/index.html">Get Users</a></li>
                 <li><a href="../../../../../../../distribute/engage/index.html">Engage &amp; Retain</a></li>
                 <li><a href="../../../../../../../distribute/monetize/index.html">Monetize</a></li>
+                <li><a href="../../../../../../../distribute/analyze/index.html">Analyze</a></li>
                 <li><a href="../../../../../../../distribute/tools/index.html">Tools &amp; Reference</a></li>
                 <li><a href="../../../../../../../distribute/stories/index.html">Developer Stories</a></li>
               </ul>
@@ -343,7 +410,12 @@ type="text/css">
   
     <!-- Secondary x-nav -->
     <div id="nav-x">
-        <div class="wrap">
+        <div class="wrap" style="position:relative;z-index:1">
+
+        
+        
+        
+
             <ul class="nav-x col-9 develop" style="width:100%">
                 <li class="training"><a href="../../../../../../../training/index.html"
                   zh-tw-lang="訓練課程"
@@ -467,8 +539,6 @@ type="text/css">
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/auth/package-summary.html">com.google.android.gms.auth</a></li>
     <li class="api apilevel-">
-  <a href="../../../../../../../reference/com/google/android/gms/auth/api/package-summary.html">com.google.android.gms.auth.api</a></li>
-    <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/cast/package-summary.html">com.google.android.gms.cast</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/common/package-summary.html">com.google.android.gms.common</a></li>
@@ -529,9 +599,17 @@ type="text/css">
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/location/package-summary.html">com.google.android.gms.location</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../../../reference/com/google/android/gms/location/places/package-summary.html">com.google.android.gms.location.places</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../reference/com/google/android/gms/location/places/ui/package-summary.html">com.google.android.gms.location.places.ui</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/maps/package-summary.html">com.google.android.gms.maps</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/maps/model/package-summary.html">com.google.android.gms.maps.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../reference/com/google/android/gms/nearby/package-summary.html">com.google.android.gms.nearby</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../reference/com/google/android/gms/nearby/connection/package-summary.html">com.google.android.gms.nearby.connection</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/panorama/package-summary.html">com.google.android.gms.panorama</a></li>
     <li class="api apilevel-">
@@ -540,6 +618,8 @@ type="text/css">
   <a href="../../../../../../../reference/com/google/android/gms/plus/model/moments/package-summary.html">com.google.android.gms.plus.model.moments</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/plus/model/people/package-summary.html">com.google.android.gms.plus.model.people</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../reference/com/google/android/gms/safetynet/package-summary.html">com.google.android.gms.safetynet</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/security/package-summary.html">com.google.android.gms.security</a></li>
     <li class="api apilevel-">
@@ -563,13 +643,17 @@ type="text/css">
               
     <li><h2>Interfaces</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../../../../../reference/com/google/android/gms/common/data/DataBuffer.html">DataBuffer</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../reference/com/google/android/gms/common/data/DataBufferObserver.html">DataBufferObserver</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../reference/com/google/android/gms/common/data/DataBufferObserver.Observable.html">DataBufferObserver.Observable</a></li>
           <li class="selected api apilevel-"><a href="../../../../../../../reference/com/google/android/gms/common/data/Freezable.html">Freezable</a></li>
       </ul>
     </li>
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="api apilevel-"><a href="../../../../../../../reference/com/google/android/gms/common/data/DataBuffer.html">DataBuffer</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../reference/com/google/android/gms/common/data/AbstractDataBuffer.html">AbstractDataBuffer</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../reference/com/google/android/gms/common/data/DataBufferObserverSet.html">DataBufferObserverSet</a></li>
           <li class="api apilevel-"><a href="../../../../../../../reference/com/google/android/gms/common/data/DataBufferUtils.html">DataBufferUtils</a></li>
           <li class="api apilevel-"><a href="../../../../../../../reference/com/google/android/gms/common/data/FreezableUtils.html">FreezableUtils</a></li>
       </ul>
@@ -678,6 +762,9 @@ Summary:
   
 
 
+    
+
+
 </div><!-- end header -->
 
 <div id="naMessage"></div>
@@ -728,7 +815,14 @@ Summary:
               
             
               
-                <a href="../../../../../../../reference/com/google/android/gms/appstate/AppState.html">AppState</a>,
+              
+            
+              
+              
+            
+              
+              
+            
               
               
             
@@ -739,23 +833,8 @@ Summary:
               
             
               
-                <a href="../../../../../../../reference/com/google/android/gms/wearable/DataEvent.html">DataEvent</a>,
-              
               
             
-              
-              
-            
-              
-              
-            
-              
-                <a href="../../../../../../../reference/com/google/android/gms/wearable/DataItem.html">DataItem</a>,
-              
-              
-            
-              
-                <a href="../../../../../../../reference/com/google/android/gms/wearable/DataItemAsset.html">DataItemAsset</a>,
               
               
             
@@ -770,7 +849,7 @@ Summary:
             
               
               and
-                <a href="#" onclick="return toggleInherited(document.getElementById('subclasses-indirect', null))">31 others.</a>
+                <a href="#" onclick="return toggleInherited(document.getElementById('subclasses-indirect', null))">34 others.</a>
               
             
           
@@ -778,193 +857,556 @@ Summary:
       <div id="subclasses-indirect-summary"
               style="display: none;"
               >
+  
   <table class="jd-sumtable-expando">
-        <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/achievement/Achievement.html">Achievement</a></td>
-              <td class="jd-descrcol" width="100%">Data interface for retrieving achievement information.&nbsp;</td>
-          </tr>
-        <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/achievement/AchievementEntity.html">AchievementEntity</a></td>
-              <td class="jd-descrcol" width="100%">Data object representing a set of Achievement data.&nbsp;</td>
-          </tr>
-        <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/appstate/AppState.html">AppState</a></td>
-              <td class="jd-descrcol" width="100%">Data interface for retrieving app state information.&nbsp;</td>
-          </tr>
-        <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/wearable/DataEvent.html">DataEvent</a></td>
-              <td class="jd-descrcol" width="100%">Data interface for data events.&nbsp;</td>
-          </tr>
-        <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/wearable/DataItem.html">DataItem</a></td>
-              <td class="jd-descrcol" width="100%">The base object of data stored in the Android Wear network.&nbsp;</td>
-          </tr>
-        <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/wearable/DataItemAsset.html">DataItemAsset</a></td>
-              <td class="jd-descrcol" width="100%">A reference to an asset stored in a data item.&nbsp;</td>
-          </tr>
-        <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/event/Event.html">Event</a></td>
-              <td class="jd-descrcol" width="100%">Data interface for retrieving event information.&nbsp;</td>
-          </tr>
-        <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/event/EventEntity.html">EventEntity</a></td>
-              <td class="jd-descrcol" width="100%">Data object representing the data for a event.&nbsp;</td>
-          </tr>
-        <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/Game.html">Game</a></td>
-              <td class="jd-descrcol" width="100%">Data interface for retrieving game information.&nbsp;</td>
-          </tr>
-        <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/GameEntity.html">GameEntity</a></td>
-              <td class="jd-descrcol" width="100%">Data object representing a set of Game data.&nbsp;</td>
-          </tr>
-        <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/request/GameRequest.html">GameRequest</a></td>
-              <td class="jd-descrcol" width="100%">Data interface for game requests.&nbsp;</td>
-          </tr>
-        <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/request/GameRequestEntity.html">GameRequestEntity</a></td>
-              <td class="jd-descrcol" width="100%">Data object representing the data for a request.&nbsp;</td>
-          </tr>
-        <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/multiplayer/Invitation.html">Invitation</a></td>
-              <td class="jd-descrcol" width="100%">Data interface for an invitation object.&nbsp;</td>
-          </tr>
-        <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/multiplayer/InvitationEntity.html">InvitationEntity</a></td>
-              <td class="jd-descrcol" width="100%">Data object representing the data for a multiplayer invitation.&nbsp;</td>
-          </tr>
-        <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/plus/model/moments/ItemScope.html">ItemScope</a></td>
-              <td class="jd-descrcol" width="100%">&nbsp;</td>
-          </tr>
-        <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/leaderboard/Leaderboard.html">Leaderboard</a></td>
-              <td class="jd-descrcol" width="100%">Data interface for leaderboard metadata.&nbsp;</td>
-          </tr>
-        <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/leaderboard/LeaderboardScore.html">LeaderboardScore</a></td>
-              <td class="jd-descrcol" width="100%">Data interface representing a single score on a leaderboard.&nbsp;</td>
-          </tr>
-        <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/leaderboard/LeaderboardVariant.html">LeaderboardVariant</a></td>
-              <td class="jd-descrcol" width="100%">Data interface for a specific variant of a leaderboard; a variant is defined by the combination
- of the leaderboard's collection (public or social) and time span (daily, weekly, or all-time).&nbsp;</td>
-          </tr>
-        <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/drive/Metadata.html">Metadata</a></td>
-              <td class="jd-descrcol" width="100%">The details of a Drive file or folder.&nbsp;</td>
-          </tr>
-        <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/quest/Milestone.html">Milestone</a></td>
-              <td class="jd-descrcol" width="100%">Data interface for retrieving milestone information.&nbsp;</td>
-          </tr>
-        <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/quest/MilestoneEntity.html">MilestoneEntity</a></td>
-              <td class="jd-descrcol" width="100%">Data object representing the data for a milestone.&nbsp;</td>
-          </tr>
-        <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/plus/model/moments/Moment.html">Moment</a></td>
-              <td class="jd-descrcol" width="100%">&nbsp;</td>
-          </tr>
-        <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/multiplayer/Participant.html">Participant</a></td>
-              <td class="jd-descrcol" width="100%">Data interface for multiplayer participants.&nbsp;</td>
-          </tr>
-        <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/multiplayer/ParticipantEntity.html">ParticipantEntity</a></td>
-              <td class="jd-descrcol" width="100%">Data object representing a Participant in a match.&nbsp;</td>
-          </tr>
-        <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html">Person</a></td>
-              <td class="jd-descrcol" width="100%">&nbsp;</td>
-          </tr>
-        <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/plus/model/people/Person.AgeRange.html">Person.AgeRange</a></td>
-              <td class="jd-descrcol" width="100%">The age range of the person.&nbsp;</td>
-          </tr>
-        <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/plus/model/people/Person.Cover.html">Person.Cover</a></td>
-              <td class="jd-descrcol" width="100%">The cover photo content.&nbsp;</td>
-          </tr>
-        <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/plus/model/people/Person.Cover.CoverInfo.html">Person.Cover.CoverInfo</a></td>
-              <td class="jd-descrcol" width="100%">Extra information about the cover photo.&nbsp;</td>
-          </tr>
-        <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/plus/model/people/Person.Cover.CoverPhoto.html">Person.Cover.CoverPhoto</a></td>
-              <td class="jd-descrcol" width="100%">The person's primary cover image.&nbsp;</td>
-          </tr>
-        <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/plus/model/people/Person.Image.html">Person.Image</a></td>
-              <td class="jd-descrcol" width="100%">The representation of the person's profile photo.&nbsp;</td>
-          </tr>
-        <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/plus/model/people/Person.Name.html">Person.Name</a></td>
-              <td class="jd-descrcol" width="100%">An object representation of the individual components of a person's name.&nbsp;</td>
-          </tr>
-        <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/plus/model/people/Person.Organizations.html">Person.Organizations</a></td>
-              <td class="jd-descrcol" width="100%">&nbsp;</td>
-          </tr>
-        <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/plus/model/people/Person.PlacesLived.html">Person.PlacesLived</a></td>
-              <td class="jd-descrcol" width="100%">&nbsp;</td>
-          </tr>
-        <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/plus/model/people/Person.Urls.html">Person.Urls</a></td>
-              <td class="jd-descrcol" width="100%">&nbsp;</td>
-          </tr>
-        <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/Player.html">Player</a></td>
-              <td class="jd-descrcol" width="100%">Data interface for retrieving player information.&nbsp;</td>
-          </tr>
-        <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/PlayerEntity.html">PlayerEntity</a></td>
-              <td class="jd-descrcol" width="100%">Data object representing a set of Player data.&nbsp;</td>
-          </tr>
-        <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/quest/Quest.html">Quest</a></td>
-              <td class="jd-descrcol" width="100%">Data interface for retrieving quest information.&nbsp;</td>
-          </tr>
-        <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/quest/QuestEntity.html">QuestEntity</a></td>
-              <td class="jd-descrcol" width="100%">Data object representing the data for a quest.&nbsp;</td>
-          </tr>
-        <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/multiplayer/realtime/Room.html">Room</a></td>
-              <td class="jd-descrcol" width="100%">Data interface for room functionality.&nbsp;</td>
-          </tr>
-        <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/multiplayer/realtime/RoomEntity.html">RoomEntity</a></td>
-              <td class="jd-descrcol" width="100%">Data object representing the data for a room.&nbsp;</td>
-          </tr>
-        <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/snapshot/Snapshot.html">Snapshot</a></td>
-              <td class="jd-descrcol" width="100%">Data interface for a representation of a saved game.&nbsp;</td>
-          </tr>
-        <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/snapshot/SnapshotEntity.html">SnapshotEntity</a></td>
-              <td class="jd-descrcol" width="100%">Data object representing the data for a saved game.&nbsp;</td>
-          </tr>
-        <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/snapshot/SnapshotMetadata.html">SnapshotMetadata</a></td>
-              <td class="jd-descrcol" width="100%">Data interface for the metadata of a saved game.&nbsp;</td>
-          </tr>
-        <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/snapshot/SnapshotMetadataEntity.html">SnapshotMetadataEntity</a></td>
-              <td class="jd-descrcol" width="100%">Data object representing the metadata for a saved game.&nbsp;</td>
-          </tr>
-        <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/multiplayer/turnbased/TurnBasedMatch.html">TurnBasedMatch</a></td>
-              <td class="jd-descrcol" width="100%">Data interface for turn-based specific match functionality.&nbsp;</td>
-          </tr>
-        <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/multiplayer/turnbased/TurnBasedMatchEntity.html">TurnBasedMatchEntity</a></td>
-              <td class="jd-descrcol" width="100%">Data object representing the data for a turn-based match.&nbsp;</td>
-          </tr>
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/achievement/Achievement.html">Achievement</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data interface for retrieving achievement information.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/achievement/AchievementEntity.html">AchievementEntity</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data object representing a set of Achievement data.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/appstate/AppState.html">AppState</a></td>
+        <td class="jd-descrcol" width="100%">
+          <em>
+      This interface is deprecated.
+    App State APIs are now deprecated. Please use Saved Games instead
+             (https://developers.google.com/games/services/common/concepts/savedgames).
+</em>&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/location/places/AutocompletePrediction.html">AutocompletePrediction</a></td>
+        <td class="jd-descrcol" width="100%">
+          Represents a query's suggestions and its attributes, like matched substrings.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/wearable/DataEvent.html">DataEvent</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data interface for data events.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/wearable/DataItem.html">DataItem</a></td>
+        <td class="jd-descrcol" width="100%">
+          The base object of data stored in the Android Wear network.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/wearable/DataItemAsset.html">DataItemAsset</a></td>
+        <td class="jd-descrcol" width="100%">
+          A reference to an asset stored in a data item.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/event/Event.html">Event</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data interface for retrieving event information.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/event/EventEntity.html">EventEntity</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data object representing the data for a event.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/Game.html">Game</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data interface for retrieving game information.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/GameEntity.html">GameEntity</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data object representing a set of Game data.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/request/GameRequest.html">GameRequest</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data interface for game requests.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/request/GameRequestEntity.html">GameRequestEntity</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data object representing the data for a request.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/multiplayer/Invitation.html">Invitation</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data interface for an invitation object.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/multiplayer/InvitationEntity.html">InvitationEntity</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data object representing the data for a multiplayer invitation.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/plus/model/moments/ItemScope.html">ItemScope</a></td>
+        <td class="jd-descrcol" width="100%">
+          &nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/leaderboard/Leaderboard.html">Leaderboard</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data interface for leaderboard metadata.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/leaderboard/LeaderboardScore.html">LeaderboardScore</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data interface representing a single score on a leaderboard.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/leaderboard/LeaderboardVariant.html">LeaderboardVariant</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data interface for a specific variant of a leaderboard; a variant is defined by the combination
+ of the leaderboard's collection (public or social) and time span (daily, weekly, or all-time).&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/drive/Metadata.html">Metadata</a></td>
+        <td class="jd-descrcol" width="100%">
+          The details of a Drive file or folder.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/quest/Milestone.html">Milestone</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data interface for retrieving milestone information.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/quest/MilestoneEntity.html">MilestoneEntity</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data object representing the data for a milestone.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/plus/model/moments/Moment.html">Moment</a></td>
+        <td class="jd-descrcol" width="100%">
+          &nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/multiplayer/Participant.html">Participant</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data interface for multiplayer participants.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/multiplayer/ParticipantEntity.html">ParticipantEntity</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data object representing a Participant in a match.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html">Person</a></td>
+        <td class="jd-descrcol" width="100%">
+          &nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/plus/model/people/Person.AgeRange.html">Person.AgeRange</a></td>
+        <td class="jd-descrcol" width="100%">
+          The age range of the person.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/plus/model/people/Person.Cover.html">Person.Cover</a></td>
+        <td class="jd-descrcol" width="100%">
+          The cover photo content.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/plus/model/people/Person.Cover.CoverInfo.html">Person.Cover.CoverInfo</a></td>
+        <td class="jd-descrcol" width="100%">
+          Extra information about the cover photo.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/plus/model/people/Person.Cover.CoverPhoto.html">Person.Cover.CoverPhoto</a></td>
+        <td class="jd-descrcol" width="100%">
+          The person's primary cover image.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/plus/model/people/Person.Image.html">Person.Image</a></td>
+        <td class="jd-descrcol" width="100%">
+          The representation of the person's profile photo.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/plus/model/people/Person.Name.html">Person.Name</a></td>
+        <td class="jd-descrcol" width="100%">
+          An object representation of the individual components of a person's name.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/plus/model/people/Person.Organizations.html">Person.Organizations</a></td>
+        <td class="jd-descrcol" width="100%">
+          &nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/plus/model/people/Person.PlacesLived.html">Person.PlacesLived</a></td>
+        <td class="jd-descrcol" width="100%">
+          &nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/plus/model/people/Person.Urls.html">Person.Urls</a></td>
+        <td class="jd-descrcol" width="100%">
+          &nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/location/places/Place.html">Place</a></td>
+        <td class="jd-descrcol" width="100%">
+          Represents a particular physical place.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/location/places/PlaceLikelihood.html">PlaceLikelihood</a></td>
+        <td class="jd-descrcol" width="100%">
+          Represents a <code><a href="../../../../../../../reference/com/google/android/gms/location/places/Place.html">Place</a></code> and the relative likelihood of the place being the best match within
+ the list of returned places for a single request.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/Player.html">Player</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data interface for retrieving player information.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/PlayerEntity.html">PlayerEntity</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data object representing a set of Player data.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/quest/Quest.html">Quest</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data interface for retrieving quest information.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/quest/QuestEntity.html">QuestEntity</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data object representing the data for a quest.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/multiplayer/realtime/Room.html">Room</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data interface for room functionality.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/multiplayer/realtime/RoomEntity.html">RoomEntity</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data object representing the data for a room.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/snapshot/Snapshot.html">Snapshot</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data interface for a representation of a saved game.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/snapshot/SnapshotEntity.html">SnapshotEntity</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data object representing the data for a saved game.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/snapshot/SnapshotMetadata.html">SnapshotMetadata</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data interface for the metadata of a saved game.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/snapshot/SnapshotMetadataEntity.html">SnapshotMetadataEntity</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data object representing the metadata for a saved game.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/multiplayer/turnbased/TurnBasedMatch.html">TurnBasedMatch</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data interface for turn-based specific match functionality.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/games/multiplayer/turnbased/TurnBasedMatchEntity.html">TurnBasedMatchEntity</a></td>
+        <td class="jd-descrcol" width="100%">
+          Data object representing the data for a turn-based match.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
   </table>
+
       </div>
   </div>
 </td></tr></table>
@@ -1047,7 +1489,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/common/data/Freezable.html#freeze()">freeze</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Freeze a volatile representation into an immutable representation.</div>
+        <div class="jd-descrdiv">
+          Freeze a volatile representation into an immutable representation.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1065,7 +1512,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/common/data/Freezable.html#isDataValid()">isDataValid</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Check to see if this object is valid for use.</div>
+        <div class="jd-descrdiv">
+          Check to see if this object is valid for use.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1141,6 +1593,9 @@ Summary:
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Freeze a volatile representation into an immutable representation. Objects returned from this
  call are safe to cache.
  <p>
@@ -1188,6 +1643,9 @@ Summary:
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Check to see if this object is valid for use. If the object is still volatile, this method
  will indicate whether or not the object can be safely used. The output of a call to
  <code><a href="../../../../../../../reference/com/google/android/gms/common/data/Freezable.html#freeze()">freeze()</a></code> will always be valid.</p></div>
@@ -1223,7 +1681,7 @@ Summary:
   </div>
   <div id="build_info">
     
-    Android GmsCore 1501030&nbsp;r &mdash; 
+    Android GmsCore 1784785&nbsp;r &mdash; 
 <script src="../../../../../../../timestamp.js" type="text/javascript"></script>
 <script>document.write(BUILD_TIMESTAMP)</script>
 

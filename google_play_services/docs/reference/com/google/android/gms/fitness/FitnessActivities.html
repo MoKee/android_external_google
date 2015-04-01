@@ -84,6 +84,20 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <html>
 <head>
 
@@ -99,7 +113,7 @@
 href="http://fonts.googleapis.com/css?family=Roboto+Condensed">
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:light,regular,medium,thin,italic,mediumitalic,bold"
   title="roboto">
-<link href="../../../../../../assets/css/default.css?v=2" rel="stylesheet" type="text/css">
+<link href="../../../../../../assets/css/default.css?v=5" rel="stylesheet" type="text/css">
 
 
 <!-- FULLSCREEN STYLESHEET -->
@@ -115,7 +129,9 @@ type="text/css">
   var metaTags = [];
   var devsite = false;
 </script>
-<script src="../../../../../../assets/js/docs.js?v=2" type="text/javascript"></script>
+<script src="../../../../../../assets/js/docs.js?v=3" type="text/javascript"></script>
+
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -132,16 +148,66 @@ type="text/css">
 </head>
 
 <body class="gc-documentation 
-  develop" itemscope itemtype="http://schema.org/Article">
+  develop reference" itemscope itemtype="http://schema.org/Article">
   <div id="doc-api-level" class="" style="display:none"></div>
   <a name="top"></a>
 
 
 <a name="top"></a>
 
+<!-- dialog to prompt lang pref change when loaded from hardcoded URL 
+<div id="langMessage" style="display:none">
+  <div>
+    <div class="lang en">
+      <p>You requested a page in English, would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang es">
+      <p>You requested a page in Spanish (Español), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ja">
+      <p>You requested a page in Japanese (日本語), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ko">
+      <p>You requested a page in Korean (한국어), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ru">
+      <p>You requested a page in Russian (Русский), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang zh-cn">
+      <p>You requested a page in Simplified Chinese (简体中文), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang zh-tw">
+      <p>You requested a page in Traditional Chinese (繁體中文), would you like to proceed with this language setting?</p>
+    </div>
+    <a href="#" class="button yes" onclick="return false;">
+      <span class="lang en">Yes</span>
+      <span class="lang es">Sí</span>
+      <span class="lang ja">Yes</span>
+      <span class="lang ko">Yes</span>
+      <span class="lang ru">Yes</span>
+      <span class="lang zh-cn">是的</span>
+      <span class="lang zh-tw">没有</span>
+    </a>
+    <a href="#" class="button" onclick="$('#langMessage').hide();return false;">
+      <span class="lang en">No</span>
+      <span class="lang es">No</span>
+      <span class="lang ja">No</span>
+      <span class="lang ko">No</span>
+      <span class="lang ru">No</span>
+      <span class="lang zh-cn">没有</span>
+      <span class="lang zh-tw">没有</span>
+    </a>
+  </div>
+</div> -->
+
+
   <!-- Header -->
   <div id="header-wrapper">
     <div id="header">
+
+    
+
+
       <div class="wrap" id="header-wrap">
         <div class="col-3 logo">
           <a href="../../../../../../index.html">
@@ -331,6 +397,7 @@ type="text/css">
                 <li><a href="../../../../../../distribute/users/index.html">Get Users</a></li>
                 <li><a href="../../../../../../distribute/engage/index.html">Engage &amp; Retain</a></li>
                 <li><a href="../../../../../../distribute/monetize/index.html">Monetize</a></li>
+                <li><a href="../../../../../../distribute/analyze/index.html">Analyze</a></li>
                 <li><a href="../../../../../../distribute/tools/index.html">Tools &amp; Reference</a></li>
                 <li><a href="../../../../../../distribute/stories/index.html">Developer Stories</a></li>
               </ul>
@@ -343,7 +410,12 @@ type="text/css">
   
     <!-- Secondary x-nav -->
     <div id="nav-x">
-        <div class="wrap">
+        <div class="wrap" style="position:relative;z-index:1">
+
+        
+        
+        
+
             <ul class="nav-x col-9 develop" style="width:100%">
                 <li class="training"><a href="../../../../../../training/index.html"
                   zh-tw-lang="訓練課程"
@@ -467,8 +539,6 @@ type="text/css">
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/auth/package-summary.html">com.google.android.gms.auth</a></li>
     <li class="api apilevel-">
-  <a href="../../../../../../reference/com/google/android/gms/auth/api/package-summary.html">com.google.android.gms.auth.api</a></li>
-    <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/cast/package-summary.html">com.google.android.gms.cast</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/common/package-summary.html">com.google.android.gms.common</a></li>
@@ -529,9 +599,17 @@ type="text/css">
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/location/package-summary.html">com.google.android.gms.location</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../../reference/com/google/android/gms/location/places/package-summary.html">com.google.android.gms.location.places</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../reference/com/google/android/gms/location/places/ui/package-summary.html">com.google.android.gms.location.places.ui</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/maps/package-summary.html">com.google.android.gms.maps</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/maps/model/package-summary.html">com.google.android.gms.maps.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../reference/com/google/android/gms/nearby/package-summary.html">com.google.android.gms.nearby</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../reference/com/google/android/gms/nearby/connection/package-summary.html">com.google.android.gms.nearby.connection</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/panorama/package-summary.html">com.google.android.gms.panorama</a></li>
     <li class="api apilevel-">
@@ -540,6 +618,8 @@ type="text/css">
   <a href="../../../../../../reference/com/google/android/gms/plus/model/moments/package-summary.html">com.google.android.gms.plus.model.moments</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/plus/model/people/package-summary.html">com.google.android.gms.plus.model.people</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../reference/com/google/android/gms/safetynet/package-summary.html">com.google.android.gms.safetynet</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/security/package-summary.html">com.google.android.gms.security</a></li>
     <li class="api apilevel-">
@@ -703,6 +783,9 @@ Summary:
   
 
 
+    
+
+
 </div><!-- end header -->
 
 <div id="naMessage"></div>
@@ -737,30 +820,37 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p itemprop="articleBody">Constants representing different user activities, such as walking, running, and cycling. 
- Activities are used in <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/Session.html">Sessions</a></code>, <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/DataType.html">DataTypes</a></code> and in
- <code><a href="../../../../../../reference/com/google/android/gms/fitness/request/DataReadRequest.html">read queries</a></code>.
+<p itemprop="articleBody">Constants representing different user activities, such as walking, running, and cycling.
+ Activities are used in <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/Session.html">Sessions</a></code>,
+ <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/DataType.html">DataTypes</a></code> and in
+ <a href="../../../../../../reference/com/google/android/gms/fitness/request/DataReadRequest.html">read queries</a></a>.
  <p/>
- A <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/Session.html">Session</a></code> associates an activity with all data that was recorded during a time interval,
- such as <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/DataType.html#TYPE_HEART_RATE_BPM">heart rate samples</a></code> taken while the user was doing
- <code><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#AEROBICS">aerobics</a></code>, or <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/DataType.html#TYPE_CYCLING_WHEEL_RPM">wheel RPM</a></code> measured
+ A <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/Session.html">Session</a></code> associates an activity with all data that
+ was recorded during a time interval, such as
+ <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/DataType.html#TYPE_HEART_RATE_BPM">heart rate samples</a></code>
+ taken while the user was doing <code><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#AEROBICS">aerobics</a></code>, or
+ <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/DataType.html#TYPE_CYCLING_WHEEL_RPM">wheel RPM</a></code> measured
  while <code><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#BIKING">biking</a></code>.
  <p/>
- Activities be stored and read using the <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/DataType.html#TYPE_ACTIVITY_SAMPLE">activity sample</a></code> and
- <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/DataType.html#TYPE_ACTIVITY_SEGMENT">activity segment</a></code> data types.  When samples are stored, 
- these are automatically converted into segments by the platform's default data source.
+ Activities be stored and read using the
+ <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/DataType.html#TYPE_ACTIVITY_SAMPLE">activity sample</a></code> and
+ <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/DataType.html#TYPE_ACTIVITY_SEGMENT">activity segment</a></code> data
+ types.  When samples are stored, these are automatically converted into segments by the
+ platform's default data source.
  <p/>
- When reading data, the <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/Bucket.html#TYPE_ACTIVITY_SEGMENT">activity segment</a></code> and
- <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/Bucket.html#TYPE_ACTIVITY_TYPE">activity type</a></code> bucketing strategies can be used to aggregate
- data by the activities happening at the time data was collected.  This would allow, for instance, 
- aggregating step counts taken during running and those taken during walking separately,
- or to query the average heart rate during each activity.
+ When reading data, the
+ <a href="../../../../../../reference/com/google/android/gms/fitness/data/Bucket.html#TYPE_ACTIVITY_SEGMENT">activity segment</a></a>
+ and <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/Bucket.html#TYPE_ACTIVITY_TYPE">activity type</a></code> bucketing
+ strategies can be used to aggregate data by the activities happening at the time data was
+ collected.  This would allow, for instance, aggregating step counts taken during running and
+ those taken during walking separately, or to query the average heart rate during each activity.
  <p/>
  Each activity is represented by its name, which is a string constant.  These constants are also
  used in intents for tracking and visualizing activity data.  Internally, activities are stored as
- integers inside of <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/DataPoint.html">DataPoint</a></code> for efficiency.  You can convert between the
- string and int representations for storage using <code><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#setValue(com.google.android.gms.fitness.data.DataPoint, java.lang.String)">setValue(DataPoint, String)</a></code> and
- <code><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#getValue(com.google.android.gms.fitness.data.DataPoint)">getValue(DataPoint)</a></code>.
+ integers inside of <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/DataPoint.html">DataPoint</a></code> for efficiency.  You can
+ convert between the <code>String</code> and <code>int</code> representations for storage using
+ <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/Value.html#setActivity(java.lang.String)">setActivity(String)</a></code> and
+ <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/Value.html#asActivity()">asActivity()</a></code>.
  <p/>
  A subset of the activities can be detected by
  <code><a href="../../../../../../reference/com/google/android/gms/location/ActivityRecognitionApi.html">Activity Recognition</a></code> and are
@@ -813,787 +903,1395 @@ Summary:
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#AEROBICS">AEROBICS</a></td>
-        <td class="jd-descrcol" width="100%">The user is performing aerobic exercises.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is performing aerobic exercises.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#BADMINTON">BADMINTON</a></td>
-        <td class="jd-descrcol" width="100%">The user is playing badminton.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is playing badminton.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#BASEBALL">BASEBALL</a></td>
-        <td class="jd-descrcol" width="100%">The user is playing baseball.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is playing baseball.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#BASKETBALL">BASKETBALL</a></td>
-        <td class="jd-descrcol" width="100%">The user is playing basketball.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is playing basketball.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#BIATHLON">BIATHLON</a></td>
-        <td class="jd-descrcol" width="100%">The user is practicing biathlon (combination of cross-country skiing and rifle shooting).</td>
+        <td class="jd-descrcol" width="100%">
+          The user is practicing biathlon (combination of cross-country skiing and rifle shooting).
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#BIKING">BIKING</a></td>
-        <td class="jd-descrcol" width="100%">The user is on a bicycle.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is on a bicycle.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#BIKING_HAND">BIKING_HAND</a></td>
-        <td class="jd-descrcol" width="100%">The user is handcycling (or handbiking).</td>
+        <td class="jd-descrcol" width="100%">
+          The user is handcycling (or handbiking).
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#BIKING_MOUNTAIN">BIKING_MOUNTAIN</a></td>
-        <td class="jd-descrcol" width="100%">The user is mountain biking.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is mountain biking.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#BIKING_ROAD">BIKING_ROAD</a></td>
-        <td class="jd-descrcol" width="100%">The user is cycling on a road or other smooth surface.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is cycling on a road or other smooth surface.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#BIKING_SPINNING">BIKING_SPINNING</a></td>
-        <td class="jd-descrcol" width="100%">The user is indoor cycling (spinning) on a specialized stationary bike.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is indoor cycling (spinning) on a specialized stationary bike.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#BIKING_STATIONARY">BIKING_STATIONARY</a></td>
-        <td class="jd-descrcol" width="100%">The user is cycling on a stationary bike.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is cycling on a stationary bike.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#BIKING_UTILITY">BIKING_UTILITY</a></td>
-        <td class="jd-descrcol" width="100%">The user is cycling as a means of transport.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is cycling as a means of transport.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#BOXING">BOXING</a></td>
-        <td class="jd-descrcol" width="100%">The user is boxing.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is boxing.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#CALISTHENICS">CALISTHENICS</a></td>
-        <td class="jd-descrcol" width="100%">The user is performing calisthenics exercises.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is performing calisthenics exercises.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#CIRCUIT_TRAINING">CIRCUIT_TRAINING</a></td>
-        <td class="jd-descrcol" width="100%">The user is performing circuit training exercises.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is performing circuit training exercises.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#CRICKET">CRICKET</a></td>
-        <td class="jd-descrcol" width="100%">The user is playing cricket.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is playing cricket.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#CURLING">CURLING</a></td>
-        <td class="jd-descrcol" width="100%">The user is practicing curling.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is practicing curling.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#DANCING">DANCING</a></td>
-        <td class="jd-descrcol" width="100%">The user is dancing.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is dancing.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#DIVING">DIVING</a></td>
-        <td class="jd-descrcol" width="100%">The user is diving into water, from a platform or spring board.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is diving into water, from a platform or spring board.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#ELLIPTICAL">ELLIPTICAL</a></td>
-        <td class="jd-descrcol" width="100%">The user is using an elliptical trainer or cross-trainer machine.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is using an elliptical trainer or cross-trainer machine.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#ERGOMETER">ERGOMETER</a></td>
-        <td class="jd-descrcol" width="100%">The user is using an ergometer machine.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is using an ergometer machine.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#EXTRA_STATUS">EXTRA_STATUS</a></td>
-        <td class="jd-descrcol" width="100%">Name for the String extra containing the status of an activity.</td>
+        <td class="jd-descrcol" width="100%">
+          Name for the String extra containing the status of an activity.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#FENCING">FENCING</a></td>
-        <td class="jd-descrcol" width="100%">The user is fencing.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is fencing.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#FOOTBALL_AMERICAN">FOOTBALL_AMERICAN</a></td>
-        <td class="jd-descrcol" width="100%">The user is playing American football (known as football in the United States).</td>
+        <td class="jd-descrcol" width="100%">
+          The user is playing American football (known as football in the United States).
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#FOOTBALL_AUSTRALIAN">FOOTBALL_AUSTRALIAN</a></td>
-        <td class="jd-descrcol" width="100%">The user is playing Australian-rules football.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is playing Australian-rules football.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#FOOTBALL_SOCCER">FOOTBALL_SOCCER</a></td>
-        <td class="jd-descrcol" width="100%">The user is playing association football (known as soccer in the United States).</td>
+        <td class="jd-descrcol" width="100%">
+          The user is playing association football (known as soccer in the United States).
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#FRISBEE_DISC">FRISBEE_DISC</a></td>
-        <td class="jd-descrcol" width="100%">The user is playing with a Frisbee disc.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is playing with a Frisbee disc.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#GARDENING">GARDENING</a></td>
-        <td class="jd-descrcol" width="100%">The user is gardening.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is gardening.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#GOLF">GOLF</a></td>
-        <td class="jd-descrcol" width="100%">The user is playing golf.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is playing golf.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#GYMNASTICS">GYMNASTICS</a></td>
-        <td class="jd-descrcol" width="100%">The user is practicing gymnastics.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is practicing gymnastics.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#HANDBALL">HANDBALL</a></td>
-        <td class="jd-descrcol" width="100%">The user is playing handball.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is playing handball.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#HIKING">HIKING</a></td>
-        <td class="jd-descrcol" width="100%">The user is hiking.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is hiking.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#HOCKEY">HOCKEY</a></td>
-        <td class="jd-descrcol" width="100%">The user is playing hockey.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is playing hockey.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#HORSEBACK_RIDING">HORSEBACK_RIDING</a></td>
-        <td class="jd-descrcol" width="100%">The user is horseback riding.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is horseback riding.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#HOUSEWORK">HOUSEWORK</a></td>
-        <td class="jd-descrcol" width="100%">The user is doing house work.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is doing house work.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#ICE_SKATING">ICE_SKATING</a></td>
-        <td class="jd-descrcol" width="100%">The user is ice-skating.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is ice-skating.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#IN_VEHICLE">IN_VEHICLE</a></td>
-        <td class="jd-descrcol" width="100%">The user is in a vehicle, such as a car.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is in a vehicle, such as a car.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#JUMP_ROPE">JUMP_ROPE</a></td>
-        <td class="jd-descrcol" width="100%">The user is jumping rope.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is jumping rope.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#KAYAKING">KAYAKING</a></td>
-        <td class="jd-descrcol" width="100%">The user is kayaking.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is kayaking.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#KETTLEBELL_TRAINING">KETTLEBELL_TRAINING</a></td>
-        <td class="jd-descrcol" width="100%">The user is training with a kettlebell.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is training with a kettlebell.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#KICKBOXING">KICKBOXING</a></td>
-        <td class="jd-descrcol" width="100%">The user is kickboxing.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is kickboxing.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#KICK_SCOOTER">KICK_SCOOTER</a></td>
-        <td class="jd-descrcol" width="100%">The user is riding a kick scooter.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is riding a kick scooter.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#KITESURFING">KITESURFING</a></td>
-        <td class="jd-descrcol" width="100%">The user is kite-surfing.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is kite-surfing.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#MARTIAL_ARTS">MARTIAL_ARTS</a></td>
-        <td class="jd-descrcol" width="100%">The user is practicing martial arts.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is practicing martial arts.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#MEDITATION">MEDITATION</a></td>
-        <td class="jd-descrcol" width="100%">The user is meditating.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is meditating.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#MIME_TYPE_PREFIX">MIME_TYPE_PREFIX</a></td>
-        <td class="jd-descrcol" width="100%">The common prefix for activity MIME types.</td>
+        <td class="jd-descrcol" width="100%">
+          The common prefix for activity MIME types.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#MIXED_MARTIAL_ARTS">MIXED_MARTIAL_ARTS</a></td>
-        <td class="jd-descrcol" width="100%">The user is practicing mixed martial arts (MMA).</td>
+        <td class="jd-descrcol" width="100%">
+          The user is practicing mixed martial arts (MMA).
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#ON_FOOT">ON_FOOT</a></td>
-        <td class="jd-descrcol" width="100%">The user is on foot, walking or running.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is on foot, walking or running.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#OTHER">OTHER</a></td>
-        <td class="jd-descrcol" width="100%">The user is performing a generic fitness activity, which isn't classified.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is performing a generic fitness activity, which isn't classified.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#P90X">P90X</a></td>
-        <td class="jd-descrcol" width="100%">The user is performing P90X exercises.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is performing P90X exercises.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#PARAGLIDING">PARAGLIDING</a></td>
-        <td class="jd-descrcol" width="100%">The user is paragliding.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is paragliding.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#PILATES">PILATES</a></td>
-        <td class="jd-descrcol" width="100%">The user is performing pilates exercises.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is performing pilates exercises.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#POLO">POLO</a></td>
-        <td class="jd-descrcol" width="100%">The user is playing polo (team sport on horseback).</td>
+        <td class="jd-descrcol" width="100%">
+          The user is playing polo (team sport on horseback).
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#RACQUETBALL">RACQUETBALL</a></td>
-        <td class="jd-descrcol" width="100%">The user is playing racquetball.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is playing racquetball.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#ROCK_CLIMBING">ROCK_CLIMBING</a></td>
-        <td class="jd-descrcol" width="100%">The user is rock climbing.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is rock climbing.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#ROWING">ROWING</a></td>
-        <td class="jd-descrcol" width="100%">The user is rowing.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is rowing.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#ROWING_MACHINE">ROWING_MACHINE</a></td>
-        <td class="jd-descrcol" width="100%">The user is using a rowing machine.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is using a rowing machine.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#RUGBY">RUGBY</a></td>
-        <td class="jd-descrcol" width="100%">The user is playing rugby.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is playing rugby.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#RUNNING">RUNNING</a></td>
-        <td class="jd-descrcol" width="100%">The user is running.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is running.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#RUNNING_JOGGING">RUNNING_JOGGING</a></td>
-        <td class="jd-descrcol" width="100%">The user is jogging.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is jogging.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#RUNNING_SAND">RUNNING_SAND</a></td>
-        <td class="jd-descrcol" width="100%">The user is running on sand.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is running on sand.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#RUNNING_TREADMILL">RUNNING_TREADMILL</a></td>
-        <td class="jd-descrcol" width="100%">The user is running on a treadmill.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is running on a treadmill.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SAILING">SAILING</a></td>
-        <td class="jd-descrcol" width="100%">The user is sailing.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is sailing.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SCUBA_DIVING">SCUBA_DIVING</a></td>
-        <td class="jd-descrcol" width="100%">The user is scuba diving.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is scuba diving.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SKATEBOARDING">SKATEBOARDING</a></td>
-        <td class="jd-descrcol" width="100%">The user is skateboarding.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is skateboarding.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SKATING">SKATING</a></td>
-        <td class="jd-descrcol" width="100%">The user is skating.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is skating.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SKATING_CROSS">SKATING_CROSS</a></td>
-        <td class="jd-descrcol" width="100%">The user is cross skating.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is cross skating.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SKATING_INDOOR">SKATING_INDOOR</a></td>
-        <td class="jd-descrcol" width="100%">The user is skating in-doors.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is skating in-doors.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SKATING_INLINE">SKATING_INLINE</a></td>
-        <td class="jd-descrcol" width="100%">The user is inline skating (roller-blading).</td>
+        <td class="jd-descrcol" width="100%">
+          The user is inline skating (roller-blading).
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SKIING">SKIING</a></td>
-        <td class="jd-descrcol" width="100%">The user is skiing.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is skiing.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SKIING_BACK_COUNTRY">SKIING_BACK_COUNTRY</a></td>
-        <td class="jd-descrcol" width="100%">The user is back-country skiing.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is back-country skiing.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SKIING_CROSS_COUNTRY">SKIING_CROSS_COUNTRY</a></td>
-        <td class="jd-descrcol" width="100%">The user is cross-country skiing.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is cross-country skiing.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SKIING_DOWNHILL">SKIING_DOWNHILL</a></td>
-        <td class="jd-descrcol" width="100%">The user is downhill skiing.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is downhill skiing.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SKIING_KITE">SKIING_KITE</a></td>
-        <td class="jd-descrcol" width="100%">The user is kite skiing.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is kite skiing.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SKIING_ROLLER">SKIING_ROLLER</a></td>
-        <td class="jd-descrcol" width="100%">The user is roller skiing (non-snow).</td>
+        <td class="jd-descrcol" width="100%">
+          The user is roller skiing (non-snow).
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SLEDDING">SLEDDING</a></td>
-        <td class="jd-descrcol" width="100%">The user is sledding.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is sledding.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SLEEP">SLEEP</a></td>
-        <td class="jd-descrcol" width="100%">The user is sleeping.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is sleeping.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SLEEP_AWAKE">SLEEP_AWAKE</a></td>
+        <td class="jd-descrcol" width="100%">
+          The user is in an awake period in the middle of sleep.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SLEEP_DEEP">SLEEP_DEEP</a></td>
+        <td class="jd-descrcol" width="100%">
+          The user is in a deep sleep cycle.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SLEEP_LIGHT">SLEEP_LIGHT</a></td>
+        <td class="jd-descrcol" width="100%">
+          The user is in a light sleep cycle.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SLEEP_REM">SLEEP_REM</a></td>
+        <td class="jd-descrcol" width="100%">
+          The user is in a REM sleep cycle.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SNOWBOARDING">SNOWBOARDING</a></td>
-        <td class="jd-descrcol" width="100%">The user is snowboarding.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is snowboarding.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SNOWMOBILE">SNOWMOBILE</a></td>
-        <td class="jd-descrcol" width="100%">The user is on a snow mobile.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is on a snow mobile.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SNOWSHOEING">SNOWSHOEING</a></td>
-        <td class="jd-descrcol" width="100%">The user is snow-shoeing.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is snow-shoeing.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SQUASH">SQUASH</a></td>
-        <td class="jd-descrcol" width="100%">The user is playing Squash.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is playing Squash.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#STAIR_CLIMBING">STAIR_CLIMBING</a></td>
-        <td class="jd-descrcol" width="100%">The user is climbing stairs.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is climbing stairs.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#STAIR_CLIMBING_MACHINE">STAIR_CLIMBING_MACHINE</a></td>
-        <td class="jd-descrcol" width="100%">The user is using a stair-climbing machine.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is using a stair-climbing machine.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#STANDUP_PADDLEBOARDING">STANDUP_PADDLEBOARDING</a></td>
-        <td class="jd-descrcol" width="100%">The user is on a stand-up paddle board.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is on a stand-up paddle board.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#STATUS_ACTIVE">STATUS_ACTIVE</a></td>
-        <td class="jd-descrcol" width="100%">Status indicating the activity has started.</td>
+        <td class="jd-descrcol" width="100%">
+          Status indicating the activity has started.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#STATUS_COMPLETED">STATUS_COMPLETED</a></td>
-        <td class="jd-descrcol" width="100%">Status indicating the activity has ended.</td>
+        <td class="jd-descrcol" width="100%">
+          Status indicating the activity has ended.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#STILL">STILL</a></td>
-        <td class="jd-descrcol" width="100%">The user is still (not moving).</td>
+        <td class="jd-descrcol" width="100%">
+          The user is still (not moving).
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#STRENGTH_TRAINING">STRENGTH_TRAINING</a></td>
-        <td class="jd-descrcol" width="100%">The user is strength training.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is strength training.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SURFING">SURFING</a></td>
-        <td class="jd-descrcol" width="100%">The user is surfing.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is surfing.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SWIMMING">SWIMMING</a></td>
-        <td class="jd-descrcol" width="100%">The user is swimming.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is swimming.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SWIMMING_OPEN_WATER">SWIMMING_OPEN_WATER</a></td>
-        <td class="jd-descrcol" width="100%">The user is swimming in open waters.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is swimming in open waters.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#SWIMMING_POOL">SWIMMING_POOL</a></td>
-        <td class="jd-descrcol" width="100%">The user is swimming in a swimming pool.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is swimming in a swimming pool.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#TABLE_TENNIS">TABLE_TENNIS</a></td>
-        <td class="jd-descrcol" width="100%">The user is playing table tennis (or ping-pong).</td>
+        <td class="jd-descrcol" width="100%">
+          The user is playing table tennis (or ping-pong).
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#TEAM_SPORTS">TEAM_SPORTS</a></td>
-        <td class="jd-descrcol" width="100%">The user is playing a team sport.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is playing a team sport.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#TENNIS">TENNIS</a></td>
-        <td class="jd-descrcol" width="100%">The user is playing tennis.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is playing tennis.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#TILTING">TILTING</a></td>
-        <td class="jd-descrcol" width="100%">This is a synthetic activity used by the
+        <td class="jd-descrcol" width="100%">
+          This is a synthetic activity used by the
  <code><a href="../../../../../../reference/com/google/android/gms/location/ActivityRecognitionApi.html">Activity Recognition API</a></code> to
  indicate that the device angle relative to gravity changed significantly between the sample
- immediately before and immediately after the "tilting" sample.</td>
+ immediately before and immediately after the "tilting" sample.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#TREADMILL">TREADMILL</a></td>
-        <td class="jd-descrcol" width="100%">The user is on a treadmill (either walking or running).</td>
+        <td class="jd-descrcol" width="100%">
+          The user is on a treadmill (either walking or running).
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#UNKNOWN">UNKNOWN</a></td>
-        <td class="jd-descrcol" width="100%">The current activity is not known.</td>
+        <td class="jd-descrcol" width="100%">
+          The current activity is not known.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#VOLLEYBALL">VOLLEYBALL</a></td>
-        <td class="jd-descrcol" width="100%">The user is playing volleyball.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is playing volleyball.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#VOLLEYBALL_BEACH">VOLLEYBALL_BEACH</a></td>
-        <td class="jd-descrcol" width="100%">The user is playing beach volleyball.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is playing beach volleyball.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#VOLLEYBALL_INDOOR">VOLLEYBALL_INDOOR</a></td>
-        <td class="jd-descrcol" width="100%">The user is playing indoor volleyball.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is playing indoor volleyball.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#WAKEBOARDING">WAKEBOARDING</a></td>
-        <td class="jd-descrcol" width="100%">The user is wake boarding.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is wake boarding.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#WALKING">WALKING</a></td>
-        <td class="jd-descrcol" width="100%">The user is walking.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is walking.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#WALKING_FITNESS">WALKING_FITNESS</a></td>
-        <td class="jd-descrcol" width="100%">The user is walking at a moderate to high pace, for fitness.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is walking at a moderate to high pace, for fitness.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#WALKING_NORDIC">WALKING_NORDIC</a></td>
-        <td class="jd-descrcol" width="100%">The user is performing Nordic walking (with poles).</td>
+        <td class="jd-descrcol" width="100%">
+          The user is performing Nordic walking (with poles).
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#WALKING_TREADMILL">WALKING_TREADMILL</a></td>
-        <td class="jd-descrcol" width="100%">The user is walking on a treadmill </td>
+        <td class="jd-descrcol" width="100%">
+          The user is walking on a treadmill 
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#WATER_POLO">WATER_POLO</a></td>
-        <td class="jd-descrcol" width="100%">The user is playing water polo.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is playing water polo.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#WEIGHTLIFTING">WEIGHTLIFTING</a></td>
-        <td class="jd-descrcol" width="100%">The user is weight lifting.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is weight lifting.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#WHEELCHAIR">WHEELCHAIR</a></td>
-        <td class="jd-descrcol" width="100%">The user is on a wheel chair.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is on a wheel chair.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#WINDSURFING">WINDSURFING</a></td>
-        <td class="jd-descrcol" width="100%">The user is wind surfing.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is wind surfing.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#YOGA">YOGA</a></td>
-        <td class="jd-descrcol" width="100%">The user is performing Yoga poses.</td>
+        <td class="jd-descrcol" width="100%">
+          The user is performing Yoga poses.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#ZUMBA">ZUMBA</a></td>
-        <td class="jd-descrcol" width="100%">The users is performing Zumba exercises.</td>
+        <td class="jd-descrcol" width="100%">
+          The users is performing Zumba exercises.
+          
+    
+
+        </td>
     </tr>
     
     
@@ -1633,45 +2331,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#getMimeType(java.lang.String)">getMimeType</a></span>(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> activity)</nobr>
         
-        <div class="jd-descrdiv">Returns the MIME type for a particular activity.</div>
-  
-  </td></tr>
+        <div class="jd-descrdiv">
+          Returns the MIME type for a particular activity.
+          
+    
 
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            static
-            
-            <a href="http://developer.android.com/reference/java/lang/String.html">String</a></nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#getValue(com.google.android.gms.fitness.data.DataPoint)">getValue</a></span>(<a href="../../../../../../reference/com/google/android/gms/fitness/data/DataPoint.html">DataPoint</a> dataPoint)</nobr>
-        
-        <div class="jd-descrdiv">Reads the value of the <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/Field.html#FIELD_ACTIVITY">activity</a></code> field of the given data point
- from the storage representation of this activity, and returns the activity name.</div>
-  
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            static
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/fitness/FitnessActivities.html#setValue(com.google.android.gms.fitness.data.DataPoint, java.lang.String)">setValue</a></span>(<a href="../../../../../../reference/com/google/android/gms/fitness/data/DataPoint.html">DataPoint</a> dataPoint, <a href="http://developer.android.com/reference/java/lang/String.html">String</a> activity)</nobr>
-        
-        <div class="jd-descrdiv">Sets the value of the <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/Field.html#FIELD_ACTIVITY">activity</a></code> field of the given data point
- to the internal representation of this activity.</div>
+        </div>
   
   </td></tr>
 
@@ -1941,6 +2606,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is performing aerobic exercises. </p></div>
 
     
@@ -1977,6 +2645,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is playing badminton. </p></div>
 
@@ -2015,6 +2686,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is playing baseball. </p></div>
 
     
@@ -2051,6 +2725,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is playing basketball. </p></div>
 
@@ -2089,6 +2766,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is practicing biathlon (combination of cross-country skiing and rifle shooting). </p></div>
 
     
@@ -2125,6 +2805,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is on a bicycle. </p></div>
 
@@ -2163,6 +2846,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is handcycling (or handbiking). </p></div>
 
     
@@ -2199,6 +2885,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is mountain biking. </p></div>
 
@@ -2237,6 +2926,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is cycling on a road or other smooth surface. </p></div>
 
     
@@ -2273,6 +2965,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is indoor cycling (spinning) on a specialized stationary bike. </p></div>
 
@@ -2311,6 +3006,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is cycling on a stationary bike. </p></div>
 
     
@@ -2347,6 +3045,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is cycling as a means of transport. </p></div>
 
@@ -2385,6 +3086,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is boxing. </p></div>
 
     
@@ -2421,6 +3125,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is performing calisthenics exercises. </p></div>
 
@@ -2459,6 +3166,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is performing circuit training exercises. </p></div>
 
     
@@ -2495,6 +3205,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is playing cricket. </p></div>
 
@@ -2533,6 +3246,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is practicing curling. </p></div>
 
     
@@ -2569,6 +3285,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is dancing. </p></div>
 
@@ -2607,6 +3326,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is diving into water, from a platform or spring board. </p></div>
 
     
@@ -2643,6 +3365,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is using an elliptical trainer or cross-trainer machine. </p></div>
 
@@ -2681,6 +3406,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is using an ergometer machine. </p></div>
 
     
@@ -2717,6 +3445,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Name for the String extra containing the status of an activity.  This is a mandatory
  extra for <code><a href="../../../../../../reference/com/google/android/gms/fitness/Fitness.html#ACTION_TRACK">ACTION_TRACK</a></code> intents, and holds one of the following values:
@@ -2761,6 +3492,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is fencing. </p></div>
 
     
@@ -2797,6 +3531,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is playing American football (known as football in the United States). </p></div>
 
@@ -2835,6 +3572,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is playing Australian-rules football. </p></div>
 
     
@@ -2871,6 +3611,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is playing association football (known as soccer in the United States). </p></div>
 
@@ -2909,6 +3652,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is playing with a Frisbee disc. </p></div>
 
     
@@ -2945,6 +3691,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is gardening. </p></div>
 
@@ -2983,6 +3732,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is playing golf. </p></div>
 
     
@@ -3019,6 +3771,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is practicing gymnastics. </p></div>
 
@@ -3057,6 +3812,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is playing handball. </p></div>
 
     
@@ -3093,6 +3851,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is hiking. </p></div>
 
@@ -3131,6 +3892,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is playing hockey. </p></div>
 
     
@@ -3167,6 +3931,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is horseback riding. </p></div>
 
@@ -3205,6 +3972,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is doing house work. </p></div>
 
     
@@ -3241,6 +4011,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is ice-skating. </p></div>
 
@@ -3279,6 +4052,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is in a vehicle, such as a car. </p></div>
 
     
@@ -3315,6 +4091,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is jumping rope. </p></div>
 
@@ -3353,6 +4132,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is kayaking. </p></div>
 
     
@@ -3389,6 +4171,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is training with a kettlebell. </p></div>
 
@@ -3427,6 +4212,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is kickboxing. </p></div>
 
     
@@ -3463,6 +4251,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is riding a kick scooter. </p></div>
 
@@ -3501,6 +4292,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is kite-surfing. </p></div>
 
     
@@ -3537,6 +4331,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is practicing martial arts. </p></div>
 
@@ -3575,6 +4372,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is meditating. </p></div>
 
     
@@ -3611,6 +4411,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The common prefix for activity MIME types.  The MIME type for a particular activity type will
  be this prefix followed by the activity name.  Examples:
@@ -3658,6 +4461,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is practicing mixed martial arts (MMA). </p></div>
 
     
@@ -3694,6 +4500,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is on foot, walking or running.  It's preferred to use the more specific activity
  when known.
@@ -3733,6 +4542,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is performing a generic fitness activity, which isn't classified.
  <p/>
@@ -3782,6 +4594,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is performing P90X exercises. </p></div>
 
     
@@ -3818,6 +4633,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is paragliding. </p></div>
 
@@ -3856,6 +4674,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is performing pilates exercises. </p></div>
 
     
@@ -3892,6 +4713,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is playing polo (team sport on horseback). </p></div>
 
@@ -3930,6 +4754,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is playing racquetball. </p></div>
 
     
@@ -3966,6 +4793,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is rock climbing. </p></div>
 
@@ -4004,6 +4834,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is rowing. </p></div>
 
     
@@ -4040,6 +4873,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is using a rowing machine. </p></div>
 
@@ -4078,6 +4914,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is playing rugby. </p></div>
 
     
@@ -4114,6 +4953,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is running. </p></div>
 
@@ -4152,6 +4994,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is jogging. </p></div>
 
     
@@ -4188,6 +5033,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is running on sand. </p></div>
 
@@ -4226,6 +5074,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is running on a treadmill. </p></div>
 
     
@@ -4262,6 +5113,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is sailing. </p></div>
 
@@ -4300,6 +5154,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is scuba diving. </p></div>
 
     
@@ -4336,6 +5193,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is skateboarding. </p></div>
 
@@ -4374,6 +5234,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is skating. </p></div>
 
     
@@ -4410,6 +5273,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is cross skating. </p></div>
 
@@ -4448,6 +5314,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is skating in-doors. </p></div>
 
     
@@ -4484,6 +5353,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is inline skating (roller-blading). </p></div>
 
@@ -4522,6 +5394,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is skiing. </p></div>
 
     
@@ -4558,6 +5433,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is back-country skiing. </p></div>
 
@@ -4596,6 +5474,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is cross-country skiing. </p></div>
 
     
@@ -4632,6 +5513,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is downhill skiing. </p></div>
 
@@ -4670,6 +5554,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is kite skiing. </p></div>
 
     
@@ -4706,6 +5593,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is roller skiing (non-snow). </p></div>
 
@@ -4744,6 +5634,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is sledding. </p></div>
 
     
@@ -4781,6 +5674,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is sleeping. </p></div>
 
     
@@ -4789,6 +5685,166 @@ From class
         <span>
             
                 "sleep"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="SLEEP_AWAKE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://developer.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        SLEEP_AWAKE
+    </h4>
+      <div class="api-level">
+        
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The user is in an awake period in the middle of sleep. </p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "sleep.awake"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="SLEEP_DEEP"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://developer.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        SLEEP_DEEP
+    </h4>
+      <div class="api-level">
+        
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The user is in a deep sleep cycle. </p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "sleep.deep"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="SLEEP_LIGHT"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://developer.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        SLEEP_LIGHT
+    </h4>
+      <div class="api-level">
+        
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The user is in a light sleep cycle. </p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "sleep.light"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="SLEEP_REM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://developer.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        SLEEP_REM
+    </h4>
+      <div class="api-level">
+        
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The user is in a REM sleep cycle. </p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "sleep.rem"
             
         </span>
         </div>
@@ -4817,6 +5873,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is snowboarding. </p></div>
 
@@ -4855,6 +5914,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is on a snow mobile. </p></div>
 
     
@@ -4891,6 +5953,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is snow-shoeing. </p></div>
 
@@ -4929,6 +5994,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is playing Squash. </p></div>
 
     
@@ -4965,6 +6033,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is climbing stairs. </p></div>
 
@@ -5003,6 +6074,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is using a stair-climbing machine. </p></div>
 
     
@@ -5039,6 +6113,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is on a stand-up paddle board. </p></div>
 
@@ -5077,6 +6154,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Status indicating the activity has started. </p></div>
 
     
@@ -5113,6 +6193,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Status indicating the activity has ended. </p></div>
 
@@ -5151,6 +6234,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is still (not moving). </p></div>
 
     
@@ -5187,6 +6273,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is strength training. </p></div>
 
@@ -5225,6 +6314,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is surfing. </p></div>
 
     
@@ -5261,6 +6353,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is swimming. </p></div>
 
@@ -5299,6 +6394,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is swimming in open waters. </p></div>
 
     
@@ -5335,6 +6433,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is swimming in a swimming pool. </p></div>
 
@@ -5373,6 +6474,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is playing table tennis (or ping-pong). </p></div>
 
     
@@ -5409,6 +6513,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is playing a team sport. </p></div>
 
@@ -5447,6 +6554,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is playing tennis. </p></div>
 
     
@@ -5483,6 +6593,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>This is a synthetic activity used by the
  <code><a href="../../../../../../reference/com/google/android/gms/location/ActivityRecognitionApi.html">Activity Recognition API</a></code> to
@@ -5526,6 +6639,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is on a treadmill (either walking or running). </p></div>
 
     
@@ -5563,8 +6679,11 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>The current activity is not known.  In this case, the activity could be any of the 
- activities described in this class, or a completely different one. 
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The current activity is not known.  In this case, the activity could be any of the
+ activities described in this class, or a completely different one.
 </p></div>
 
     
@@ -5601,6 +6720,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is playing volleyball. </p></div>
 
@@ -5639,6 +6761,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is playing beach volleyball. </p></div>
 
     
@@ -5675,6 +6800,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is playing indoor volleyball. </p></div>
 
@@ -5713,6 +6841,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is wake boarding. </p></div>
 
     
@@ -5749,6 +6880,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is walking. </p></div>
 
@@ -5787,6 +6921,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is walking at a moderate to high pace, for fitness. </p></div>
 
     
@@ -5823,6 +6960,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is performing Nordic walking (with poles). </p></div>
 
@@ -5861,6 +7001,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is walking on a treadmill </p></div>
 
     
@@ -5897,6 +7040,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is playing water polo. </p></div>
 
@@ -5935,6 +7081,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is weight lifting. </p></div>
 
     
@@ -5971,6 +7120,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The user is on a wheel chair. </p></div>
 
@@ -6009,6 +7161,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is wind surfing. </p></div>
 
     
@@ -6046,6 +7201,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user is performing Yoga poses. </p></div>
 
     
@@ -6082,6 +7240,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The users is performing Zumba exercises. </p></div>
 
@@ -6143,113 +7304,18 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Returns the MIME type for a particular activity.  The MIME type is used in intents for
- <code><a href="../../../../../../reference/com/google/android/gms/fitness/SessionsApi.ViewIntentBuilder.html">viewing a session</a></code> and
- <code><a href="../../../../../../reference/com/google/android/gms/fitness/Fitness.html#ACTION_TRACK">tracking an activity</a></code>.</p></div>
+ <a href="../../../../../../reference/com/google/android/gms/fitness/SessionsApi.ViewIntentBuilder.html">viewing a session</a></a> and
+ <a href="../../../../../../reference/com/google/android/gms/fitness/Fitness.html#ACTION_TRACK">tracking an activity</a></a>.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
           <th>activity</td>
           <td>the desired activity.
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="getValue(com.google.android.gms.fitness.data.DataPoint)"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-         
-         
-         
-        <a href="http://developer.android.com/reference/java/lang/String.html">String</a>
-      </span>
-      <span class="sympad">getValue</span>
-      <span class="normal">(<a href="../../../../../../reference/com/google/android/gms/fitness/data/DataPoint.html">DataPoint</a> dataPoint)</span>
-    </h4>
-      <div class="api-level">
-        <div></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Reads the value of the <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/Field.html#FIELD_ACTIVITY">activity</a></code> field of the given data point
- from the storage representation of this activity, and returns the activity name.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>dataPoint</td>
-          <td>a data point which has a field of type <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/Field.html#FIELD_ACTIVITY">FIELD_ACTIVITY</a></code></td>
-        </tr>
-      </table>
-  </div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Throws</h5>
-      <table class="jd-tagtable">  
-        <tr>
-            <th><a href="http://developer.android.com/reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
-            <td>if the data point is invalid
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="setValue(com.google.android.gms.fitness.data.DataPoint, java.lang.String)"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">setValue</span>
-      <span class="normal">(<a href="../../../../../../reference/com/google/android/gms/fitness/data/DataPoint.html">DataPoint</a> dataPoint, <a href="http://developer.android.com/reference/java/lang/String.html">String</a> activity)</span>
-    </h4>
-      <div class="api-level">
-        <div></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/Field.html#FIELD_ACTIVITY">activity</a></code> field of the given data point
- to the internal representation of this activity.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>dataPoint</td>
-          <td>a data point which has a field of type <code><a href="../../../../../../reference/com/google/android/gms/fitness/data/Field.html#FIELD_ACTIVITY">FIELD_ACTIVITY</a></code></td>
-        </tr>
-      </table>
-  </div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Throws</h5>
-      <table class="jd-tagtable">  
-        <tr>
-            <th><a href="http://developer.android.com/reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
-            <td>if the data point is invalid
 </td>
         </tr>
       </table>
@@ -6281,7 +7347,7 @@ From class
   </div>
   <div id="build_info">
     
-    Android GmsCore 1501030&nbsp;r &mdash; 
+    Android GmsCore 1784785&nbsp;r &mdash; 
 <script src="../../../../../../timestamp.js" type="text/javascript"></script>
 <script>document.write(BUILD_TIMESTAMP)</script>
 

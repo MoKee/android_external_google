@@ -84,6 +84,20 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <html>
 <head>
 
@@ -99,7 +113,7 @@
 href="http://fonts.googleapis.com/css?family=Roboto+Condensed">
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:light,regular,medium,thin,italic,mediumitalic,bold"
   title="roboto">
-<link href="../../../../../../assets/css/default.css?v=2" rel="stylesheet" type="text/css">
+<link href="../../../../../../assets/css/default.css?v=5" rel="stylesheet" type="text/css">
 
 
 <!-- FULLSCREEN STYLESHEET -->
@@ -115,7 +129,9 @@ type="text/css">
   var metaTags = [];
   var devsite = false;
 </script>
-<script src="../../../../../../assets/js/docs.js?v=2" type="text/javascript"></script>
+<script src="../../../../../../assets/js/docs.js?v=3" type="text/javascript"></script>
+
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -132,16 +148,66 @@ type="text/css">
 </head>
 
 <body class="gc-documentation 
-  develop" itemscope itemtype="http://schema.org/Article">
+  develop reference" itemscope itemtype="http://schema.org/Article">
   <div id="doc-api-level" class="" style="display:none"></div>
   <a name="top"></a>
 
 
 <a name="top"></a>
 
+<!-- dialog to prompt lang pref change when loaded from hardcoded URL 
+<div id="langMessage" style="display:none">
+  <div>
+    <div class="lang en">
+      <p>You requested a page in English, would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang es">
+      <p>You requested a page in Spanish (Español), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ja">
+      <p>You requested a page in Japanese (日本語), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ko">
+      <p>You requested a page in Korean (한국어), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ru">
+      <p>You requested a page in Russian (Русский), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang zh-cn">
+      <p>You requested a page in Simplified Chinese (简体中文), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang zh-tw">
+      <p>You requested a page in Traditional Chinese (繁體中文), would you like to proceed with this language setting?</p>
+    </div>
+    <a href="#" class="button yes" onclick="return false;">
+      <span class="lang en">Yes</span>
+      <span class="lang es">Sí</span>
+      <span class="lang ja">Yes</span>
+      <span class="lang ko">Yes</span>
+      <span class="lang ru">Yes</span>
+      <span class="lang zh-cn">是的</span>
+      <span class="lang zh-tw">没有</span>
+    </a>
+    <a href="#" class="button" onclick="$('#langMessage').hide();return false;">
+      <span class="lang en">No</span>
+      <span class="lang es">No</span>
+      <span class="lang ja">No</span>
+      <span class="lang ko">No</span>
+      <span class="lang ru">No</span>
+      <span class="lang zh-cn">没有</span>
+      <span class="lang zh-tw">没有</span>
+    </a>
+  </div>
+</div> -->
+
+
   <!-- Header -->
   <div id="header-wrapper">
     <div id="header">
+
+    
+
+
       <div class="wrap" id="header-wrap">
         <div class="col-3 logo">
           <a href="../../../../../../index.html">
@@ -331,6 +397,7 @@ type="text/css">
                 <li><a href="../../../../../../distribute/users/index.html">Get Users</a></li>
                 <li><a href="../../../../../../distribute/engage/index.html">Engage &amp; Retain</a></li>
                 <li><a href="../../../../../../distribute/monetize/index.html">Monetize</a></li>
+                <li><a href="../../../../../../distribute/analyze/index.html">Analyze</a></li>
                 <li><a href="../../../../../../distribute/tools/index.html">Tools &amp; Reference</a></li>
                 <li><a href="../../../../../../distribute/stories/index.html">Developer Stories</a></li>
               </ul>
@@ -343,7 +410,12 @@ type="text/css">
   
     <!-- Secondary x-nav -->
     <div id="nav-x">
-        <div class="wrap">
+        <div class="wrap" style="position:relative;z-index:1">
+
+        
+        
+        
+
             <ul class="nav-x col-9 develop" style="width:100%">
                 <li class="training"><a href="../../../../../../training/index.html"
                   zh-tw-lang="訓練課程"
@@ -467,8 +539,6 @@ type="text/css">
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/auth/package-summary.html">com.google.android.gms.auth</a></li>
     <li class="api apilevel-">
-  <a href="../../../../../../reference/com/google/android/gms/auth/api/package-summary.html">com.google.android.gms.auth.api</a></li>
-    <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/cast/package-summary.html">com.google.android.gms.cast</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/common/package-summary.html">com.google.android.gms.common</a></li>
@@ -529,9 +599,17 @@ type="text/css">
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/location/package-summary.html">com.google.android.gms.location</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../../reference/com/google/android/gms/location/places/package-summary.html">com.google.android.gms.location.places</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../reference/com/google/android/gms/location/places/ui/package-summary.html">com.google.android.gms.location.places.ui</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/maps/package-summary.html">com.google.android.gms.maps</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/maps/model/package-summary.html">com.google.android.gms.maps.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../reference/com/google/android/gms/nearby/package-summary.html">com.google.android.gms.nearby</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../reference/com/google/android/gms/nearby/connection/package-summary.html">com.google.android.gms.nearby.connection</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/panorama/package-summary.html">com.google.android.gms.panorama</a></li>
     <li class="api apilevel-">
@@ -540,6 +618,8 @@ type="text/css">
   <a href="../../../../../../reference/com/google/android/gms/plus/model/moments/package-summary.html">com.google.android.gms.plus.model.moments</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/plus/model/people/package-summary.html">com.google.android.gms.plus.model.people</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../reference/com/google/android/gms/safetynet/package-summary.html">com.google.android.gms.safetynet</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/security/package-summary.html">com.google.android.gms.security</a></li>
     <li class="api apilevel-">
@@ -718,6 +798,9 @@ Summary:
   
 
 
+    
+
+
 </div><!-- end header -->
 
 <div id="naMessage"></div>
@@ -823,7 +906,12 @@ Summary:
         
         class</nobr></td>
       <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/games/Games.GamesOptions.html">Games.GamesOptions</a></td>
-      <td class="jd-descrcol" width="100%">API configuration parameters for Games.&nbsp;</td>
+      <td class="jd-descrcol" width="100%">
+        API configuration parameters for Games.&nbsp;
+        
+    
+
+      </td>
     </tr>
     
     
@@ -848,7 +936,24 @@ Summary:
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/games/Games.html#EXTRA_PLAYER_IDS">EXTRA_PLAYER_IDS</a></td>
-        <td class="jd-descrcol" width="100%">Used to return a list of player IDs.</td>
+        <td class="jd-descrcol" width="100%">
+          Used to return a list of player IDs.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/games/Games.html#EXTRA_STATUS">EXTRA_STATUS</a></td>
+        <td class="jd-descrcol" width="100%">
+          Used to return a <code><a href="../../../../../../reference/com/google/android/gms/common/api/Status.html">Status</a></code> object from activities.
+          
+    
+
+        </td>
     </tr>
     
     
@@ -873,7 +978,12 @@ Summary:
           final
           <a href="../../../../../../reference/com/google/android/gms/common/api/Api.html">Api</a>&lt;<a href="../../../../../../reference/com/google/android/gms/games/Games.GamesOptions.html">Games.GamesOptions</a>&gt;</nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/games/Games.html#API">API</a></td>
-          <td class="jd-descrcol" width="100%">Token to pass to <code><a href="../../../../../../reference/com/google/android/gms/common/api/GoogleApiClient.Builder.html#addApi(com.google.android.gms.common.api.Api<? extends com.google.android.gms.common.api.Api.ApiOptions.NotRequiredOptions>)">addApi(Api<? extends Api.ApiOptions.NotRequiredOptions>)</a></code> to enable the Games features.</td>
+          <td class="jd-descrcol" width="100%">
+            Token to pass to <code><a href="../../../../../../reference/com/google/android/gms/common/api/GoogleApiClient.Builder.html#addApi(com.google.android.gms.common.api.Api<? extends com.google.android.gms.common.api.Api.ApiOptions.NotRequiredOptions>)">addApi(Api<? extends Api.ApiOptions.NotRequiredOptions>)</a></code> to enable the Games features.
+            
+    
+
+          </td>
       </tr>
       
     
@@ -884,7 +994,12 @@ Summary:
           final
           <a href="../../../../../../reference/com/google/android/gms/games/achievement/Achievements.html">Achievements</a></nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/games/Games.html#Achievements">Achievements</a></td>
-          <td class="jd-descrcol" width="100%">Methods for interacting with achievements.</td>
+          <td class="jd-descrcol" width="100%">
+            Methods for interacting with achievements.
+            
+    
+
+          </td>
       </tr>
       
     
@@ -895,7 +1010,12 @@ Summary:
           final
           <a href="../../../../../../reference/com/google/android/gms/games/event/Events.html">Events</a></nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/games/Games.html#Events">Events</a></td>
-          <td class="jd-descrcol" width="100%">Methods for interacting with events.</td>
+          <td class="jd-descrcol" width="100%">
+            Methods for interacting with events.
+            
+    
+
+          </td>
       </tr>
       
     
@@ -906,7 +1026,12 @@ Summary:
           final
           <a href="../../../../../../reference/com/google/android/gms/games/GamesMetadata.html">GamesMetadata</a></nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/games/Games.html#GamesMetadata">GamesMetadata</a></td>
-          <td class="jd-descrcol" width="100%">Methods for interacting with game metadata.</td>
+          <td class="jd-descrcol" width="100%">
+            Methods for interacting with game metadata.
+            
+    
+
+          </td>
       </tr>
       
     
@@ -917,7 +1042,12 @@ Summary:
           final
           <a href="../../../../../../reference/com/google/android/gms/games/multiplayer/Invitations.html">Invitations</a></nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/games/Games.html#Invitations">Invitations</a></td>
-          <td class="jd-descrcol" width="100%">Methods for interacting with invitations.</td>
+          <td class="jd-descrcol" width="100%">
+            Methods for interacting with invitations.
+            
+    
+
+          </td>
       </tr>
       
     
@@ -928,7 +1058,12 @@ Summary:
           final
           <a href="../../../../../../reference/com/google/android/gms/games/leaderboard/Leaderboards.html">Leaderboards</a></nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/games/Games.html#Leaderboards">Leaderboards</a></td>
-          <td class="jd-descrcol" width="100%">Methods for interacting with leaderboard data.</td>
+          <td class="jd-descrcol" width="100%">
+            Methods for interacting with leaderboard data.
+            
+    
+
+          </td>
       </tr>
       
     
@@ -939,7 +1074,12 @@ Summary:
           final
           <a href="../../../../../../reference/com/google/android/gms/games/Notifications.html">Notifications</a></nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/games/Games.html#Notifications">Notifications</a></td>
-          <td class="jd-descrcol" width="100%">Methods for interacting with notifications.</td>
+          <td class="jd-descrcol" width="100%">
+            Methods for interacting with notifications.
+            
+    
+
+          </td>
       </tr>
       
     
@@ -950,7 +1090,12 @@ Summary:
           final
           <a href="../../../../../../reference/com/google/android/gms/games/Players.html">Players</a></nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/games/Games.html#Players">Players</a></td>
-          <td class="jd-descrcol" width="100%">Methods for interacting with players.</td>
+          <td class="jd-descrcol" width="100%">
+            Methods for interacting with players.
+            
+    
+
+          </td>
       </tr>
       
     
@@ -961,7 +1106,12 @@ Summary:
           final
           <a href="../../../../../../reference/com/google/android/gms/games/quest/Quests.html">Quests</a></nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/games/Games.html#Quests">Quests</a></td>
-          <td class="jd-descrcol" width="100%">Methods for interacting with quests.</td>
+          <td class="jd-descrcol" width="100%">
+            Methods for interacting with quests.
+            
+    
+
+          </td>
       </tr>
       
     
@@ -972,7 +1122,12 @@ Summary:
           final
           <a href="../../../../../../reference/com/google/android/gms/games/multiplayer/realtime/RealTimeMultiplayer.html">RealTimeMultiplayer</a></nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/games/Games.html#RealTimeMultiplayer">RealTimeMultiplayer</a></td>
-          <td class="jd-descrcol" width="100%">Methods for interacting with real-time multiplayer games.</td>
+          <td class="jd-descrcol" width="100%">
+            Methods for interacting with real-time multiplayer games.
+            
+    
+
+          </td>
       </tr>
       
     
@@ -983,7 +1138,12 @@ Summary:
           final
           <a href="../../../../../../reference/com/google/android/gms/games/request/Requests.html">Requests</a></nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/games/Games.html#Requests">Requests</a></td>
-          <td class="jd-descrcol" width="100%">Methods for interacting with requests.</td>
+          <td class="jd-descrcol" width="100%">
+            Methods for interacting with requests.
+            
+    
+
+          </td>
       </tr>
       
     
@@ -994,7 +1154,12 @@ Summary:
           final
           <a href="../../../../../../reference/com/google/android/gms/common/api/Scope.html">Scope</a></nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/games/Games.html#SCOPE_GAMES">SCOPE_GAMES</a></td>
-          <td class="jd-descrcol" width="100%">Scope for accessing data from Google Play Games.</td>
+          <td class="jd-descrcol" width="100%">
+            Scope for accessing data from Google Play Games.
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1005,7 +1170,12 @@ Summary:
           final
           <a href="../../../../../../reference/com/google/android/gms/games/snapshot/Snapshots.html">Snapshots</a></nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/games/Games.html#Snapshots">Snapshots</a></td>
-          <td class="jd-descrcol" width="100%">Methods for interacting with snapshots.</td>
+          <td class="jd-descrcol" width="100%">
+            Methods for interacting with snapshots.
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1016,7 +1186,12 @@ Summary:
           final
           <a href="../../../../../../reference/com/google/android/gms/games/multiplayer/turnbased/TurnBasedMultiplayer.html">TurnBasedMultiplayer</a></nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../reference/com/google/android/gms/games/Games.html#TurnBasedMultiplayer">TurnBasedMultiplayer</a></td>
-          <td class="jd-descrcol" width="100%">Methods for interacting with turn-based multiplayer games.</td>
+          <td class="jd-descrcol" width="100%">
+            Methods for interacting with turn-based multiplayer games.
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1051,7 +1226,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/games/Games.html#getAppId(com.google.android.gms.common.api.GoogleApiClient)">getAppId</a></span>(<a href="../../../../../../reference/com/google/android/gms/common/api/GoogleApiClient.html">GoogleApiClient</a> apiClient)</nobr>
         
-        <div class="jd-descrdiv">Get the application ID linked to this client instance.</div>
+        <div class="jd-descrdiv">
+          Get the application ID linked to this client instance.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1069,7 +1249,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/games/Games.html#getCurrentAccountName(com.google.android.gms.common.api.GoogleApiClient)">getCurrentAccountName</a></span>(<a href="../../../../../../reference/com/google/android/gms/common/api/GoogleApiClient.html">GoogleApiClient</a> apiClient)</nobr>
         
-        <div class="jd-descrdiv">Get the name of the currently selected account.</div>
+        <div class="jd-descrdiv">
+          Get the name of the currently selected account.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1103,8 +1288,13 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/games/Games.html#getSettingsIntent(com.google.android.gms.common.api.GoogleApiClient)">getSettingsIntent</a></span>(<a href="../../../../../../reference/com/google/android/gms/common/api/GoogleApiClient.html">GoogleApiClient</a> apiClient)</nobr>
         
-        <div class="jd-descrdiv">Gets an intent to show the Settings screen that allows the user to configure Games-related
- features for the current game.</div>
+        <div class="jd-descrdiv">
+          Gets an intent to show the Settings screen that allows the user to configure Games-related
+ features for the current game.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1122,8 +1312,13 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/games/Games.html#setGravityForPopups(com.google.android.gms.common.api.GoogleApiClient, int)">setGravityForPopups</a></span>(<a href="../../../../../../reference/com/google/android/gms/common/api/GoogleApiClient.html">GoogleApiClient</a> apiClient, int gravity)</nobr>
         
-        <div class="jd-descrdiv">Specifies the part of the screen at which games service popups (for example, "welcome back"
- or "achievement unlocked" popups) will be displayed using gravity.</div>
+        <div class="jd-descrdiv">
+          Specifies the part of the screen at which games service popups (for example, "welcome back"
+ or "achievement unlocked" popups) will be displayed using gravity.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1141,7 +1336,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/games/Games.html#setViewForPopups(com.google.android.gms.common.api.GoogleApiClient, android.view.View)">setViewForPopups</a></span>(<a href="../../../../../../reference/com/google/android/gms/common/api/GoogleApiClient.html">GoogleApiClient</a> apiClient, <a href="http://developer.android.com/reference/android/view/View.html">View</a> gamesContentView)</nobr>
         
-        <div class="jd-descrdiv">Sets the <code><a href="http://developer.android.com/reference/android/view/View.html">View</a></code> to use as a content view for popups.</div>
+        <div class="jd-descrdiv">
+          Sets the <code><a href="http://developer.android.com/reference/android/view/View.html">View</a></code> to use as a content view for popups.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1159,7 +1359,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/games/Games.html#signOut(com.google.android.gms.common.api.GoogleApiClient)">signOut</a></span>(<a href="../../../../../../reference/com/google/android/gms/common/api/GoogleApiClient.html">GoogleApiClient</a> apiClient)</nobr>
         
-        <div class="jd-descrdiv">Asynchronously signs the current user out.</div>
+        <div class="jd-descrdiv">
+          Asynchronously signs the current user out.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1429,6 +1634,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Used to return a list of player IDs. Retrieve with
  <code><a href="http://developer.android.com/reference/android/content/Intent.html#getStringArrayListExtra(java.lang.String)">getStringArrayListExtra(String)</a></code>.
 
@@ -1446,6 +1654,48 @@ From class
         <span>
             
                 "players"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="EXTRA_STATUS"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://developer.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        EXTRA_STATUS
+    </h4>
+      <div class="api-level">
+        
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Used to return a <code><a href="../../../../../../reference/com/google/android/gms/common/api/Status.html">Status</a></code> object from activities. Retrieve with
+ <code><a href="http://developer.android.com/reference/android/content/Intent.html#getParcelableExtra(java.lang.String)">getParcelableExtra(String)</a></code>.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "status"
             
         </span>
         </div>
@@ -1485,6 +1735,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Token to pass to <code><a href="../../../../../../reference/com/google/android/gms/common/api/GoogleApiClient.Builder.html#addApi(com.google.android.gms.common.api.Api<? extends com.google.android.gms.common.api.Api.ApiOptions.NotRequiredOptions>)">addApi(Api<? extends Api.ApiOptions.NotRequiredOptions>)</a></code> to enable the Games features.
  <p>
  To configure additional Games options, provide a <code><a href="../../../../../../reference/com/google/android/gms/games/Games.GamesOptions.html">Games.GamesOptions</a></code> object to
@@ -1517,6 +1770,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Methods for interacting with achievements.
 </p></div>
 
@@ -1545,6 +1801,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Methods for interacting with events.
 </p></div>
@@ -1575,6 +1834,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Methods for interacting with game metadata.
 </p></div>
 
@@ -1603,6 +1865,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Methods for interacting with invitations.
 </p></div>
@@ -1633,6 +1898,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Methods for interacting with leaderboard data.
 </p></div>
 
@@ -1661,6 +1929,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Methods for interacting with notifications.
 </p></div>
@@ -1691,6 +1962,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Methods for interacting with players.
 </p></div>
 
@@ -1719,6 +1993,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Methods for interacting with quests.
 </p></div>
@@ -1749,6 +2026,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Methods for interacting with real-time multiplayer games.
 </p></div>
 
@@ -1777,6 +2057,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Methods for interacting with requests.
 </p></div>
@@ -1807,6 +2090,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Scope for accessing data from Google Play Games.
 </p></div>
 
@@ -1836,6 +2122,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Methods for interacting with snapshots.
 </p></div>
 
@@ -1864,6 +2153,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Methods for interacting with turn-based multiplayer games.
 </p></div>
@@ -1914,6 +2206,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Get the application ID linked to this client instance.
  <p>
  Required API: <code><a href="../../../../../../reference/com/google/android/gms/games/Games.html#API">API</a></code><br>
@@ -1959,6 +2254,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Get the name of the currently selected account. This is the account the user has chosen to
  use for Google Play Games.
@@ -2022,6 +2320,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
@@ -2050,6 +2351,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Gets an intent to show the Settings screen that allows the user to configure Games-related
  features for the current game. Note that this must be invoked with
@@ -2108,6 +2412,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Specifies the part of the screen at which games service popups (for example, "welcome back"
  or "achievement unlocked" popups) will be displayed using gravity.
  <p>
@@ -2157,6 +2464,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Sets the <code><a href="http://developer.android.com/reference/android/view/View.html">View</a></code> to use as a content view for popups.
  <p>
  Required API: <code><a href="../../../../../../reference/com/google/android/gms/games/Games.html#API">API</a></code><br>
@@ -2202,6 +2512,9 @@ From class
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Asynchronously signs the current user out.
  <p>
@@ -2252,7 +2565,7 @@ From class
   </div>
   <div id="build_info">
     
-    Android GmsCore 1501030&nbsp;r &mdash; 
+    Android GmsCore 1784785&nbsp;r &mdash; 
 <script src="../../../../../../timestamp.js" type="text/javascript"></script>
 <script>document.write(BUILD_TIMESTAMP)</script>
 

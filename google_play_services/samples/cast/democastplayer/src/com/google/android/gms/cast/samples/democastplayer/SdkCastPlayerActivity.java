@@ -23,6 +23,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.media.MediaRouter.RouteInfo;
 import android.util.Log;
+import android.view.View;
 
 import java.io.IOException;
 import java.util.List;
@@ -60,6 +61,12 @@ public class SdkCastPlayerActivity extends BaseCastPlayerActivity {
         mConnectionFailedListener = new ConnectionFailedListener();
 
         mCastListener = new CastListener();
+        mLoadMediaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                playMedia(mSelectedMedia);
+            }
+        });
     }
 
     @Override
@@ -89,13 +96,21 @@ public class SdkCastPlayerActivity extends BaseCastPlayerActivity {
         }
     }
 
+    @Override
+    protected void onMediaSelected(final MediaInfo media) {
+        mSelectedMedia = media;
+        mLoadMediaButton.setEnabled(media != null);
+        if (media == null) {
+            return;
+        }
+        setCurrentMediaTracks(media.getMediaTracks());
+    }
+
     /*
      * Connects to the device (if necessary), and then casts the currently selected video.
      */
     @Override
     protected void onPlayMedia(final MediaInfo media) {
-        mSelectedMedia = media;
-
         if (mAppMetadata == null) {
             return;
         }
@@ -282,6 +297,10 @@ public class SdkCastPlayerActivity extends BaseCastPlayerActivity {
         if (mMediaPlayer == null) {
             return;
         }
+        setSelectedMediaTracks(trackIds);
+        if (mMediaPlayer.getMediaStatus() == null) {
+            return;
+        }
         try {
             mMediaPlayer.setActiveMediaTracks(mApiClient, trackIds).setResultCallback(
                     new MediaResultCallback(getString(R.string.mediaop_set_active_media_tracks)));
@@ -312,6 +331,7 @@ public class SdkCastPlayerActivity extends BaseCastPlayerActivity {
     private void clearMediaState() {
         setCurrentMediaMetadata(null, null, null);
         setCurrentMediaTracks(null);
+        mLoadMediaButton.setEnabled(false);
         refreshPlaybackPosition(0, 0);
     }
 
@@ -368,6 +388,8 @@ public class SdkCastPlayerActivity extends BaseCastPlayerActivity {
                     }
                     setCurrentMediaMetadata(title, artist, imageUrl);
                     setCurrentMediaTracks(mediaInfo.getMediaTracks());
+                    mLoadMediaButton.setEnabled(false);
+                    setSeekBarEnabled(mediaInfo.getStreamType() == MediaInfo.STREAM_TYPE_BUFFERED);
                 }
             }
         });
@@ -425,8 +447,8 @@ public class SdkCastPlayerActivity extends BaseCastPlayerActivity {
 
         media.setTextTrackStyle(getTextTrackStyle());
 
-        mMediaPlayer.load(mApiClient, media, isAutoplayChecked()).setResultCallback(
-                new MediaResultCallback(getString(R.string.mediaop_load)));
+        mMediaPlayer.load(mApiClient, media, isAutoplayChecked(), 0, getSelectedMediaTracks(), null)
+                .setResultCallback(new MediaResultCallback(getString(R.string.mediaop_load)));
     }
 
     private void updateButtonStates() {
@@ -641,15 +663,23 @@ public class SdkCastPlayerActivity extends BaseCastPlayerActivity {
     private class CastListener extends Cast.Listener {
         @Override
         public void onVolumeChanged() {
-            refreshDeviceVolume(Cast.CastApi.getVolume(mApiClient),
-                    Cast.CastApi.isMute(mApiClient));
+            try {
+                refreshDeviceVolume(Cast.CastApi.getVolume(mApiClient),
+                        Cast.CastApi.isMute(mApiClient));
+            } catch (IllegalStateException e) {
+                Log.w(TAG, "Unable to refresh the volume", e);
+            }
         }
 
         @Override
         public void onApplicationStatusChanged() {
-            String status = Cast.CastApi.getApplicationStatus(mApiClient);
-            Log.d(TAG, "onApplicationStatusChanged; status=" + status);
-            setApplicationStatus(status);
+            try {
+                String status = Cast.CastApi.getApplicationStatus(mApiClient);
+                Log.d(TAG, "onApplicationStatusChanged; status=" + status);
+                setApplicationStatus(status);
+            } catch (IllegalStateException e) {
+                Log.w(TAG, "Unable to get the application status", e);
+            }
         }
 
         @Override
@@ -717,7 +747,10 @@ public class SdkCastPlayerActivity extends BaseCastPlayerActivity {
         @Override
         public void onResult(MediaChannelResult result) {
             Status status = result.getStatus();
-            if (!status.isSuccess()) {
+            // Ignore STATUS_REPLACED since it's just an informative status and doesn't indicate
+            // a failure.
+            if (!status.isSuccess()
+                    && (status.getStatusCode() != RemoteMediaPlayer.STATUS_REPLACED)) {
                 Log.w(TAG, mOperationName + " failed: " + status.getStatusCode());
                 showErrorDialog(getString(R.string.error_operation_failed, mOperationName));
             }

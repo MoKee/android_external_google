@@ -19,6 +19,7 @@ package com.example.mapdemo;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnCameraChangeListener;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
@@ -33,12 +34,13 @@ import android.view.View;
 import android.view.animation.Interpolator;
 import android.view.animation.OvershootInterpolator;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * This shows how to use setPadding to allow overlays that obscure part of the map without
  * obscuring the map UI or copyright notices.
  */
-public class VisibleRegionDemoActivity extends FragmentActivity {
+public class VisibleRegionDemoActivity extends FragmentActivity implements OnMapReadyCallback {
     /**
      * Note that this may be null if the Google Play services APK is not available.
      */
@@ -62,71 +64,75 @@ public class VisibleRegionDemoActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.visible_region_demo);
         mMessageView = (TextView) findViewById(R.id.message_text);
-        setUpMapIfNeeded();
+
+        SupportMapFragment mapFragment =
+                (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        setUpMapIfNeeded();
+    public void onMapReady(GoogleMap map) {
+        mMap = map;
+
+        // turn MyLocation on and move to a place with indoor (SFO airport)
+        mMap.setMyLocationEnabled(true);
+        mMap.setPadding(currentLeft, currentTop, currentRight, currentBottom);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(SFO, 18));
+        // Add a marker to the Opera House
+        mMap.addMarker(new MarkerOptions().position(SOH).title("Sydney Opera House"));
+        // Add a camera change listener.
+        mMap.setOnCameraChangeListener(new OnCameraChangeListener() {
+            @Override
+            public void onCameraChange(CameraPosition pos) {
+                mMessageView.setText("CameraChangeListener: " + pos);
+            }
+        });
     }
 
     /**
-     * Sets up the map if it is possible to do so (i.e., the Google Play services APK is correctly
-     * installed) and the map has not already been instantiated.. This will ensure that we only ever
-     * call {@link #setUpMap()} once when {@link #mMap} is not null.
-     * <p>
-     * If it isn't installed {@link SupportMapFragment} (and
-     * {@link com.google.android.gms.maps.MapView MapView}) will show a prompt for the user to
-     * install/update the Google Play services APK on their device.
-     * <p>
-     * A user can return to this FragmentActivity after following the prompt and correctly
-     * installing/updating/enabling the Google Play services. Since the FragmentActivity may not
-     * have been completely destroyed during this process (it is likely that it would only be
-     * stopped or paused), {@link #onCreate(Bundle)} may not be called again so we should call this
-     * method in {@link #onResume()} to guarantee that it will be called.
+     * Checks if the map is ready (which depends on whether the Google Play services APK is
+     * available. This should be called prior to calling any methods on GoogleMap.
      */
-    private void setUpMapIfNeeded() {
-        // Do a null check to confirm that we have not already instantiated the map.
+    private boolean checkReady() {
         if (mMap == null) {
-            // Try to obtain the map from the SupportMapFragment.
-            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
-                   .getMap();
-            // Check if we were successful in obtaining the map.
-            if (mMap != null) {
-                // turn MyLocation on and move to a place with indoor (SFO airport)
-                mMap.setMyLocationEnabled(true);
-                mMap.setPadding(currentLeft, currentTop, currentRight, currentBottom);
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(SFO, 18));
-                // Add a marker to the Opera House
-                mMap.addMarker(new MarkerOptions().position(SOH).title("Sydney Opera House"));
-                // Add a camera change listener.
-                mMap.setOnCameraChangeListener(new OnCameraChangeListener() {
-                    public void onCameraChange(CameraPosition pos) {
-                      mMessageView.setText("CameraChangeListener: " + pos);
-                    }
-                  });
-            }
+            Toast.makeText(this, R.string.map_not_ready, Toast.LENGTH_SHORT).show();
+            return false;
         }
+        return true;
     }
 
     public void moveToOperaHouse(View view) {
+        if (!checkReady()) {
+            return;
+        }
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(SOH, 16));
     }
 
     public void moveToSFO(View view) {
+        if (!checkReady()) {
+            return;
+        }
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(SFO, 18));
     }
 
     public void moveToAUS(View view) {
+        if (!checkReady()) {
+            return;
+        }
         mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(AUS, 0));
     }
 
     public void setNoPadding(View view) {
+        if (!checkReady()) {
+            return;
+        }
         animatePadding(150, 0, 0, 0);
     }
 
     public void setMorePadding(View view) {
+        if (!checkReady()) {
+            return;
+        }
         View mapView = ((SupportMapFragment)
             getSupportFragmentManager().findFragmentById(R.id.map)).getView();
         int left = 150;

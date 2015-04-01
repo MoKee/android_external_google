@@ -17,6 +17,7 @@
 package com.example.mapdemo;
 
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.TileOverlay;
 import com.google.android.gms.maps.model.TileOverlayOptions;
@@ -35,13 +36,11 @@ import java.util.Locale;
 /**
  * This demonstrates how to add a tile overlay to a map.
  */
-public class TileOverlayDemoActivity extends FragmentActivity {
+public class TileOverlayDemoActivity extends FragmentActivity implements OnMapReadyCallback {
 
     /** This returns moon tiles. */
     private static final String MOON_MAP_URL_FORMAT =
             "http://mw1.google.com/mw-planetary/lunar/lunarmaps_v1/clem_bw/%d/%d/%d.jpg";
-
-    private GoogleMap mMap;
 
     private TileOverlay mMoonTiles;
 
@@ -49,30 +48,15 @@ public class TileOverlayDemoActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tile_overlay_demo);
-        setUpMapIfNeeded();
+
+        SupportMapFragment mapFragment =
+                (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        setUpMapIfNeeded();
-    }
-
-    private void setUpMapIfNeeded() {
-        // Do a null check to confirm that we have not already instantiated the map.
-        if (mMap == null) {
-            // Try to obtain the map from the SupportMapFragment.
-            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
-                    .getMap();
-            // Check if we were successful in obtaining the map.
-            if (mMap != null) {
-                setUpMap();
-            }
-        }
-    }
-
-    private void setUpMap() {
-        mMap.setMapType(GoogleMap.MAP_TYPE_NONE);
+    public void onMapReady(GoogleMap map) {
+        map.setMapType(GoogleMap.MAP_TYPE_NONE);
 
         TileProvider tileProvider = new UrlTileProvider(256, 256) {
             @Override
@@ -90,7 +74,7 @@ public class TileOverlayDemoActivity extends FragmentActivity {
             }
         };
 
-        mMoonTiles = mMap.addTileOverlay(new TileOverlayOptions().tileProvider(tileProvider));
+        mMoonTiles = map.addTileOverlay(new TileOverlayOptions().tileProvider(tileProvider));
     }
 
     public void setFadeIn(View v) {

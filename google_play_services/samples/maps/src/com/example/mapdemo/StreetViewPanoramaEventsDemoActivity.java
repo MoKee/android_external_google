@@ -16,6 +16,7 @@
 
 package com.example.mapdemo;
 
+import com.google.android.gms.maps.OnStreetViewPanoramaReadyCallback;
 import com.google.android.gms.maps.StreetViewPanorama;
 import com.google.android.gms.maps.StreetViewPanorama.OnStreetViewPanoramaCameraChangeListener;
 import com.google.android.gms.maps.StreetViewPanorama.OnStreetViewPanoramaChangeListener;
@@ -41,7 +42,7 @@ public class StreetViewPanoramaEventsDemoActivity extends FragmentActivity
     // George St, Sydney
     private static final LatLng SYDNEY = new LatLng(-33.87365, 151.20689);
 
-    private StreetViewPanorama mSvp;
+    private StreetViewPanorama mStreetViewPanorama;
 
     private TextView mPanoChangeTimesTextView;
     private TextView mPanoCameraChangeTextView;
@@ -52,31 +53,36 @@ public class StreetViewPanoramaEventsDemoActivity extends FragmentActivity
     private int mPanoClickTimes = 0;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.street_view_panorama_events_demo);
-
-        setUpStreetViewPanoramaIfNeeded(savedInstanceState);
 
         mPanoChangeTimesTextView = (TextView) findViewById(R.id.change_pano);
         mPanoCameraChangeTextView = (TextView) findViewById(R.id.change_camera);
         mPanoClickTextView = (TextView) findViewById(R.id.click_pano);
-    }
 
-    private void setUpStreetViewPanoramaIfNeeded(Bundle savedInstanceState) {
-        if (mSvp == null) {
-            mSvp = ((SupportStreetViewPanoramaFragment)
-                getSupportFragmentManager().findFragmentById(R.id.streetviewpanorama))
-                    .getStreetViewPanorama();
-            if (mSvp != null) {
-                if (savedInstanceState == null) {
-                    mSvp.setPosition(SYDNEY);
+        SupportStreetViewPanoramaFragment streetViewPanoramaFragment =
+                (SupportStreetViewPanoramaFragment)
+                        getSupportFragmentManager().findFragmentById(R.id.streetviewpanorama);
+        streetViewPanoramaFragment.getStreetViewPanoramaAsync(
+            new OnStreetViewPanoramaReadyCallback() {
+                @Override
+                public void onStreetViewPanoramaReady(StreetViewPanorama panorama) {
+                    mStreetViewPanorama = panorama;
+                    mStreetViewPanorama.setOnStreetViewPanoramaChangeListener(
+                            StreetViewPanoramaEventsDemoActivity.this);
+                    mStreetViewPanorama.setOnStreetViewPanoramaCameraChangeListener(
+                            StreetViewPanoramaEventsDemoActivity.this);
+                    mStreetViewPanorama.setOnStreetViewPanoramaClickListener(
+                            StreetViewPanoramaEventsDemoActivity.this);
+
+                    // Only set the panorama to SYDNEY on startup (when no panoramas have been
+                    // loaded which is when the savedInstanceState is null).
+                    if (savedInstanceState == null) {
+                        mStreetViewPanorama.setPosition(SYDNEY);
+                    }
                 }
-                mSvp.setOnStreetViewPanoramaChangeListener(this);
-                mSvp.setOnStreetViewPanoramaCameraChangeListener(this);
-                mSvp.setOnStreetViewPanoramaClickListener(this);
-            }
-        }
+            });
     }
 
     @Override
@@ -93,12 +99,16 @@ public class StreetViewPanoramaEventsDemoActivity extends FragmentActivity
 
     @Override
     public void onStreetViewPanoramaClick(StreetViewPanoramaOrientation orientation) {
-        Point point = mSvp.orientationToPoint(orientation);
+        Point point = mStreetViewPanorama.orientationToPoint(orientation);
         if (point != null) {
+            mPanoClickTimes++;
             mPanoClickTextView.setText(
-                "Times clicked=" + ++mPanoClickTimes + " :" + point.toString());
-            mSvp.animateTo(new StreetViewPanoramaCamera.Builder().orientation(orientation)
-                .zoom(mSvp.getPanoramaCamera().zoom).build(), 1000);
+                "Times clicked=" + mPanoClickTimes);
+            mStreetViewPanorama.animateTo(
+                    new StreetViewPanoramaCamera.Builder()
+                            .orientation(orientation)
+                            .zoom(mStreetViewPanorama.getPanoramaCamera().zoom)
+                            .build(), 1000);
         }
     }
 }

@@ -17,6 +17,7 @@
 package com.example.mapdemo;
 
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -28,9 +29,7 @@ import android.support.v4.app.FragmentActivity;
  * This shows how to retain a map across activity restarts (e.g., from screen rotations), which can
  * be faster than relying on state serialization.
  */
-public class RetainMapDemoActivity extends FragmentActivity {
-
-    private GoogleMap mMap;
+public class RetainMapDemoActivity extends FragmentActivity implements OnMapReadyCallback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,31 +42,13 @@ public class RetainMapDemoActivity extends FragmentActivity {
         if (savedInstanceState == null) {
             // First incarnation of this activity.
             mapFragment.setRetainInstance(true);
-        } else {
-            // Reincarnated activity. The obtained map is the same map instance in the previous
-            // activity life cycle. There is no need to reinitialize it.
-            mMap = mapFragment.getMap();
         }
-        setUpMapIfNeeded();
+
+        mapFragment.getMapAsync(this);
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        setUpMapIfNeeded();
-    }
-
-    private void setUpMapIfNeeded() {
-        if (mMap == null) {
-            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
-                    .getMap();
-            if (mMap != null) {
-                setUpMap();
-            }
-        }
-    }
-
-    private void setUpMap() {
-        mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
+    public void onMapReady(GoogleMap map) {
+        map.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
     }
 }

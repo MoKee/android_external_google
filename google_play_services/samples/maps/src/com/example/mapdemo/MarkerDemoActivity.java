@@ -22,6 +22,7 @@ import com.google.android.gms.maps.GoogleMap.InfoWindowAdapter;
 import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMarkerDragListener;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
@@ -58,12 +59,13 @@ import java.util.Random;
 /**
  * This shows how to place markers on a map.
  */
-public class MarkerDemoActivity extends FragmentActivity
-        implements
+public class MarkerDemoActivity extends FragmentActivity implements
         OnMarkerClickListener,
         OnInfoWindowClickListener,
         OnMarkerDragListener,
-        OnSeekBarChangeListener {
+        OnSeekBarChangeListener,
+        OnMapReadyCallback {
+
     private static final LatLng BRISBANE = new LatLng(-27.47093, 153.0235);
     private static final LatLng MELBOURNE = new LatLng(-37.81319, 144.96298);
     private static final LatLng SYDNEY = new LatLng(-33.87365, 151.20689);
@@ -192,29 +194,15 @@ public class MarkerDemoActivity extends FragmentActivity
           }
         });
 
-        setUpMapIfNeeded();
+        SupportMapFragment mapFragment =
+                (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        setUpMapIfNeeded();
-    }
+    public void onMapReady(GoogleMap map) {
+        mMap = map;
 
-    private void setUpMapIfNeeded() {
-        // Do a null check to confirm that we have not already instantiated the map.
-        if (mMap == null) {
-            // Try to obtain the map from the SupportMapFragment.
-            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
-                    .getMap();
-            // Check if we were successful in obtaining the map.
-            if (mMap != null) {
-                setUpMap();
-            }
-        }
-    }
-
-    private void setUpMap() {
         // Hide the zoom controls as the button panel will cover it.
         mMap.getUiSettings().setZoomControlsEnabled(false);
 
@@ -229,6 +217,10 @@ public class MarkerDemoActivity extends FragmentActivity
         mMap.setOnMarkerClickListener(this);
         mMap.setOnInfoWindowClickListener(this);
         mMap.setOnMarkerDragListener(this);
+
+        // Override the default content description on the view, for accessibility mode.
+        // Ideally this string would be localised.
+        map.setContentDescription("Map with lots of markers.");
 
         // Pan to see all markers in view.
         // Cannot zoom to bounds until the map has a size.
@@ -384,8 +376,8 @@ public class MarkerDemoActivity extends FragmentActivity
                 @Override
                 public void run() {
                     long elapsed = SystemClock.uptimeMillis() - start;
-                    float t = Math.max(1 - interpolator
-                            .getInterpolation((float) elapsed / duration), 0);
+                    float t = Math.max(
+                            1 - interpolator.getInterpolation((float) elapsed / duration), 0);
                     marker.setAnchor(0.5f, 1.0f + 2 * t);
 
                     if (t > 0.0) {

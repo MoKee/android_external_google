@@ -16,7 +16,7 @@ public class StreetViewPanoramaViewDemoActivity extends FragmentActivity {
     // George St, Sydney
     private static final LatLng SYDNEY = new LatLng(-33.87365, 151.20689);
 
-    private StreetViewPanoramaView mSvpView;
+    private StreetViewPanoramaView mStreetViewPanoramaView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,34 +27,34 @@ public class StreetViewPanoramaViewDemoActivity extends FragmentActivity {
             options.position(SYDNEY);
         }
 
-        mSvpView = new StreetViewPanoramaView(this, options);
-        addContentView(mSvpView,
+        mStreetViewPanoramaView = new StreetViewPanoramaView(this, options);
+        addContentView(mStreetViewPanoramaView,
             new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 
-      mSvpView.onCreate(savedInstanceState);
+        mStreetViewPanoramaView.onCreate(savedInstanceState);
     }
 
     @Override
     protected void onResume() {
-        mSvpView.onResume();
+        mStreetViewPanoramaView.onResume();
         super.onResume();
     }
 
     @Override
     protected void onPause() {
-        mSvpView.onPause();
+        mStreetViewPanoramaView.onPause();
         super.onPause();
     }
 
     @Override
     protected void onDestroy() {
-        mSvpView.onDestroy();
+        mStreetViewPanoramaView.onDestroy();
         super.onPause();
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        mSvpView.onSaveInstanceState(outState);
+        mStreetViewPanoramaView.onSaveInstanceState(outState);
     }
 }

@@ -84,6 +84,20 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <html>
 <head>
 
@@ -99,7 +113,7 @@
 href="http://fonts.googleapis.com/css?family=Roboto+Condensed">
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:light,regular,medium,thin,italic,mediumitalic,bold"
   title="roboto">
-<link href="../../../../../../../assets/css/default.css?v=2" rel="stylesheet" type="text/css">
+<link href="../../../../../../../assets/css/default.css?v=5" rel="stylesheet" type="text/css">
 
 
 <!-- FULLSCREEN STYLESHEET -->
@@ -115,7 +129,9 @@ type="text/css">
   var metaTags = [];
   var devsite = false;
 </script>
-<script src="../../../../../../../assets/js/docs.js?v=2" type="text/javascript"></script>
+<script src="../../../../../../../assets/js/docs.js?v=3" type="text/javascript"></script>
+
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -132,16 +148,66 @@ type="text/css">
 </head>
 
 <body class="gc-documentation 
-  develop" itemscope itemtype="http://schema.org/Article">
+  develop reference" itemscope itemtype="http://schema.org/Article">
   <div id="doc-api-level" class="" style="display:none"></div>
   <a name="top"></a>
 
 
 <a name="top"></a>
 
+<!-- dialog to prompt lang pref change when loaded from hardcoded URL 
+<div id="langMessage" style="display:none">
+  <div>
+    <div class="lang en">
+      <p>You requested a page in English, would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang es">
+      <p>You requested a page in Spanish (Español), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ja">
+      <p>You requested a page in Japanese (日本語), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ko">
+      <p>You requested a page in Korean (한국어), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ru">
+      <p>You requested a page in Russian (Русский), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang zh-cn">
+      <p>You requested a page in Simplified Chinese (简体中文), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang zh-tw">
+      <p>You requested a page in Traditional Chinese (繁體中文), would you like to proceed with this language setting?</p>
+    </div>
+    <a href="#" class="button yes" onclick="return false;">
+      <span class="lang en">Yes</span>
+      <span class="lang es">Sí</span>
+      <span class="lang ja">Yes</span>
+      <span class="lang ko">Yes</span>
+      <span class="lang ru">Yes</span>
+      <span class="lang zh-cn">是的</span>
+      <span class="lang zh-tw">没有</span>
+    </a>
+    <a href="#" class="button" onclick="$('#langMessage').hide();return false;">
+      <span class="lang en">No</span>
+      <span class="lang es">No</span>
+      <span class="lang ja">No</span>
+      <span class="lang ko">No</span>
+      <span class="lang ru">No</span>
+      <span class="lang zh-cn">没有</span>
+      <span class="lang zh-tw">没有</span>
+    </a>
+  </div>
+</div> -->
+
+
   <!-- Header -->
   <div id="header-wrapper">
     <div id="header">
+
+    
+
+
       <div class="wrap" id="header-wrap">
         <div class="col-3 logo">
           <a href="../../../../../../../index.html">
@@ -331,6 +397,7 @@ type="text/css">
                 <li><a href="../../../../../../../distribute/users/index.html">Get Users</a></li>
                 <li><a href="../../../../../../../distribute/engage/index.html">Engage &amp; Retain</a></li>
                 <li><a href="../../../../../../../distribute/monetize/index.html">Monetize</a></li>
+                <li><a href="../../../../../../../distribute/analyze/index.html">Analyze</a></li>
                 <li><a href="../../../../../../../distribute/tools/index.html">Tools &amp; Reference</a></li>
                 <li><a href="../../../../../../../distribute/stories/index.html">Developer Stories</a></li>
               </ul>
@@ -343,7 +410,12 @@ type="text/css">
   
     <!-- Secondary x-nav -->
     <div id="nav-x">
-        <div class="wrap">
+        <div class="wrap" style="position:relative;z-index:1">
+
+        
+        
+        
+
             <ul class="nav-x col-9 develop" style="width:100%">
                 <li class="training"><a href="../../../../../../../training/index.html"
                   zh-tw-lang="訓練課程"
@@ -467,8 +539,6 @@ type="text/css">
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/auth/package-summary.html">com.google.android.gms.auth</a></li>
     <li class="api apilevel-">
-  <a href="../../../../../../../reference/com/google/android/gms/auth/api/package-summary.html">com.google.android.gms.auth.api</a></li>
-    <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/cast/package-summary.html">com.google.android.gms.cast</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/common/package-summary.html">com.google.android.gms.common</a></li>
@@ -529,9 +599,17 @@ type="text/css">
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/location/package-summary.html">com.google.android.gms.location</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../../../reference/com/google/android/gms/location/places/package-summary.html">com.google.android.gms.location.places</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../reference/com/google/android/gms/location/places/ui/package-summary.html">com.google.android.gms.location.places.ui</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/maps/package-summary.html">com.google.android.gms.maps</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/maps/model/package-summary.html">com.google.android.gms.maps.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../reference/com/google/android/gms/nearby/package-summary.html">com.google.android.gms.nearby</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../reference/com/google/android/gms/nearby/connection/package-summary.html">com.google.android.gms.nearby.connection</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/panorama/package-summary.html">com.google.android.gms.panorama</a></li>
     <li class="api apilevel-">
@@ -540,6 +618,8 @@ type="text/css">
   <a href="../../../../../../../reference/com/google/android/gms/plus/model/moments/package-summary.html">com.google.android.gms.plus.model.moments</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/plus/model/people/package-summary.html">com.google.android.gms.plus.model.people</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../reference/com/google/android/gms/safetynet/package-summary.html">com.google.android.gms.safetynet</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../reference/com/google/android/gms/security/package-summary.html">com.google.android.gms.security</a></li>
     <li class="api apilevel-">
@@ -566,7 +646,6 @@ type="text/css">
           <li class="api apilevel-"><a href="../../../../../../../reference/com/google/android/gms/drive/events/ChangeListener.html">ChangeListener</a></li>
           <li class="api apilevel-"><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionListener.html">CompletionListener</a></li>
           <li class="api apilevel-"><a href="../../../../../../../reference/com/google/android/gms/drive/events/DriveEvent.html">DriveEvent</a></li>
-          <li class="api apilevel-"><a href="../../../../../../../reference/com/google/android/gms/drive/events/DriveEvent.Listener.html">DriveEvent.Listener</a></li>
           <li class="api apilevel-"><a href="../../../../../../../reference/com/google/android/gms/drive/events/ResourceEvent.html">ResourceEvent</a></li>
       </ul>
     </li>
@@ -644,25 +723,18 @@ type="text/css">
    
   
   
-   
-  
-  
-  
-
-  
-  
-   
-  
-  
-  
-
-  
-  
   
   
 
   
    
+  
+  
+   
+  
+  
+  
+
   
   
   
@@ -733,12 +805,15 @@ Summary:
   
       implements 
       
-        SafeParcelable 
-      
         <a href="../../../../../../../reference/com/google/android/gms/drive/events/ResourceEvent.html">ResourceEvent</a> 
       
+        <a href="http://developer.android.com/reference/android/os/Parcelable.html">Parcelable</a> 
+      
   
   
+
+
+    
 
 
 </div><!-- end header -->
@@ -863,25 +938,53 @@ Summary:
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
-        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#STATUS_CONFLICT">STATUS_CONFLICT</a></td>
-        <td class="jd-descrcol" width="100%">Status code indicating that the action referenced by this event has failed to be applied on
- the server because of a conflict.</td>
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#STATUS_CANCELED">STATUS_CANCELED</a></td>
+        <td class="jd-descrcol" width="100%">
+          Status code indicating that the action referenced by this event was canceled as a result
+ of <code><a href="../../../../../../../reference/com/google/android/gms/drive/DriveApi.html#cancelPendingActions(com.google.android.gms.common.api.GoogleApiClient, java.util.List<java.lang.String>)">cancelPendingActions(GoogleApiClient, List<String>)</a></code>.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
-        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#STATUS_FAILURE">STATUS_FAILURE</a></td>
-        <td class="jd-descrcol" width="100%">Status code indicating that the action referenced by this event has permanently failed to be
- applied on the server.</td>
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#STATUS_CONFLICT">STATUS_CONFLICT</a></td>
+        <td class="jd-descrcol" width="100%">
+          Status code indicating that the action referenced by this event has failed to be applied on
+ the server because of a conflict.
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#STATUS_FAILURE">STATUS_FAILURE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Status code indicating that the action referenced by this event has permanently failed to be
+ applied on the server.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">int</td>
         <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#STATUS_SUCCESS">STATUS_SUCCESS</a></td>
-        <td class="jd-descrcol" width="100%">Status code indicating that the action referenced by this event has successfully been applied
- on the server.</td>
+        <td class="jd-descrcol" width="100%">
+          Status code indicating that the action referenced by this event has successfully been applied
+ on the server.
+          
+    
+
+        </td>
     </tr>
     
     
@@ -896,6 +999,8 @@ Summary:
 <table id="inhconstants" class="jd-sumtable"><tr><th>
   <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
   <div style="clear:left;">Inherited Constants</div></th></tr>
+
+
 
 
 
@@ -920,14 +1025,24 @@ android.os.Parcelable
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">CONTENTS_FILE_DESCRIPTOR</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">PARCELABLE_WRITE_RETURN_VALUE</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
@@ -935,39 +1050,6 @@ android.os.Parcelable
   </div>
 </div>
 </td></tr>
-
-
-
-<tr class="api apilevel-" >
-<td colspan="12">
-
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-constants-com.google.android.gms.common.internal.safeparcel.SafeParcelable" class="jd-expando-trigger closed"
-          ><img id="inherited-constants-com.google.android.gms.common.internal.safeparcel.SafeParcelable-trigger"
-          src="../../../../../../../assets/images/triangle-closed.png"
-          class="jd-expando-trigger-img" /></a>From interface
-com.google.android.gms.common.internal.safeparcel.SafeParcelable
-<div id="inherited-constants-com.google.android.gms.common.internal.safeparcel.SafeParcelable">
-  <div id="inherited-constants-com.google.android.gms.common.internal.safeparcel.SafeParcelable-list"
-        class="jd-inheritedlinks">
-  </div>
-  <div id="inherited-constants-com.google.android.gms.common.internal.safeparcel.SafeParcelable-summary" style="display: none;">
-    <table class="jd-sumtable-expando">
-    
-
-    
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
-        <td class="jd-linkcol">NULL</td>
-        <td class="jd-descrcol" width="100%"></td>
-    </tr>
-    
-    
-</table>
-  </div>
-</div>
-</td></tr>
-
-
 
 
 
@@ -989,7 +1071,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
           final
           <a href="http://developer.android.com/reference/android/os/Parcelable.Creator.html">Creator</a>&lt;<a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html">CompletionEvent</a>&gt;</nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#CREATOR">CREATOR</a></td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1040,8 +1127,13 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#dismiss()">dismiss</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates to the Drive API that the caller has finished interacting with this event and
- cleans up any related resources.</div>
+        <div class="jd-descrdiv">
+          Indicates to the Drive API that the caller has finished interacting with this event and any
+ related resources should be cleaned up.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1059,8 +1151,13 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#getAccountName()">getAccountName</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Returns the account name that was used by the GoogleApiClient that requested this
- notification, or <code>null</code> if the default account was used.</div>
+        <div class="jd-descrdiv">
+          Returns the account name that was used by the GoogleApiClient that requested this
+ notification, or <code>null</code> if the default account was used.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1078,10 +1175,13 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#getBaseContentsInputStream()">getBaseContentsInputStream</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Returns an <code><a href="http://developer.android.com/reference/java/io/InputStream.html">InputStream</a></code> for the initial contents of a file, in the case of a
- notification of conflict originating from <code><a href="../../../../../../../reference/com/google/android/gms/drive/DriveContents.html#commit(com.google.android.gms.common.api.GoogleApiClient, com.google.android.gms.drive.MetadataChangeSet)">commit(GoogleApiClient, MetadataChangeSet)</a></code>, or a notification
- of success or failure of a <code><a href="../../../../../../../reference/com/google/android/gms/drive/DriveContents.html#commit(com.google.android.gms.common.api.GoogleApiClient, com.google.android.gms.drive.MetadataChangeSet)">commit(GoogleApiClient, MetadataChangeSet)</a></code> on contents opened with
- <code><a href="../../../../../../../reference/com/google/android/gms/drive/DriveFile.html#MODE_READ_WRITE">MODE_READ_WRITE</a></code>.</div>
+        <div class="jd-descrdiv">
+          Returns an <code><a href="http://developer.android.com/reference/java/io/InputStream.html">InputStream</a></code> for the initial contents of a file, in the case of a
+ notification with status <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#STATUS_CONFLICT">STATUS_CONFLICT</a></code>.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1099,7 +1199,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#getDriveId()">getDriveId</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Returns the id of the Drive resource that triggered the event.</div>
+        <div class="jd-descrdiv">
+          Returns the id of the Drive resource that triggered the event.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1117,8 +1222,13 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#getModifiedContentsInputStream()">getModifiedContentsInputStream</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Returns an <code><a href="http://developer.android.com/reference/java/io/InputStream.html">InputStream</a></code> for the modified contents that generated this
- event.</div>
+        <div class="jd-descrdiv">
+          Returns an <code><a href="http://developer.android.com/reference/java/io/InputStream.html">InputStream</a></code> for the modified contents that generated this
+ event.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1136,8 +1246,13 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#getModifiedMetadataChangeSet()">getModifiedMetadataChangeSet</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Returns the <code><a href="../../../../../../../reference/com/google/android/gms/drive/MetadataChangeSet.html">MetadataChangeSet</a></code> that was committed during the update that generated
- this event.</div>
+        <div class="jd-descrdiv">
+          Returns the <code><a href="../../../../../../../reference/com/google/android/gms/drive/MetadataChangeSet.html">MetadataChangeSet</a></code> that was committed during the update that generated
+ this event.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1155,7 +1270,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#getStatus()">getStatus</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Returns a status indicating the result of the action that generated this event.</div>
+        <div class="jd-descrdiv">
+          Returns a status indicating the result of the action that generated this event.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1173,8 +1293,12 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#getTrackingTags()">getTrackingTags</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Returns a <code><a href="http://developer.android.com/reference/java/util/List.html">List</a></code> of tracking tags provided through
- <code><a href="../../../../../../../reference/com/google/android/gms/drive/DriveContents.html#commit(com.google.android.gms.common.api.GoogleApiClient, com.google.android.gms.drive.MetadataChangeSet)">commit(GoogleApiClient, MetadataChangeSet)</a></code>.</div>
+        <div class="jd-descrdiv">
+          Returns a <code><a href="http://developer.android.com/reference/java/util/List.html">List</a></code> of tracking tags provided through <code><a href="../../../../../../../reference/com/google/android/gms/drive/DriveContents.html#commit(com.google.android.gms.common.api.GoogleApiClient, com.google.android.gms.drive.MetadataChangeSet)">commit(GoogleApiClient, MetadataChangeSet)</a></code>.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1192,8 +1316,13 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelable
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#snooze()">snooze</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates that the client could not process the event at the current time, for example
- because of connectivity issues.</div>
+        <div class="jd-descrdiv">
+          Indicates that the client could not process the event at the current time, for example
+ because of connectivity issues.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1449,6 +1578,55 @@ From class
 
 <tr class="api apilevel-" >
 <td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-com.google.android.gms.drive.events.ResourceEvent" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-com.google.android.gms.drive.events.ResourceEvent-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From interface
+
+  <a href="../../../../../../../reference/com/google/android/gms/drive/events/ResourceEvent.html">com.google.android.gms.drive.events.ResourceEvent</a>
+
+<div id="inherited-methods-com.google.android.gms.drive.events.ResourceEvent">
+  <div id="inherited-methods-com.google.android.gms.drive.events.ResourceEvent-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-com.google.android.gms.drive.events.ResourceEvent-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../../../reference/com/google/android/gms/drive/DriveId.html">DriveId</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/drive/events/ResourceEvent.html#getDriveId()">getDriveId</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Returns the id of the Drive resource that triggered the event.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
   <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-android.os.Parcelable" class="jd-expando-trigger closed"
           ><img id="inherited-methods-android.os.Parcelable-trigger"
           src="../../../../../../../assets/images/triangle-closed.png"
@@ -1506,52 +1684,6 @@ From interface
 
 
 
-
-
-
-<tr class="api apilevel-" >
-<td colspan="12">
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-com.google.android.gms.drive.events.ResourceEvent" class="jd-expando-trigger closed"
-          ><img id="inherited-methods-com.google.android.gms.drive.events.ResourceEvent-trigger"
-          src="../../../../../../../assets/images/triangle-closed.png"
-          class="jd-expando-trigger-img" /></a>
-From interface
-
-  <a href="../../../../../../../reference/com/google/android/gms/drive/events/ResourceEvent.html">com.google.android.gms.drive.events.ResourceEvent</a>
-
-<div id="inherited-methods-com.google.android.gms.drive.events.ResourceEvent">
-  <div id="inherited-methods-com.google.android.gms.drive.events.ResourceEvent-list"
-        class="jd-inheritedlinks">
-  </div>
-  <div id="inherited-methods-com.google.android.gms.drive.events.ResourceEvent-summary" style="display: none;">
-    <table class="jd-sumtable-expando">
-    
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            abstract
-            
-            
-            
-            
-            <a href="../../../../../../../reference/com/google/android/gms/drive/DriveId.html">DriveId</a></nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../../reference/com/google/android/gms/drive/events/ResourceEvent.html#getDriveId()">getDriveId</a></span>()</nobr>
-        
-        <div class="jd-descrdiv">Returns the id of the Drive resource that triggered the event.</div>
-  
-  </td></tr>
-
-
-</table>
-  </div>
-</div>
-</td></tr>
-
-
 </table>
 
 
@@ -1581,6 +1713,50 @@ From interface
 
 
 
+<A NAME="STATUS_CANCELED"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        STATUS_CANCELED
+    </h4>
+      <div class="api-level">
+        
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Status code indicating that the action referenced by this event was canceled as a result
+ of <code><a href="../../../../../../../reference/com/google/android/gms/drive/DriveApi.html#cancelPendingActions(com.google.android.gms.common.api.GoogleApiClient, java.util.List<java.lang.String>)">cancelPendingActions(GoogleApiClient, List<String>)</a></code>. A canceled action was not applied on the server
+ and was reverted locally.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                3
+                (0x00000003)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
 <A NAME="STATUS_CONFLICT"></A>
 
 <div class="jd-details api apilevel-"> 
@@ -1601,9 +1777,14 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Status code indicating that the action referenced by this event has failed to be applied on
- the server because of a conflict. When this status code is provided, the metadata and
- contents that were changed in the original action (if applicable) will be provided through
+ the server because of a conflict. A conflict originates from <code><a href="../../../../../../../reference/com/google/android/gms/drive/DriveContents.html#commit(com.google.android.gms.common.api.GoogleApiClient, com.google.android.gms.drive.MetadataChangeSet)">commit(GoogleApiClient, MetadataChangeSet)</a></code>.
+
+ When this status code is provided, the metadata and contents that were changed in the
+ original action (if applicable) will be provided through
  <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#getModifiedMetadataChangeSet()">getModifiedMetadataChangeSet()</a></code> and <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#getModifiedContentsInputStream()">getModifiedContentsInputStream()</a></code>,
  respectively, so that the client can retrieve the data that has failed to upload.
 
@@ -1679,6 +1860,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Status code indicating that the action referenced by this event has permanently failed to be
  applied on the server. When this status code is provided, the metadata and contents that were
  changed in the original action (if applicable) will be provided through
@@ -1721,6 +1905,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Status code indicating that the action referenced by this event has successfully been applied
  on the server.
@@ -1772,6 +1959,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     
@@ -1820,6 +2010,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
@@ -1849,9 +2042,12 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Indicates to the Drive API that the caller has finished interacting with this event and
- cleans up any related resources. The client may not continue using this event instance after
- <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#dismiss()">dismiss()</a></code>.
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Indicates to the Drive API that the caller has finished interacting with this event and any
+ related resources should be cleaned up. The client may not continue using this event instance
+ after dismissing.
 </p></div>
 
     </div>
@@ -1880,6 +2076,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Returns the account name that was used by the GoogleApiClient that requested this
  notification, or <code>null</code> if the default account was used.
@@ -1915,11 +2114,12 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Returns an <code><a href="http://developer.android.com/reference/java/io/InputStream.html">InputStream</a></code> for the initial contents of a file, in the case of a
- notification of conflict originating from <code><a href="../../../../../../../reference/com/google/android/gms/drive/DriveContents.html#commit(com.google.android.gms.common.api.GoogleApiClient, com.google.android.gms.drive.MetadataChangeSet)">commit(GoogleApiClient, MetadataChangeSet)</a></code>, or a notification
- of success or failure of a <code><a href="../../../../../../../reference/com/google/android/gms/drive/DriveContents.html#commit(com.google.android.gms.common.api.GoogleApiClient, com.google.android.gms.drive.MetadataChangeSet)">commit(GoogleApiClient, MetadataChangeSet)</a></code> on contents opened with
- <code><a href="../../../../../../../reference/com/google/android/gms/drive/DriveFile.html#MODE_READ_WRITE">MODE_READ_WRITE</a></code>. If the base content is not available this method returns
- <code>null</code>.
+ notification with status <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#STATUS_CONFLICT">STATUS_CONFLICT</a></code>. Returns <code>null</code> for any other status
+ but <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#STATUS_CONFLICT">STATUS_CONFLICT</a></code>.
 
  <p>
  This version of the file content is not the current version anymore. In order to get the
@@ -1932,7 +2132,7 @@ From interface
  current version.
 
  <p>
- The returned <code><a href="http://developer.android.com/reference/java/io/InputStream.html">InputStream</a></code> can be used until <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#dismiss()">dismiss()</a></code> is
+ The returned <code><a href="http://developer.android.com/reference/java/io/InputStream.html">InputStream</a></code> can be used until <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#dismiss()">dismiss()</a></code> or <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#snooze()">snooze()</a></code> is
  called.
 </p></div>
 
@@ -1962,6 +2162,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Returns the id of the Drive resource that triggered the event.
 </p></div>
@@ -1993,13 +2196,16 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Returns an <code><a href="http://developer.android.com/reference/java/io/InputStream.html">InputStream</a></code> for the modified contents that generated this
- event. If the status of this event is <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#STATUS_FAILURE">STATUS_FAILURE</a></code> or <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#STATUS_CONFLICT">STATUS_CONFLICT</a></code>,
- note that the modified contents provided by this method have not been applied on the server.
+ event. If the status of this event is not <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#STATUS_SUCCESS">STATUS_SUCCESS</a></code>, note that the modified
+ contents provided by this method have not been applied on the server.
  This method may only be called once per <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html">CompletionEvent</a></code> instance.
 
  <p>
- The returned <code><a href="http://developer.android.com/reference/java/io/InputStream.html">InputStream</a></code> can be used until <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#dismiss()">dismiss()</a></code> is
+ The returned <code><a href="http://developer.android.com/reference/java/io/InputStream.html">InputStream</a></code> can be used until <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#dismiss()">dismiss()</a></code> or <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#snooze()">snooze()</a></code> is
  called.
 </p></div>
 
@@ -2030,13 +2236,16 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Returns the <code><a href="../../../../../../../reference/com/google/android/gms/drive/MetadataChangeSet.html">MetadataChangeSet</a></code> that was committed during the update that generated
  this event. The value may be <code>null</code> if the action didn't contain metadata changes. The
  current metadata can be obtained using <code><a href="../../../../../../../reference/com/google/android/gms/drive/DriveApi.html#getFile(com.google.android.gms.common.api.GoogleApiClient, com.google.android.gms.drive.DriveId)">getFile</a></code> and
  <code><a href="../../../../../../../reference/com/google/android/gms/drive/DriveResource.html#getMetadata(com.google.android.gms.common.api.GoogleApiClient)">getMetadata</a></code> and be compared with this
- <code><a href="../../../../../../../reference/com/google/android/gms/drive/MetadataChangeSet.html">MetadataChangeSet</a></code>. If the event has the status <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#STATUS_FAILURE">STATUS_FAILURE</a></code> or
- <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#STATUS_CONFLICT">STATUS_CONFLICT</a></code>, note that the changes in this change set have not been applied on
- the server and have been reverted locally.
+ <code><a href="../../../../../../../reference/com/google/android/gms/drive/MetadataChangeSet.html">MetadataChangeSet</a></code>. If the event has a status other than <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#STATUS_SUCCESS">STATUS_SUCCESS</a></code>,
+ note that the changes in this change set have not been applied on the server and have been
+ reverted locally.
 
  <p>
  Modifying the returned <code><a href="../../../../../../../reference/com/google/android/gms/drive/MetadataChangeSet.html">MetadataChangeSet</a></code> will not have any effect unless the set is
@@ -2070,8 +2279,12 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Returns a status indicating the result of the action that generated this event. May be one
- of <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#STATUS_SUCCESS">STATUS_SUCCESS</a></code>, <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#STATUS_CONFLICT">STATUS_CONFLICT</a></code>, or <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#STATUS_FAILURE">STATUS_FAILURE</a></code>.
+ of <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#STATUS_SUCCESS">STATUS_SUCCESS</a></code>, <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#STATUS_CONFLICT">STATUS_CONFLICT</a></code>, <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#STATUS_FAILURE">STATUS_FAILURE</a></code>,
+ <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#STATUS_CANCELED">STATUS_CANCELED</a></code>.
 </p></div>
 
     </div>
@@ -2101,9 +2314,12 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Returns a <code><a href="http://developer.android.com/reference/java/util/List.html">List</a></code> of tracking tags provided through
- <code><a href="../../../../../../../reference/com/google/android/gms/drive/DriveContents.html#commit(com.google.android.gms.common.api.GoogleApiClient, com.google.android.gms.drive.MetadataChangeSet)">commit(GoogleApiClient, MetadataChangeSet)</a></code>. The application can use these tags to relate this event with
- the specific method execution that generated it.
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns a <code><a href="http://developer.android.com/reference/java/util/List.html">List</a></code> of tracking tags provided through <code><a href="../../../../../../../reference/com/google/android/gms/drive/DriveContents.html#commit(com.google.android.gms.common.api.GoogleApiClient, com.google.android.gms.drive.MetadataChangeSet)">commit(GoogleApiClient, MetadataChangeSet)</a></code>. The
+ application can use these tags to relate this event with the specific method execution that
+ generated it.
 
  <p>
  If the list contains multiple elements, the ordering of the elements is guaranteed to be the
@@ -2138,9 +2354,12 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Indicates that the client could not process the event at the current time, for example
  because of connectivity issues. The client will be notified again of the same event in the
- future. The client may not continue using this event instance after <code><a href="../../../../../../../reference/com/google/android/gms/drive/events/CompletionEvent.html#snooze()">snooze()</a></code>.
+ future. The client may not continue using this event instance after snoozing.
 </p></div>
 
     </div>
@@ -2169,6 +2388,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
@@ -2199,6 +2421,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
@@ -2227,7 +2452,7 @@ From interface
   </div>
   <div id="build_info">
     
-    Android GmsCore 1501030&nbsp;r &mdash; 
+    Android GmsCore 1784785&nbsp;r &mdash; 
 <script src="../../../../../../../timestamp.js" type="text/javascript"></script>
 <script>document.write(BUILD_TIMESTAMP)</script>
 

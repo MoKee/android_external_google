@@ -60,5 +60,12 @@
         title="[Public] Cynthia Remixed"
         type="music"
         url="http://ashaadistory.com/cynthia1.mp3" />
+    <media
+        type="music"
+        mimeType="audio/mp3"
+        title="[Public] Vermont NPR Radio (Live Stream)"
+        streamType="live"
+        url="http://vpr.streamguys.net/vpr96.mp3"
+        />
 
 </medias>

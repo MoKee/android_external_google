@@ -23,6 +23,7 @@
     <string name="sign_in_profile_label">profile scope</string>
     <string name="sign_out_button_name">Sign out</string>
     <string name="revoke_access_button_name">Revoke access</string>
+    <string name="server_auth_code_required_label">Reset server auth code state</string>
     <string name="share_title">Prefill Text (optional)</string>
     <string name="share_prefill_text">Welcome to the Google+ platform.</string>
 
@@ -37,6 +38,7 @@
     <!-- Used if there was an error loading the signed in user's name. -->
     <string name="unknown_person">Unknown</string>
     <string name="signed_out_status">Signed out.</string>
+    <string name="sign_in_error_status">Error signing in.</string>
     <string name="revoke_access_status">Revoked access.</string>
     <string name="revoke_access_error_status">Unable to revoke access.</string>
 
@@ -60,4 +62,22 @@
     </string>
     <string name="plus_generic_error">Sign in with Google is not available.</string>
     <string name="progress_message">Signing in to Google&#8230;</string>
+
+    <string name="offline_access_disabled">Offline access emulation disabled: set the server client
+        ID in strings.xml for offline access</string>
+
+    <!--
+    The server client ID to which offline access will be granted, if set.
+    This value should match the id of a service account configured on your developer
+    console project. For more information on configuring your app for offline access,
+    see:
+
+    https://developers.google.com/+/web/signin/server-side-flow
+
+    Also:
+
+    https://developers.google.com/+/mobile/android/sign-in#enable_server-side_api_access_for_your_app
+
+    -->
+    <string name="server_client_id"></string>
 </resources>

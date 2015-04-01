@@ -32,12 +32,14 @@ abstract class MediaSelectionDialog extends ListSelectionDialog<MediaInfo> {
     private static final String XML_TAG_TRACK = "track";
     private static final String XML_ATTR_ARTIST = "artist";
     private static final String XML_ATTR_CONTENT_ID = "contentId";
+    private static final String XML_ATTR_CONTENT_TYPE = "contentType";
     private static final String XML_ATTR_ID = "id";
     private static final String XML_ATTR_IMAGE_URL = "imageUrl";
     private static final String XML_ATTR_LANGUAGE = "language";
     private static final String XML_ATTR_MIME_TYPE = "mimeType";
     private static final String XML_ATTR_NAME = "name";
     private static final String XML_ATTR_SERIES_TITLE = "seriesTitle";
+    private static final String XML_ATTR_STREAM_TYPE = "streamType";
     private static final String XML_ATTR_STUDIO = "studio";
     private static final String XML_ATTR_SUBTYPE = "subtype";
     private static final String XML_ATTR_TITLE = "title";
@@ -48,6 +50,8 @@ abstract class MediaSelectionDialog extends ListSelectionDialog<MediaInfo> {
     private static final String TYPE_MUSIC = "music";
     private static final String TYPE_PHOTO = "photo";
     private static final String TYPE_TV = "tv";
+    private static final String STREAM_TYPE_BUFFERED = "buffered";
+    private static final String STREAM_TYPE_LIVE = "live";
     private static final String TRACK_TYPE_AUDIO = "audio";
     private static final String TRACK_TYPE_VIDEO = "video";
     private static final String TRACK_TYPE_TEXT = "text";
@@ -130,11 +134,22 @@ abstract class MediaSelectionDialog extends ListSelectionDialog<MediaInfo> {
 
                 String url = attrs.getAttributeValue(null, XML_ATTR_URL);
                 String mimeType = attrs.getAttributeValue(null, XML_ATTR_MIME_TYPE);
+                String streamTypeText = attrs.getAttributeValue(null, XML_ATTR_STREAM_TYPE);
                 String imageUrlText = attrs.getAttributeValue(null, XML_ATTR_IMAGE_URL);
                 Uri imageUrl = (imageUrlText != null) ? Uri.parse(imageUrlText) : null;
 
                 String metadataTypeToken = attrs.getAttributeValue(null, XML_ATTR_TYPE);
                 int metadataType = MediaMetadata.MEDIA_TYPE_GENERIC;
+
+                int streamType;
+                if ((streamTypeText == null)
+                        || streamTypeText.equalsIgnoreCase(STREAM_TYPE_BUFFERED)) {
+                    streamType = MediaInfo.STREAM_TYPE_BUFFERED;
+                } else if (streamTypeText.equalsIgnoreCase(STREAM_TYPE_LIVE)) {
+                    streamType = MediaInfo.STREAM_TYPE_LIVE;
+                } else {
+                    throw new IOException("Invalid stream type: " + streamTypeText);
+                }
 
                 if (TYPE_MOVIE.equals(metadataTypeToken)) {
                     metadataType = MediaMetadata.MEDIA_TYPE_MOVIE;
@@ -173,8 +188,9 @@ abstract class MediaSelectionDialog extends ListSelectionDialog<MediaInfo> {
                 }
 
                 mediaInfoBuilder = new MediaInfo.Builder(url)
-                        .setStreamType(MediaInfo.STREAM_TYPE_BUFFERED)
-                        .setContentType(mimeType).setMetadata(metadata);
+                        .setStreamType(streamType)
+                        .setContentType(mimeType)
+                        .setMetadata(metadata);
             } else if ((type == XmlPullParser.END_TAG) && XML_TAG_MEDIA.equals(parser.getName())
                     && inMediaTag) {
                 list.add(mediaInfoBuilder.setMediaTracks(mediaTracks).build());
@@ -187,6 +203,7 @@ abstract class MediaSelectionDialog extends ListSelectionDialog<MediaInfo> {
 
                 String idToken = attrs.getAttributeValue(null, XML_ATTR_ID);
                 String contentId = attrs.getAttributeValue(null, XML_ATTR_CONTENT_ID);
+                String contentType = attrs.getAttributeValue(null, XML_ATTR_CONTENT_TYPE);
                 String typeToken = attrs.getAttributeValue(null, XML_ATTR_TYPE);
                 String subtypeToken = attrs.getAttributeValue(null, XML_ATTR_SUBTYPE);
                 String name = attrs.getAttributeValue(null, XML_ATTR_NAME);
@@ -238,6 +255,10 @@ abstract class MediaSelectionDialog extends ListSelectionDialog<MediaInfo> {
 
                 if (contentId != null) {
                     builder.setContentId(contentId);
+                }
+
+                if (contentType != null) {
+                    builder.setContentType(contentType);
                 }
 
                 if (language != null) {

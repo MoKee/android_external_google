@@ -25,6 +25,7 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 
 import android.location.Location;
@@ -45,9 +46,8 @@ public class MyLocationDemoActivity extends FragmentActivity
         ConnectionCallbacks,
         OnConnectionFailedListener,
         LocationListener,
-        OnMyLocationButtonClickListener {
-
-    private GoogleMap mMap;
+        OnMyLocationButtonClickListener,
+        OnMapReadyCallback {
 
     private GoogleApiClient mGoogleApiClient;
     private TextView mMessageView;
@@ -64,46 +64,34 @@ public class MyLocationDemoActivity extends FragmentActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_location_demo);
         mMessageView = (TextView) findViewById(R.id.message_text);
+
+        SupportMapFragment mapFragment =
+                (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                           .addApi(LocationServices.API)
+                           .addConnectionCallbacks(this)
+                           .addOnConnectionFailedListener(this)
+                           .build();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        setUpMapIfNeeded();
-        setUpGoogleApiClientIfNeeded();
         mGoogleApiClient.connect();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        if (mGoogleApiClient != null) {
-            mGoogleApiClient.disconnect();
-        }
+        mGoogleApiClient.disconnect();
     }
 
-    private void setUpMapIfNeeded() {
-        // Do a null check to confirm that we have not already instantiated the map.
-        if (mMap == null) {
-            // Try to obtain the map from the SupportMapFragment.
-            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
-                    .getMap();
-            // Check if we were successful in obtaining the map.
-            if (mMap != null) {
-                mMap.setMyLocationEnabled(true);
-                mMap.setOnMyLocationButtonClickListener(this);
-            }
-        }
-    }
-
-    private void setUpGoogleApiClientIfNeeded() {
-        if (mGoogleApiClient == null) {
-            mGoogleApiClient = new GoogleApiClient.Builder(this)
-                    .addApi(LocationServices.API)
-                    .addConnectionCallbacks(this)
-                    .addOnConnectionFailedListener(this)
-                    .build();
-        }
+    @Override
+    public void onMapReady(GoogleMap map) {
+        map.setMyLocationEnabled(true);
+        map.setOnMyLocationButtonClickListener(this);
     }
 
     /**
@@ -111,7 +99,7 @@ public class MyLocationDemoActivity extends FragmentActivity
      * without needing to register a LocationListener.
      */
     public void showMyLocation(View view) {
-        if (mGoogleApiClient != null && mGoogleApiClient.isConnected()) {
+        if (mGoogleApiClient.isConnected()) {
             String msg = "Location = "
                     + LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
             Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();

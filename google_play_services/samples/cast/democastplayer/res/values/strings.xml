@@ -19,6 +19,7 @@
     <string name="app_name">Demo Cast Player</string>
     <string name="select_media">Select Media&#8230;</string>
     <string name="select_tracks">Select Tracks&#8230;</string>
+    <string name="load_media">Load Media</string>
     <string name="attach_to_session">Attach to Session</string>
     <string name="scan_failed_network_error">Unable to scan for devices. Check your network settings.</string>
     <string name="ok">OK</string>
@@ -55,6 +56,7 @@
     <string name="action_wifi_settings">Wi-Fi Settings</string>
     <string name="action_accessibility_settings">Accessibility Settings</string>
     <string name="action_locale_settings">Language Settings</string>
+    <string name="default_receiver_app_name">Default media receiver</string>
 
     <string-array name="seek_behaviors">
         <item>Do Nothing</item>
@@ -70,7 +72,12 @@
 
     <string name="receiver_application_id_pref">Receiver application ID</string>
     <string name="summary_receiver_application_id_pref">Specify the receiver application ID.</string>
-    <string name="dialog_title_receiver_application_id_pref">Enter the receiver application ID:</string>
+    <string name="dialog_title_receiver_application_id_pref">Select the receiver application ID:</string>
+
+    <string name="additional_receiver_apps"></string>
+    <string name="dialog_title_additional_receiver_apps_pref">Modify additional receiver applications</string>
+    <string name="summary_additional_receiver_apps_pref">Comma separated list of "id:name"</string>
+    <string name="additional_receiver_apps_pref">Additional receiver applications</string>
 
     <string name="relaunch_app_pref">Always relaunch receiver app</string>
     <string name="summary_relaunch_app_pref">If checked, launch always relaunches; otherwise, it tries to join first.</string>

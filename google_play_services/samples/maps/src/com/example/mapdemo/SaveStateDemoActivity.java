@@ -20,6 +20,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMarkerDragListener;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
@@ -117,9 +118,8 @@ public class SaveStateDemoActivity extends FragmentActivity {
      * {@link #onActivityCreated(Bundle)} method.
      */
     public static class SaveStateMapFragment extends SupportMapFragment
-            implements OnMarkerClickListener, OnMarkerDragListener {
+            implements OnMarkerClickListener, OnMarkerDragListener, OnMapReadyCallback {
 
-        private GoogleMap mMap;
         private LatLng mMarkerPosition;
         private MarkerInfo mMarkerInfo;
         private boolean mMoveCameraToMarker;
@@ -148,14 +148,9 @@ public class SaveStateDemoActivity extends FragmentActivity {
                 mMoveCameraToMarker = false;
             }
 
-            setUpMapIfNeeded();
+            getMapAsync(this);
         }
 
-        @Override
-        public void onResume() {
-            super.onResume();
-            setUpMapIfNeeded();
-        }
 
         @Override
         public void onSaveInstanceState(Bundle outState) {
@@ -182,29 +177,18 @@ public class SaveStateDemoActivity extends FragmentActivity {
             return true;
         }
 
-        private void setUpMapIfNeeded() {
-            // Do a null check to confirm that we have not already instantiated the map.
-            if (mMap == null) {
-                // Try to obtain the map from the SupportMapFragment.
-                mMap = getMap();
-                // Check if we were successful in obtaining the map.
-                if (mMap != null) {
-                    setUpMap();
-                }
-            }
-        }
-
-        private void setUpMap() {
+        @Override
+        public void onMapReady(GoogleMap map) {
             MarkerOptions markerOptions = new MarkerOptions()
                 .position(mMarkerPosition)
                 .icon(BitmapDescriptorFactory.defaultMarker(mMarkerInfo.mHue))
                 .draggable(true);
-            mMap.addMarker(markerOptions);
-            mMap.setOnMarkerDragListener(this);
-            mMap.setOnMarkerClickListener(this);
+            map.addMarker(markerOptions);
+            map.setOnMarkerDragListener(this);
+            map.setOnMarkerClickListener(this);
 
             if (mMoveCameraToMarker) {
-                mMap.animateCamera(CameraUpdateFactory.newLatLng(mMarkerPosition));
+                map.animateCamera(CameraUpdateFactory.newLatLng(mMarkerPosition));
             }
         }
 
@@ -225,5 +209,4 @@ public class SaveStateDemoActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.save_state_demo);
     }
-
 }

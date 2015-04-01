@@ -37,6 +37,18 @@
         android:visibility="invisible" />
 
     <Button
+        android:id="@+id/server_auth_code_reset_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/server_auth_code_required_label" />
+
+    <TextView
+        android:id="@+id/server_auth_code_disabled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/offline_access_disabled" />
+
+    <Button
         android:id="@+id/sign_out_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

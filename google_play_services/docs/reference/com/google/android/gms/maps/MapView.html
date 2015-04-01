@@ -84,6 +84,20 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <html>
 <head>
 
@@ -99,7 +113,7 @@
 href="http://fonts.googleapis.com/css?family=Roboto+Condensed">
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:light,regular,medium,thin,italic,mediumitalic,bold"
   title="roboto">
-<link href="../../../../../../assets/css/default.css?v=2" rel="stylesheet" type="text/css">
+<link href="../../../../../../assets/css/default.css?v=5" rel="stylesheet" type="text/css">
 
 
 <!-- FULLSCREEN STYLESHEET -->
@@ -115,7 +129,9 @@ type="text/css">
   var metaTags = [];
   var devsite = false;
 </script>
-<script src="../../../../../../assets/js/docs.js?v=2" type="text/javascript"></script>
+<script src="../../../../../../assets/js/docs.js?v=3" type="text/javascript"></script>
+
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -132,16 +148,66 @@ type="text/css">
 </head>
 
 <body class="gc-documentation 
-  develop" itemscope itemtype="http://schema.org/Article">
+  develop reference" itemscope itemtype="http://schema.org/Article">
   <div id="doc-api-level" class="" style="display:none"></div>
   <a name="top"></a>
 
 
 <a name="top"></a>
 
+<!-- dialog to prompt lang pref change when loaded from hardcoded URL 
+<div id="langMessage" style="display:none">
+  <div>
+    <div class="lang en">
+      <p>You requested a page in English, would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang es">
+      <p>You requested a page in Spanish (Español), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ja">
+      <p>You requested a page in Japanese (日本語), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ko">
+      <p>You requested a page in Korean (한국어), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ru">
+      <p>You requested a page in Russian (Русский), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang zh-cn">
+      <p>You requested a page in Simplified Chinese (简体中文), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang zh-tw">
+      <p>You requested a page in Traditional Chinese (繁體中文), would you like to proceed with this language setting?</p>
+    </div>
+    <a href="#" class="button yes" onclick="return false;">
+      <span class="lang en">Yes</span>
+      <span class="lang es">Sí</span>
+      <span class="lang ja">Yes</span>
+      <span class="lang ko">Yes</span>
+      <span class="lang ru">Yes</span>
+      <span class="lang zh-cn">是的</span>
+      <span class="lang zh-tw">没有</span>
+    </a>
+    <a href="#" class="button" onclick="$('#langMessage').hide();return false;">
+      <span class="lang en">No</span>
+      <span class="lang es">No</span>
+      <span class="lang ja">No</span>
+      <span class="lang ko">No</span>
+      <span class="lang ru">No</span>
+      <span class="lang zh-cn">没有</span>
+      <span class="lang zh-tw">没有</span>
+    </a>
+  </div>
+</div> -->
+
+
   <!-- Header -->
   <div id="header-wrapper">
     <div id="header">
+
+    
+
+
       <div class="wrap" id="header-wrap">
         <div class="col-3 logo">
           <a href="../../../../../../index.html">
@@ -331,6 +397,7 @@ type="text/css">
                 <li><a href="../../../../../../distribute/users/index.html">Get Users</a></li>
                 <li><a href="../../../../../../distribute/engage/index.html">Engage &amp; Retain</a></li>
                 <li><a href="../../../../../../distribute/monetize/index.html">Monetize</a></li>
+                <li><a href="../../../../../../distribute/analyze/index.html">Analyze</a></li>
                 <li><a href="../../../../../../distribute/tools/index.html">Tools &amp; Reference</a></li>
                 <li><a href="../../../../../../distribute/stories/index.html">Developer Stories</a></li>
               </ul>
@@ -343,7 +410,12 @@ type="text/css">
   
     <!-- Secondary x-nav -->
     <div id="nav-x">
-        <div class="wrap">
+        <div class="wrap" style="position:relative;z-index:1">
+
+        
+        
+        
+
             <ul class="nav-x col-9 develop" style="width:100%">
                 <li class="training"><a href="../../../../../../training/index.html"
                   zh-tw-lang="訓練課程"
@@ -467,8 +539,6 @@ type="text/css">
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/auth/package-summary.html">com.google.android.gms.auth</a></li>
     <li class="api apilevel-">
-  <a href="../../../../../../reference/com/google/android/gms/auth/api/package-summary.html">com.google.android.gms.auth.api</a></li>
-    <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/cast/package-summary.html">com.google.android.gms.cast</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/common/package-summary.html">com.google.android.gms.common</a></li>
@@ -528,10 +598,18 @@ type="text/css">
   <a href="../../../../../../reference/com/google/android/gms/identity/intents/model/package-summary.html">com.google.android.gms.identity.intents.model</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/location/package-summary.html">com.google.android.gms.location</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../reference/com/google/android/gms/location/places/package-summary.html">com.google.android.gms.location.places</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../reference/com/google/android/gms/location/places/ui/package-summary.html">com.google.android.gms.location.places.ui</a></li>
     <li class="selected api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/maps/package-summary.html">com.google.android.gms.maps</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/maps/model/package-summary.html">com.google.android.gms.maps.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../reference/com/google/android/gms/nearby/package-summary.html">com.google.android.gms.nearby</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../reference/com/google/android/gms/nearby/connection/package-summary.html">com.google.android.gms.nearby.connection</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/panorama/package-summary.html">com.google.android.gms.panorama</a></li>
     <li class="api apilevel-">
@@ -540,6 +618,8 @@ type="text/css">
   <a href="../../../../../../reference/com/google/android/gms/plus/model/moments/package-summary.html">com.google.android.gms.plus.model.moments</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/plus/model/people/package-summary.html">com.google.android.gms.plus.model.people</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../reference/com/google/android/gms/safetynet/package-summary.html">com.google.android.gms.safetynet</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/security/package-summary.html">com.google.android.gms.security</a></li>
     <li class="api apilevel-">
@@ -578,6 +658,8 @@ type="text/css">
           <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/maps/GoogleMap.SnapshotReadyCallback.html">GoogleMap.SnapshotReadyCallback</a></li>
           <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/maps/LocationSource.html">LocationSource</a></li>
           <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/maps/LocationSource.OnLocationChangedListener.html">LocationSource.OnLocationChangedListener</a></li>
+          <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/maps/OnMapReadyCallback.html">OnMapReadyCallback</a></li>
+          <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/maps/OnStreetViewPanoramaReadyCallback.html">OnStreetViewPanoramaReadyCallback</a></li>
           <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/maps/StreetViewPanorama.OnStreetViewPanoramaCameraChangeListener.html">StreetViewPanorama.OnStreetViewPanoramaCameraChangeListener</a></li>
           <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/maps/StreetViewPanorama.OnStreetViewPanoramaChangeListener.html">StreetViewPanorama.OnStreetViewPanoramaChangeListener</a></li>
           <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/maps/StreetViewPanorama.OnStreetViewPanoramaClickListener.html">StreetViewPanorama.OnStreetViewPanoramaClickListener</a></li>
@@ -805,6 +887,9 @@ Summary:
   
 
 
+    
+
+
 </div><!-- end header -->
 
 <div id="naMessage"></div>
@@ -890,12 +975,8 @@ Summary:
  <li> <code><a href="../../../../../../reference/com/google/android/gms/maps/MapView.html#onLowMemory()">onLowMemory()</a></code></li>
  </ul>
  <p>
- A <code><a href="../../../../../../reference/com/google/android/gms/maps/GoogleMap.html">GoogleMap</a></code> can only be acquired using <code><a href="../../../../../../reference/com/google/android/gms/maps/MapView.html#getMap()">getMap()</a></code> when the underlying maps
- system is loaded and the underlying view in the fragment exists. The <code><a href="../../../../../../reference/com/google/android/gms/maps/MapView.html">MapView</a></code>
- automatically initializes the maps system and the view; however you cannot be guaranteed
- when it will be ready because this depends on the availability of the Google Play
- services APK.  If a <code><a href="../../../../../../reference/com/google/android/gms/maps/GoogleMap.html">GoogleMap</a></code> is not available, <code><a href="../../../../../../reference/com/google/android/gms/maps/MapView.html#getMap()">getMap()</a></code> will return
- <code>null</code>.
+ A <code><a href="../../../../../../reference/com/google/android/gms/maps/GoogleMap.html">GoogleMap</a></code> must be acquired using <code><a href="../../../../../../reference/com/google/android/gms/maps/MapView.html#getMapAsync(com.google.android.gms.maps.OnMapReadyCallback)">getMapAsync(OnMapReadyCallback)</a></code>.
+ The <code><a href="../../../../../../reference/com/google/android/gms/maps/MapView.html">MapView</a></code> automatically initializes the maps system and the view.
  <p>
  For a simpler method of displaying a Map use <code><a href="../../../../../../reference/com/google/android/gms/maps/MapFragment.html">MapFragment</a></code> (or <code><a href="../../../../../../reference/default package/SupportMapFragment.html">SupportMapFragment</a></code>)
  if you are looking to target earlier platforms.
@@ -978,70 +1059,120 @@ android.view.ViewGroup
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">CLIP_TO_PADDING_MASK</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">FOCUS_AFTER_DESCENDANTS</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">FOCUS_BEFORE_DESCENDANTS</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">FOCUS_BLOCK_DESCENDANTS</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">LAYOUT_MODE_CLIP_BOUNDS</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">LAYOUT_MODE_OPTICAL_BOUNDS</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">PERSISTENT_ALL_CACHES</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">PERSISTENT_ANIMATION_CACHE</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">PERSISTENT_NO_CACHE</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">PERSISTENT_SCROLLING_CACHE</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
@@ -1072,553 +1203,948 @@ android.view.View
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">ACCESSIBILITY_LIVE_REGION_ASSERTIVE</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">ACCESSIBILITY_LIVE_REGION_NONE</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">ACCESSIBILITY_LIVE_REGION_POLITE</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">DRAWING_CACHE_QUALITY_AUTO</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">DRAWING_CACHE_QUALITY_HIGH</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">DRAWING_CACHE_QUALITY_LOW</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">FIND_VIEWS_WITH_CONTENT_DESCRIPTION</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">FIND_VIEWS_WITH_TEXT</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">FOCUSABLES_ALL</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">FOCUSABLES_TOUCH_MODE</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">FOCUS_BACKWARD</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">FOCUS_DOWN</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">FOCUS_FORWARD</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">FOCUS_LEFT</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">FOCUS_RIGHT</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">FOCUS_UP</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">GONE</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">HAPTIC_FEEDBACK_ENABLED</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">IMPORTANT_FOR_ACCESSIBILITY_AUTO</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">IMPORTANT_FOR_ACCESSIBILITY_NO</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">IMPORTANT_FOR_ACCESSIBILITY_YES</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">INVISIBLE</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">KEEP_SCREEN_ON</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">LAYER_TYPE_HARDWARE</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">LAYER_TYPE_NONE</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">LAYER_TYPE_SOFTWARE</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">LAYOUT_DIRECTION_INHERIT</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">LAYOUT_DIRECTION_LOCALE</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">LAYOUT_DIRECTION_LTR</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">LAYOUT_DIRECTION_RTL</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">MEASURED_HEIGHT_STATE_SHIFT</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">MEASURED_SIZE_MASK</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">MEASURED_STATE_MASK</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">MEASURED_STATE_TOO_SMALL</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">NO_ID</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">OVER_SCROLL_ALWAYS</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">OVER_SCROLL_IF_CONTENT_SCROLLS</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">OVER_SCROLL_NEVER</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">SCREEN_STATE_OFF</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">SCREEN_STATE_ON</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">SCROLLBARS_INSIDE_INSET</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">SCROLLBARS_INSIDE_OVERLAY</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">SCROLLBARS_OUTSIDE_INSET</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">SCROLLBARS_OUTSIDE_OVERLAY</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">SCROLLBAR_POSITION_DEFAULT</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">SCROLLBAR_POSITION_LEFT</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">SCROLLBAR_POSITION_RIGHT</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">SCROLL_AXIS_HORIZONTAL</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">SCROLL_AXIS_NONE</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">SCROLL_AXIS_VERTICAL</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">SOUND_EFFECTS_ENABLED</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">STATUS_BAR_HIDDEN</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">STATUS_BAR_VISIBLE</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">SYSTEM_UI_FLAG_FULLSCREEN</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">SYSTEM_UI_FLAG_HIDE_NAVIGATION</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">SYSTEM_UI_FLAG_IMMERSIVE</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">SYSTEM_UI_FLAG_IMMERSIVE_STICKY</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">SYSTEM_UI_FLAG_LAYOUT_STABLE</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">SYSTEM_UI_FLAG_LOW_PROFILE</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">SYSTEM_UI_FLAG_VISIBLE</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">SYSTEM_UI_LAYOUT_FLAGS</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">TEXT_ALIGNMENT_CENTER</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">TEXT_ALIGNMENT_GRAVITY</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">TEXT_ALIGNMENT_INHERIT</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">TEXT_ALIGNMENT_TEXT_END</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">TEXT_ALIGNMENT_TEXT_START</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">TEXT_ALIGNMENT_VIEW_END</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">TEXT_ALIGNMENT_VIEW_START</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">TEXT_DIRECTION_ANY_RTL</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">TEXT_DIRECTION_FIRST_STRONG</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">TEXT_DIRECTION_INHERIT</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">TEXT_DIRECTION_LOCALE</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">TEXT_DIRECTION_LTR</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">TEXT_DIRECTION_RTL</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
         <td class="jd-linkcol">VIEW_LOG_TAG</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol">VISIBLE</td>
-        <td class="jd-descrcol" width="100%"></td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
     </tr>
     
     
@@ -1682,7 +2208,12 @@ android.view.View
           final
           Property&lt;<a href="http://developer.android.com/reference/android/view/View.html">View</a>,&nbsp;<a href="http://developer.android.com/reference/java/lang/Float.html">Float</a>&gt;</nobr></td>
           <td class="jd-linkcol">ALPHA</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1693,7 +2224,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">EMPTY_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1704,7 +2240,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">ENABLED_FOCUSED_SELECTED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1715,7 +2256,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">ENABLED_FOCUSED_SELECTED_WINDOW_FOCUSED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1726,7 +2272,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">ENABLED_FOCUSED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1737,7 +2288,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">ENABLED_FOCUSED_WINDOW_FOCUSED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1748,7 +2304,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">ENABLED_SELECTED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1759,7 +2320,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">ENABLED_SELECTED_WINDOW_FOCUSED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1770,7 +2336,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">ENABLED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1781,7 +2352,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">ENABLED_WINDOW_FOCUSED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1792,7 +2368,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">FOCUSED_SELECTED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1803,7 +2384,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">FOCUSED_SELECTED_WINDOW_FOCUSED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1814,7 +2400,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">FOCUSED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1825,7 +2416,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">FOCUSED_WINDOW_FOCUSED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1836,7 +2432,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">PRESSED_ENABLED_FOCUSED_SELECTED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1847,7 +2448,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">PRESSED_ENABLED_FOCUSED_SELECTED_WINDOW_FOCUSED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1858,7 +2464,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">PRESSED_ENABLED_FOCUSED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1869,7 +2480,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">PRESSED_ENABLED_FOCUSED_WINDOW_FOCUSED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1880,7 +2496,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">PRESSED_ENABLED_SELECTED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1891,7 +2512,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">PRESSED_ENABLED_SELECTED_WINDOW_FOCUSED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1902,7 +2528,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">PRESSED_ENABLED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1913,7 +2544,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">PRESSED_ENABLED_WINDOW_FOCUSED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1924,7 +2560,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">PRESSED_FOCUSED_SELECTED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1935,7 +2576,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">PRESSED_FOCUSED_SELECTED_WINDOW_FOCUSED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1946,7 +2592,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">PRESSED_FOCUSED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1957,7 +2608,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">PRESSED_FOCUSED_WINDOW_FOCUSED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1968,7 +2624,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">PRESSED_SELECTED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1979,7 +2640,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">PRESSED_SELECTED_WINDOW_FOCUSED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -1990,7 +2656,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">PRESSED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -2001,7 +2672,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">PRESSED_WINDOW_FOCUSED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -2012,7 +2688,12 @@ android.view.View
           final
           Property&lt;<a href="http://developer.android.com/reference/android/view/View.html">View</a>,&nbsp;<a href="http://developer.android.com/reference/java/lang/Float.html">Float</a>&gt;</nobr></td>
           <td class="jd-linkcol">ROTATION</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -2023,7 +2704,12 @@ android.view.View
           final
           Property&lt;<a href="http://developer.android.com/reference/android/view/View.html">View</a>,&nbsp;<a href="http://developer.android.com/reference/java/lang/Float.html">Float</a>&gt;</nobr></td>
           <td class="jd-linkcol">ROTATION_X</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -2034,7 +2720,12 @@ android.view.View
           final
           Property&lt;<a href="http://developer.android.com/reference/android/view/View.html">View</a>,&nbsp;<a href="http://developer.android.com/reference/java/lang/Float.html">Float</a>&gt;</nobr></td>
           <td class="jd-linkcol">ROTATION_Y</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -2045,7 +2736,12 @@ android.view.View
           final
           Property&lt;<a href="http://developer.android.com/reference/android/view/View.html">View</a>,&nbsp;<a href="http://developer.android.com/reference/java/lang/Float.html">Float</a>&gt;</nobr></td>
           <td class="jd-linkcol">SCALE_X</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -2056,7 +2752,12 @@ android.view.View
           final
           Property&lt;<a href="http://developer.android.com/reference/android/view/View.html">View</a>,&nbsp;<a href="http://developer.android.com/reference/java/lang/Float.html">Float</a>&gt;</nobr></td>
           <td class="jd-linkcol">SCALE_Y</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -2067,7 +2768,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">SELECTED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -2078,7 +2784,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">SELECTED_WINDOW_FOCUSED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -2089,7 +2800,12 @@ android.view.View
           final
           Property&lt;<a href="http://developer.android.com/reference/android/view/View.html">View</a>,&nbsp;<a href="http://developer.android.com/reference/java/lang/Float.html">Float</a>&gt;</nobr></td>
           <td class="jd-linkcol">TRANSLATION_X</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -2100,7 +2816,12 @@ android.view.View
           final
           Property&lt;<a href="http://developer.android.com/reference/android/view/View.html">View</a>,&nbsp;<a href="http://developer.android.com/reference/java/lang/Float.html">Float</a>&gt;</nobr></td>
           <td class="jd-linkcol">TRANSLATION_Y</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -2111,7 +2832,12 @@ android.view.View
           final
           Property&lt;<a href="http://developer.android.com/reference/android/view/View.html">View</a>,&nbsp;<a href="http://developer.android.com/reference/java/lang/Float.html">Float</a>&gt;</nobr></td>
           <td class="jd-linkcol">TRANSLATION_Z</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -2122,7 +2848,12 @@ android.view.View
           final
           int[]</nobr></td>
           <td class="jd-linkcol">WINDOW_FOCUSED_STATE_SET</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -2133,7 +2864,12 @@ android.view.View
           final
           Property&lt;<a href="http://developer.android.com/reference/android/view/View.html">View</a>,&nbsp;<a href="http://developer.android.com/reference/java/lang/Float.html">Float</a>&gt;</nobr></td>
           <td class="jd-linkcol">X</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -2144,7 +2880,12 @@ android.view.View
           final
           Property&lt;<a href="http://developer.android.com/reference/android/view/View.html">View</a>,&nbsp;<a href="http://developer.android.com/reference/java/lang/Float.html">Float</a>&gt;</nobr></td>
           <td class="jd-linkcol">Y</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -2155,7 +2896,12 @@ android.view.View
           final
           Property&lt;<a href="http://developer.android.com/reference/android/view/View.html">View</a>,&nbsp;<a href="http://developer.android.com/reference/java/lang/Float.html">Float</a>&gt;</nobr></td>
           <td class="jd-linkcol">Z</td>
-          <td class="jd-descrcol" width="100%"></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
       </tr>
       
     
@@ -2277,13 +3023,45 @@ android.view.View
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/maps/MapView.html#getMap()">getMap</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Gets the underlying GoogleMap that is tied to this view.</div>
+        <div class="jd-descrdiv">
+          <em>
+      This method is deprecated.
+    Use <code><a href="../../../../../../reference/com/google/android/gms/maps/MapView.html#getMapAsync(com.google.android.gms.maps.OnMapReadyCallback)">getMapAsync(OnMapReadyCallback)</a></code> instead. The callback
+ method provides you with a <code><a href="../../../../../../reference/com/google/android/gms/maps/GoogleMap.html">GoogleMap</a></code> instance guaranteed to be non-null and ready to
+ be used.</em>
+          
+    
+
+        </div>
   
   </td></tr>
 
 
 	 
     <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/maps/MapView.html#getMapAsync(com.google.android.gms.maps.OnMapReadyCallback)">getMapAsync</a></span>(<a href="../../../../../../reference/com/google/android/gms/maps/OnMapReadyCallback.html">OnMapReadyCallback</a> callback)</nobr>
+        
+        <div class="jd-descrdiv">
+          Returns a non-null instance of the <code><a href="../../../../../../reference/com/google/android/gms/maps/GoogleMap.html">GoogleMap</a></code>, ready to be used.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2295,13 +3073,18 @@ android.view.View
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/maps/MapView.html#onCreate(android.os.Bundle)">onCreate</a></span>(<a href="http://developer.android.com/reference/android/os/Bundle.html">Bundle</a> savedInstanceState)</nobr>
         
-        <div class="jd-descrdiv">You must call this method from the parent Activity/Fragment's corresponding method.</div>
+        <div class="jd-descrdiv">
+          You must call this method from the parent Activity/Fragment's corresponding method.
+          
+    
+
+        </div>
   
   </td></tr>
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2313,13 +3096,18 @@ android.view.View
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/maps/MapView.html#onDestroy()">onDestroy</a></span>()</nobr>
         
-        <div class="jd-descrdiv">You must call this method from the parent Activity/Fragment's corresponding method.</div>
+        <div class="jd-descrdiv">
+          You must call this method from the parent Activity/Fragment's corresponding method.
+          
+    
+
+        </div>
   
   </td></tr>
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2331,25 +3119,12 @@ android.view.View
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/maps/MapView.html#onLowMemory()">onLowMemory</a></span>()</nobr>
         
-        <div class="jd-descrdiv">You must call this method from the parent Activity/Fragment's corresponding method.</div>
-  
-  </td></tr>
+        <div class="jd-descrdiv">
+          You must call this method from the parent Activity/Fragment's corresponding method.
+          
+    
 
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            final
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/maps/MapView.html#onPause()">onPause</a></span>()</nobr>
-        
-        <div class="jd-descrdiv">You must call this method from the parent Activity/Fragment's corresponding method.</div>
+        </div>
   
   </td></tr>
 
@@ -2365,9 +3140,14 @@ android.view.View
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/maps/MapView.html#onResume()">onResume</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/maps/MapView.html#onPause()">onPause</a></span>()</nobr>
         
-        <div class="jd-descrdiv">You must call this method from the parent Activity/Fragment's corresponding method.</div>
+        <div class="jd-descrdiv">
+          You must call this method from the parent Activity/Fragment's corresponding method.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -2383,9 +3163,37 @@ android.view.View
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/maps/MapView.html#onResume()">onResume</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          You must call this method from the parent Activity/Fragment's corresponding method.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/maps/MapView.html#onSaveInstanceState(android.os.Bundle)">onSaveInstanceState</a></span>(<a href="http://developer.android.com/reference/android/os/Bundle.html">Bundle</a> outState)</nobr>
         
-        <div class="jd-descrdiv">You must call this method from the parent Activity/Fragment's corresponding method.</div>
+        <div class="jd-descrdiv">
+          You must call this method from the parent Activity/Fragment's corresponding method.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -3421,13 +4229,29 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">dispatchFreezeSelfOnly</span>(<a href="http://developer.android.com/reference/android/util/SparseArray.html">SparseArray</a>&lt;<a href="http://developer.android.com/reference/android/os/Parcelable.html">Parcelable</a>&gt; arg0)</nobr>
+        <span class="sympad">dispatchDrawableHotspotChanged</span>(float arg0, float arg1)</nobr>
         
   </td></tr>
 
 
 	 
     <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">dispatchFreezeSelfOnly</span>(<a href="http://developer.android.com/reference/android/util/SparseArray.html">SparseArray</a>&lt;<a href="http://developer.android.com/reference/android/os/Parcelable.html">Parcelable</a>&gt; arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -3443,7 +4267,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -3459,7 +4283,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -3475,7 +4299,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -3491,7 +4315,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -3507,7 +4331,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -3523,7 +4347,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -3539,7 +4363,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -3555,7 +4379,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -3571,7 +4395,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -3587,7 +4411,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -3603,7 +4427,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -3619,7 +4443,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -3635,7 +4459,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -3651,7 +4475,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -3667,7 +4491,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -3683,7 +4507,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -3699,7 +4523,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -3715,7 +4539,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -3731,7 +4555,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -3747,7 +4571,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -3758,22 +4582,6 @@ From class
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad">drawChild</span>(<a href="http://developer.android.com/reference/android/graphics/Canvas.html">Canvas</a> arg0, <a href="http://developer.android.com/reference/android/view/View.html">View</a> arg1, long arg2)</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">drawableHotspotChanged</span>(float arg0, float arg1)</nobr>
         
   </td></tr>
 
@@ -4714,6 +5522,22 @@ From class
             
             
             
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">onNestedPrePerformAccessibilityAction</span>(<a href="http://developer.android.com/reference/android/view/View.html">View</a> arg0, int arg1, <a href="http://developer.android.com/reference/android/os/Bundle.html">Bundle</a> arg2)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
@@ -4723,7 +5547,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -4739,7 +5563,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -4755,7 +5579,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -4771,7 +5595,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -4787,7 +5611,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -4803,7 +5627,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -4819,7 +5643,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -4835,7 +5659,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -4851,7 +5675,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -4867,7 +5691,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -4883,7 +5707,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -4899,7 +5723,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -4915,7 +5739,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -4931,7 +5755,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -4947,7 +5771,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -4963,7 +5787,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -4979,7 +5803,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -4995,7 +5819,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5011,7 +5835,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5027,7 +5851,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5043,7 +5867,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5059,7 +5883,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5075,7 +5899,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5091,7 +5915,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5107,7 +5931,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5123,7 +5947,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5139,7 +5963,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5155,7 +5979,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5171,7 +5995,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5187,7 +6011,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5203,7 +6027,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5219,7 +6043,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5235,7 +6059,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5251,7 +6075,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5267,7 +6091,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5283,7 +6107,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5299,7 +6123,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5315,7 +6139,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5331,7 +6155,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5347,7 +6171,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5363,7 +6187,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5379,7 +6203,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5395,7 +6219,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5411,7 +6235,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5427,7 +6251,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5443,7 +6267,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -5459,7 +6283,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -6196,6 +7020,22 @@ From class
             
             
             
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">dispatchDrawableHotspotChanged</span>(float arg0, float arg1)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
             boolean</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
@@ -6205,7 +7045,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -6221,7 +7061,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -6237,7 +7077,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -6253,7 +7093,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -6269,7 +7109,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -6285,7 +7125,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -6301,7 +7141,7 @@ From class
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -6317,7 +7157,7 @@ From class
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -6328,6 +7168,22 @@ From class
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad">dispatchNestedPreFling</span>(float arg0, float arg1)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">dispatchNestedPrePerformAccessibilityAction</span>(int arg0, <a href="http://developer.android.com/reference/android/os/Bundle.html">Bundle</a> arg1)</nobr>
         
   </td></tr>
 
@@ -6792,6 +7648,38 @@ From class
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad">getAccessibilityNodeProvider</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getAccessibilityTraversalAfter</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getAccessibilityTraversalBefore</span>()</nobr>
         
   </td></tr>
 
@@ -11223,6 +12111,38 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">setAccessibilityTraversalAfter</span>(int arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">setAccessibilityTraversalBefore</span>(int arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad">setActivated</span>(boolean arg0)</nobr>
         
   </td></tr>
@@ -13327,244 +14247,6 @@ From class
 
 <tr class="api apilevel-" >
 <td colspan="12">
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-android.graphics.drawable.Drawable.Callback" class="jd-expando-trigger closed"
-          ><img id="inherited-methods-android.graphics.drawable.Drawable.Callback-trigger"
-          src="../../../../../../assets/images/triangle-closed.png"
-          class="jd-expando-trigger-img" /></a>
-From interface
-
-  <a href="http://developer.android.com/reference/android/graphics/drawable/Drawable.Callback.html">android.graphics.drawable.Drawable.Callback</a>
-
-<div id="inherited-methods-android.graphics.drawable.Drawable.Callback">
-  <div id="inherited-methods-android.graphics.drawable.Drawable.Callback-list"
-        class="jd-inheritedlinks">
-  </div>
-  <div id="inherited-methods-android.graphics.drawable.Drawable.Callback-summary" style="display: none;">
-    <table class="jd-sumtable-expando">
-    
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            abstract
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">invalidateDrawable</span>(<a href="http://developer.android.com/reference/android/graphics/drawable/Drawable.html">Drawable</a> arg0)</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            abstract
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">scheduleDrawable</span>(<a href="http://developer.android.com/reference/android/graphics/drawable/Drawable.html">Drawable</a> arg0, <a href="http://developer.android.com/reference/java/lang/Runnable.html">Runnable</a> arg1, long arg2)</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            abstract
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">unscheduleDrawable</span>(<a href="http://developer.android.com/reference/android/graphics/drawable/Drawable.html">Drawable</a> arg0, <a href="http://developer.android.com/reference/java/lang/Runnable.html">Runnable</a> arg1)</nobr>
-        
-  </td></tr>
-
-
-</table>
-  </div>
-</div>
-</td></tr>
-
-
-
-<tr class="api apilevel-" >
-<td colspan="12">
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-android.view.KeyEvent.Callback" class="jd-expando-trigger closed"
-          ><img id="inherited-methods-android.view.KeyEvent.Callback-trigger"
-          src="../../../../../../assets/images/triangle-closed.png"
-          class="jd-expando-trigger-img" /></a>
-From interface
-
-  <a href="http://developer.android.com/reference/android/view/KeyEvent.Callback.html">android.view.KeyEvent.Callback</a>
-
-<div id="inherited-methods-android.view.KeyEvent.Callback">
-  <div id="inherited-methods-android.view.KeyEvent.Callback-list"
-        class="jd-inheritedlinks">
-  </div>
-  <div id="inherited-methods-android.view.KeyEvent.Callback-summary" style="display: none;">
-    <table class="jd-sumtable-expando">
-    
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            abstract
-            
-            
-            
-            
-            boolean</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">onKeyDown</span>(int arg0, <a href="http://developer.android.com/reference/android/view/KeyEvent.html">KeyEvent</a> arg1)</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            abstract
-            
-            
-            
-            
-            boolean</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">onKeyLongPress</span>(int arg0, <a href="http://developer.android.com/reference/android/view/KeyEvent.html">KeyEvent</a> arg1)</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            abstract
-            
-            
-            
-            
-            boolean</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">onKeyMultiple</span>(int arg0, int arg1, <a href="http://developer.android.com/reference/android/view/KeyEvent.html">KeyEvent</a> arg2)</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            abstract
-            
-            
-            
-            
-            boolean</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">onKeyUp</span>(int arg0, <a href="http://developer.android.com/reference/android/view/KeyEvent.html">KeyEvent</a> arg1)</nobr>
-        
-  </td></tr>
-
-
-</table>
-  </div>
-</div>
-</td></tr>
-
-
-
-<tr class="api apilevel-" >
-<td colspan="12">
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-android.view.ViewManager" class="jd-expando-trigger closed"
-          ><img id="inherited-methods-android.view.ViewManager-trigger"
-          src="../../../../../../assets/images/triangle-closed.png"
-          class="jd-expando-trigger-img" /></a>
-From interface
-
-  <a href="http://developer.android.com/reference/android/view/ViewManager.html">android.view.ViewManager</a>
-
-<div id="inherited-methods-android.view.ViewManager">
-  <div id="inherited-methods-android.view.ViewManager-list"
-        class="jd-inheritedlinks">
-  </div>
-  <div id="inherited-methods-android.view.ViewManager-summary" style="display: none;">
-    <table class="jd-sumtable-expando">
-    
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            abstract
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">addView</span>(<a href="http://developer.android.com/reference/android/view/View.html">View</a> arg0, <a href="http://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html">ViewGroup.LayoutParams</a> arg1)</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            abstract
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">removeView</span>(<a href="http://developer.android.com/reference/android/view/View.html">View</a> arg0)</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            abstract
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">updateViewLayout</span>(<a href="http://developer.android.com/reference/android/view/View.html">View</a> arg0, <a href="http://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html">ViewGroup.LayoutParams</a> arg1)</nobr>
-        
-  </td></tr>
-
-
-</table>
-  </div>
-</div>
-</td></tr>
-
-
-
-<tr class="api apilevel-" >
-<td colspan="12">
   <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-android.view.ViewParent" class="jd-expando-trigger closed"
           ><img id="inherited-methods-android.view.ViewParent-trigger"
           src="../../../../../../assets/images/triangle-closed.png"
@@ -13990,6 +14672,22 @@ From interface
             
             
             
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">onNestedPrePerformAccessibilityAction</span>(<a href="http://developer.android.com/reference/android/view/View.html">View</a> arg0, int arg1, <a href="http://developer.android.com/reference/android/os/Bundle.html">Bundle</a> arg2)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
@@ -13999,7 +14697,7 @@ From interface
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             abstract
             
@@ -14015,7 +14713,7 @@ From interface
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             abstract
             
@@ -14031,7 +14729,7 @@ From interface
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             abstract
             
@@ -14047,7 +14745,7 @@ From interface
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             abstract
             
@@ -14063,7 +14761,7 @@ From interface
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             abstract
             
@@ -14079,7 +14777,7 @@ From interface
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             abstract
             
@@ -14095,7 +14793,7 @@ From interface
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             abstract
             
@@ -14111,7 +14809,7 @@ From interface
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             abstract
             
@@ -14127,7 +14825,7 @@ From interface
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             abstract
             
@@ -14143,7 +14841,7 @@ From interface
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             abstract
             
@@ -14159,7 +14857,7 @@ From interface
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             abstract
             
@@ -14175,7 +14873,7 @@ From interface
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             abstract
             
@@ -14191,7 +14889,7 @@ From interface
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             abstract
             
@@ -14207,7 +14905,7 @@ From interface
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             abstract
             
@@ -14218,6 +14916,244 @@ From interface
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad">startActionModeForChild</span>(<a href="http://developer.android.com/reference/android/view/View.html">View</a> arg0, ActionMode.Callback arg1)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-android.view.ViewManager" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-android.view.ViewManager-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From interface
+
+  <a href="http://developer.android.com/reference/android/view/ViewManager.html">android.view.ViewManager</a>
+
+<div id="inherited-methods-android.view.ViewManager">
+  <div id="inherited-methods-android.view.ViewManager-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-android.view.ViewManager-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">addView</span>(<a href="http://developer.android.com/reference/android/view/View.html">View</a> arg0, <a href="http://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html">ViewGroup.LayoutParams</a> arg1)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">removeView</span>(<a href="http://developer.android.com/reference/android/view/View.html">View</a> arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">updateViewLayout</span>(<a href="http://developer.android.com/reference/android/view/View.html">View</a> arg0, <a href="http://developer.android.com/reference/android/view/ViewGroup.LayoutParams.html">ViewGroup.LayoutParams</a> arg1)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-android.graphics.drawable.Drawable.Callback" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-android.graphics.drawable.Drawable.Callback-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From interface
+
+  <a href="http://developer.android.com/reference/android/graphics/drawable/Drawable.Callback.html">android.graphics.drawable.Drawable.Callback</a>
+
+<div id="inherited-methods-android.graphics.drawable.Drawable.Callback">
+  <div id="inherited-methods-android.graphics.drawable.Drawable.Callback-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-android.graphics.drawable.Drawable.Callback-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">invalidateDrawable</span>(<a href="http://developer.android.com/reference/android/graphics/drawable/Drawable.html">Drawable</a> arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">scheduleDrawable</span>(<a href="http://developer.android.com/reference/android/graphics/drawable/Drawable.html">Drawable</a> arg0, <a href="http://developer.android.com/reference/java/lang/Runnable.html">Runnable</a> arg1, long arg2)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">unscheduleDrawable</span>(<a href="http://developer.android.com/reference/android/graphics/drawable/Drawable.html">Drawable</a> arg0, <a href="http://developer.android.com/reference/java/lang/Runnable.html">Runnable</a> arg1)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-android.view.KeyEvent.Callback" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-android.view.KeyEvent.Callback-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From interface
+
+  <a href="http://developer.android.com/reference/android/view/KeyEvent.Callback.html">android.view.KeyEvent.Callback</a>
+
+<div id="inherited-methods-android.view.KeyEvent.Callback">
+  <div id="inherited-methods-android.view.KeyEvent.Callback-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-android.view.KeyEvent.Callback-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">onKeyDown</span>(int arg0, <a href="http://developer.android.com/reference/android/view/KeyEvent.html">KeyEvent</a> arg1)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">onKeyLongPress</span>(int arg0, <a href="http://developer.android.com/reference/android/view/KeyEvent.html">KeyEvent</a> arg1)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">onKeyMultiple</span>(int arg0, int arg1, <a href="http://developer.android.com/reference/android/view/KeyEvent.html">KeyEvent</a> arg2)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">onKeyUp</span>(int arg0, <a href="http://developer.android.com/reference/android/view/KeyEvent.html">KeyEvent</a> arg1)</nobr>
         
   </td></tr>
 
@@ -14343,6 +15279,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
@@ -14371,6 +15310,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
@@ -14401,6 +15343,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
@@ -14429,6 +15374,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
@@ -14474,6 +15422,15 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      <p>
+  <p class="caution"><strong>
+      This method is deprecated.</strong><br/>
+    Use <code><a href="../../../../../../reference/com/google/android/gms/maps/MapView.html#getMapAsync(com.google.android.gms.maps.OnMapReadyCallback)">getMapAsync(OnMapReadyCallback)</a></code> instead. The callback
+ method provides you with a <code><a href="../../../../../../reference/com/google/android/gms/maps/GoogleMap.html">GoogleMap</a></code> instance guaranteed to be non-null and ready to
+ be used.
+  </p>
   <div class="jd-tagdata jd-tagdescr"><p>Gets the underlying GoogleMap that is tied to this view.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
@@ -14481,6 +15438,57 @@ From interface
          Google Play services is not available. If Google Play services becomes available
          afterwards, calling this method again will initialize and return the GoogleMap.
 </li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getMapAsync(com.google.android.gms.maps.OnMapReadyCallback)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">getMapAsync</span>
+      <span class="normal">(<a href="../../../../../../reference/com/google/android/gms/maps/OnMapReadyCallback.html">OnMapReadyCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns a non-null instance of the <code><a href="../../../../../../reference/com/google/android/gms/maps/GoogleMap.html">GoogleMap</a></code>, ready to be used.
+
+ <p>Note that:
+ <ul>
+ <li>This method must be called from the main thread.
+ <li>The callback will be executed in the main thread.
+ <li>In the case where Google Play services is not installed on the user's device, the
+ callback will not be triggered until the user installs it.
+ <li>The <code><a href="../../../../../../reference/com/google/android/gms/maps/GoogleMap.html">GoogleMap</a></code> object provided by the callback is non-null.
+ </ul></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>callback</td>
+          <td>The callback object that will be triggered when the map is ready to be used.
+</td>
+        </tr>
+      </table>
   </div>
 
     </div>
@@ -14509,6 +15517,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>You must call this method from the parent Activity/Fragment's corresponding method.</p></div>
   <div class="jd-tagdata">
@@ -14544,6 +15555,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>You must call this method from the parent Activity/Fragment's corresponding method.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">See Also</h5>
@@ -14577,6 +15591,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>You must call this method from the parent Activity/Fragment's corresponding method.</p></div>
   <div class="jd-tagdata">
@@ -14612,6 +15629,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>You must call this method from the parent Activity/Fragment's corresponding method.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">See Also</h5>
@@ -14645,6 +15665,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>You must call this method from the parent Activity/Fragment's corresponding method.</p></div>
   <div class="jd-tagdata">
@@ -14680,6 +15703,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>You must call this method from the parent Activity/Fragment's corresponding method.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">See Also</h5>
@@ -14713,7 +15739,7 @@ From interface
   </div>
   <div id="build_info">
     
-    Android GmsCore 1501030&nbsp;r &mdash; 
+    Android GmsCore 1784785&nbsp;r &mdash; 
 <script src="../../../../../../timestamp.js" type="text/javascript"></script>
 <script>document.write(BUILD_TIMESTAMP)</script>
 

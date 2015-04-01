@@ -18,6 +18,7 @@ package com.example.mapdemo;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Polygon;
@@ -35,14 +36,14 @@ import java.util.List;
 /**
  * This shows how to draw polygons on a map.
  */
-public class PolygonDemoActivity extends FragmentActivity implements OnSeekBarChangeListener {
+public class PolygonDemoActivity extends FragmentActivity
+        implements OnSeekBarChangeListener, OnMapReadyCallback {
+
     private static final LatLng SYDNEY = new LatLng(-33.87365, 151.20689);
 
     private static final int WIDTH_MAX = 50;
     private static final int HUE_MAX = 360;
     private static final int ALPHA_MAX = 255;
-
-    private GoogleMap mMap;
 
     private Polygon mMutablePolygon;
 
@@ -67,31 +68,19 @@ public class PolygonDemoActivity extends FragmentActivity implements OnSeekBarCh
         mWidthBar.setMax(WIDTH_MAX);
         mWidthBar.setProgress(10);
 
-        setUpMapIfNeeded();
+        SupportMapFragment mapFragment =
+                (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        setUpMapIfNeeded();
-    }
+    public void onMapReady(GoogleMap map) {
+        // Override the default content description on the view, for accessibility mode.
+        // Ideally this string would be localised.
+        map.setContentDescription("Google Map with polygons.");
 
-    private void setUpMapIfNeeded() {
-        // Do a null check to confirm that we have not already instantiated the map.
-        if (mMap == null) {
-            // Try to obtain the map from the SupportMapFragment.
-            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
-                    .getMap();
-            // Check if we were successful in obtaining the map.
-            if (mMap != null) {
-                setUpMap();
-            }
-        }
-    }
-
-    private void setUpMap() {
         // Create a rectangle with two rectangular holes.
-        mMap.addPolygon(new PolygonOptions()
+        map.addPolygon(new PolygonOptions()
                 .addAll(createRectangle(new LatLng(-20, 130), 5, 5))
                 .addHole(createRectangle(new LatLng(-22, 128), 1, 1))
                 .addHole(createRectangle(new LatLng(-18, 133), 0.5, 1.5))
@@ -104,7 +93,7 @@ public class PolygonDemoActivity extends FragmentActivity implements OnSeekBarCh
 
         int fillColor = Color.HSVToColor(
                 mAlphaBar.getProgress(), new float[] {mColorBar.getProgress(), 1, 1});
-        mMutablePolygon = mMap.addPolygon(options
+        mMutablePolygon = map.addPolygon(options
                 .strokeWidth(mWidthBar.getProgress())
                 .strokeColor(Color.BLACK)
                 .fillColor(fillColor));
@@ -114,7 +103,7 @@ public class PolygonDemoActivity extends FragmentActivity implements OnSeekBarCh
         mWidthBar.setOnSeekBarChangeListener(this);
 
         // Move the map so that it is centered on the mutable polygon.
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(SYDNEY));
+        map.moveCamera(CameraUpdateFactory.newLatLng(SYDNEY));
     }
 
     /**

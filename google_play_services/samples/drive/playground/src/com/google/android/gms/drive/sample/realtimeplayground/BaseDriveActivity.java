@@ -9,18 +9,19 @@ import com.google.android.gms.drive.Drive;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentSender.SendIntentException;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 
 /**
  * The BaseDriveActivity handles authentication and the connection to the Drive services.  Each
  * activity that interacts with Drive should extend this class.
- * <p>The connection is requested in onStart, and disconnected in onStop unless you override
- * {@link #disconnectOnStop()} to return false, in which case disconnection will happen in
- * onDestroy.
+ * <p>The connection is requested in onStart, and disconnected in onStop.
  * <p>Extend {@link #onClientConnected()} to be notified when the connection is active.
  */
 public abstract class BaseDriveActivity extends ActionBarActivity
@@ -29,6 +30,7 @@ public abstract class BaseDriveActivity extends ActionBarActivity
     private static final String TAG = "BaseDriveActivity";
 
     protected static final String EXTRA_ACCOUNT_NAME = "accountName";
+    private static final String EXTRA_RESOLVING_ERROR = "resolvingError";
 
     // Magic value indicating use the GMS Core default account
     protected static final String DEFAULT_ACCOUNT = "DEFAULT ACCOUNT";
@@ -39,17 +41,21 @@ public abstract class BaseDriveActivity extends ActionBarActivity
     // This variable can only be accessed from the UI thread.
     protected GoogleApiClient mGoogleApiClient;
 
+    // Tracks whether the app is already resolving an error.
+    private boolean mResolvingError = false;
+
     protected String mAccountName;
 
     @Override
-    protected void onCreate(Bundle b) {
-        super.onCreate(b);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         // Determine the active account:
         // In the saved instance bundle?
         // In the intent?
         // If not found, use the default account.
-        if (b != null) {
-            mAccountName = b.getString(EXTRA_ACCOUNT_NAME);
+        if (savedInstanceState != null) {
+            mAccountName = savedInstanceState.getString(EXTRA_ACCOUNT_NAME);
+            mResolvingError = savedInstanceState.getBoolean(EXTRA_RESOLVING_ERROR, false);
         }
         if (mAccountName == null) {
             mAccountName = getIntent().getStringExtra(EXTRA_ACCOUNT_NAME);
@@ -66,21 +72,6 @@ public abstract class BaseDriveActivity extends ActionBarActivity
         }
 
         setupGoogleApiClient();
-    }
-
-    /**
-     * Switches the account name to be used for the GoogleApiClient. This will disconnect any
-     * existing client connection and try to connect to the new one. Caller should wait for the
-     * {@link #onClientConnected()} callback before trying to use the client.
-     *
-     * @param accountName The new account name to be used.
-     */
-    protected void switchAccount(String accountName) {
-        disconnectGoogleApiClient();
-        cleanupGoogleApiClient();
-        mAccountName = accountName;
-        setupGoogleApiClient();
-        connectGoogleApiClient();
     }
 
     protected void setupGoogleApiClient() {
@@ -124,6 +115,7 @@ public abstract class BaseDriveActivity extends ActionBarActivity
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putString(EXTRA_ACCOUNT_NAME, mAccountName);
+        outState.putBoolean(EXTRA_RESOLVING_ERROR, mResolvingError);
     }
 
     @Override
@@ -133,30 +125,26 @@ public abstract class BaseDriveActivity extends ActionBarActivity
         disconnectGoogleApiClient();
         cleanupGoogleApiClient();
         setupGoogleApiClient();
-        connectGoogleApiClient();
+        if (!mResolvingError) {
+            connectGoogleApiClient();
+        }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
             case RESOLVE_CONNECTION_REQUEST_CODE:
-                handleResultConnectionResult(resultCode);
+                mResolvingError = false;
+                if (resultCode == RESULT_OK) {
+                    connectGoogleApiClient();
+                } else {
+                    Log.w(TAG, "Canceled request to connect to Play Services: " + resultCode);
+                }
                 break;
             default:
                 Log.w(TAG, "Unexpected activity request code" + requestCode);
         }
     }
-
-    private void handleResultConnectionResult(int resultCode) {
-        switch (resultCode) {
-            case RESULT_OK:
-                connectGoogleApiClient();
-                break;
-            default:
-                Log.w(TAG, "Canceled request to connect to Google Play Services: " + resultCode);
-        }
-    }
-
 
     @Override
     protected void onPause() {
@@ -208,17 +196,56 @@ public abstract class BaseDriveActivity extends ActionBarActivity
     @Override
     public void onConnectionFailed(ConnectionResult result) {
         Log.i(TAG, "Connection failed: " + result.getErrorCode());
-        if (!result.hasResolution()) {
-            GooglePlayServicesUtil.showErrorDialogFragment(result.getErrorCode(), this, 0);
+
+        if (mResolvingError) {
+            // Already attempting to resolve an error.
             return;
+        } else if (result.hasResolution()) {
+            try {
+                mResolvingError = true;
+                result.startResolutionForResult(this, RESOLVE_CONNECTION_REQUEST_CODE);
+            } catch (SendIntentException e) {
+                // There was an error with the resolution intent. Try again.
+                connectGoogleApiClient();
+            }
+        } else {
+            // Show dialog using GooglePlayServicesUtil.getErrorDialog()
+            ErrorDialogFragment fragment = ErrorDialogFragment.newInstance(result.getErrorCode());
+            fragment.show(getSupportFragmentManager(), "errordialog");
+            mResolvingError = true;
         }
-        // If user interaction is required to resolve the connection failure, the result will
-        // contain a resolution.  This will launch a UI that allows the user to resolve the issue.
-        // (E.g., authorize your app.)
-        try {
-            result.startResolutionForResult(this, RESOLVE_CONNECTION_REQUEST_CODE);
-        } catch (SendIntentException e) {
-            Log.i(TAG, "Send intent failed", e);
+    }
+
+    /* Called from ErrorDialogFragment when the dialog is dismissed. */
+    private void onErrorDialogDismissed() {
+        mResolvingError = false;
+    }
+
+    /* A fragment to display an error dialog */
+    public static class ErrorDialogFragment extends DialogFragment {
+        // Argument tag for the error code passed to the error dialog.
+        private static final String ARG_ERROR_CODE = "dialog_error_code";
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            // Get the error code and retrieve the appropriate dialog
+            int errorCode = this.getArguments().getInt(ARG_ERROR_CODE);
+            return GooglePlayServicesUtil.getErrorDialog(errorCode,
+                    getActivity(), RESOLVE_CONNECTION_REQUEST_CODE);
+        }
+
+        @Override
+        public void onDismiss(DialogInterface dialog) {
+            ((BaseDriveActivity) getActivity()).onErrorDialogDismissed();
+            super.onDismiss(dialog);
+        }
+
+        public static ErrorDialogFragment newInstance(int errorCode) {
+            ErrorDialogFragment dialogFragment = new ErrorDialogFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_ERROR_CODE, errorCode);
+            dialogFragment.setArguments(args);
+            return dialogFragment;
         }
     }
 }

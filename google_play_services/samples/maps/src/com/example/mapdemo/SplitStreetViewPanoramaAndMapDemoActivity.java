@@ -2,6 +2,8 @@ package com.example.mapdemo;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnMarkerDragListener;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.OnStreetViewPanoramaReadyCallback;
 import com.google.android.gms.maps.StreetViewPanorama;
 import com.google.android.gms.maps.StreetViewPanorama.OnStreetViewPanoramaChangeListener;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -21,11 +23,12 @@ import android.support.v4.app.FragmentActivity;
 public class SplitStreetViewPanoramaAndMapDemoActivity extends FragmentActivity
     implements OnMarkerDragListener, OnStreetViewPanoramaChangeListener {
 
+    private static final String MARKER_POSITION_KEY = "MarkerPosition";
+
     // George St, Sydney
     private static final LatLng SYDNEY = new LatLng(-33.87365, 151.20689);
 
-    private StreetViewPanorama mSvp;
-    private GoogleMap mMap;
+    private StreetViewPanorama mStreetViewPanorama;
     private Marker mMarker;
 
     @Override
@@ -33,35 +36,46 @@ public class SplitStreetViewPanoramaAndMapDemoActivity extends FragmentActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.split_street_view_panorama_and_map_demo);
 
-        setUpStreetViewPanoramaIfNeeded(savedInstanceState);
-        setUpMapIfNeeded();
+        final LatLng markerPosition;
+        if (savedInstanceState == null) {
+            markerPosition = SYDNEY;
+        } else {
+            markerPosition = savedInstanceState.getParcelable(MARKER_POSITION_KEY);
+        }
+
+        SupportStreetViewPanoramaFragment streetViewPanoramaFragment =
+                (SupportStreetViewPanoramaFragment)
+                        getSupportFragmentManager().findFragmentById(R.id.streetviewpanorama);
+        streetViewPanoramaFragment.getStreetViewPanoramaAsync(
+                new OnStreetViewPanoramaReadyCallback() {
+            @Override
+            public void onStreetViewPanoramaReady(StreetViewPanorama panorama) {
+                mStreetViewPanorama = panorama;
+                mStreetViewPanorama.setPosition(markerPosition);
+                mStreetViewPanorama.setOnStreetViewPanoramaChangeListener(
+                        SplitStreetViewPanoramaAndMapDemoActivity.this);
+            }
+        });
+
+        SupportMapFragment mapFragment =
+                (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(new OnMapReadyCallback() {
+            @Override
+            public void onMapReady(GoogleMap map) {
+                map.setOnMarkerDragListener(SplitStreetViewPanoramaAndMapDemoActivity.this);
+                // Creates a draggable marker. Long press to drag.
+                mMarker = map.addMarker(new MarkerOptions()
+                        .position(markerPosition)
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.pegman))
+                        .draggable(true));
+            }
+        });
     }
 
-    private void setUpStreetViewPanoramaIfNeeded(Bundle savedInstanceState) {
-        if (mSvp == null) {
-            mSvp = ((SupportStreetViewPanoramaFragment)
-                getSupportFragmentManager().findFragmentById(R.id.streetviewpanorama))
-                    .getStreetViewPanorama();
-            if (mSvp != null) {
-                if (savedInstanceState == null) {
-                    mSvp.setPosition(SYDNEY);
-                }
-                mSvp.setOnStreetViewPanoramaChangeListener(this);
-            }
-        }
-    }
-
-    private void setUpMapIfNeeded() {
-        // Do a null check to confirm that we have not already instantiated the map.
-        if (mMap == null) {
-            // Try to obtain the map from the SupportMapFragment.
-            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
-                .getMap();
-            // Check if we were successful in obtaining the map.
-            if (mMap != null) {
-                setUpMap();
-            }
-        }
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable(MARKER_POSITION_KEY, mMarker.getPosition());
     }
 
     @Override
@@ -71,22 +85,13 @@ public class SplitStreetViewPanoramaAndMapDemoActivity extends FragmentActivity
         }
     }
 
-    private void setUpMap() {
-        mMap.setOnMarkerDragListener(this);
-        // Creates a draggable marker. Long press to drag.
-        mMarker = mMap.addMarker(new MarkerOptions()
-                .position(SYDNEY)
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.pegman))
-                .draggable(true));
-    }
-
     @Override
     public void onMarkerDragStart(Marker marker) {
     }
 
     @Override
     public void onMarkerDragEnd(Marker marker) {
-        mSvp.setPosition(marker.getPosition(), 150);
+        mStreetViewPanorama.setPosition(marker.getPosition(), 150);
     }
 
     @Override

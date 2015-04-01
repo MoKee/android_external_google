@@ -9,12 +9,15 @@ import com.google.android.gms.drive.realtime.CollaborativeMap;
 import com.google.android.gms.drive.realtime.CollaborativeObject.ObjectChangedEvent;
 import com.google.android.gms.drive.realtime.CollaborativeObjectEvent;
 import com.google.android.gms.drive.realtime.CollaborativeString;
+import com.google.android.gms.drive.realtime.CustomCollaborativeObject;
 import com.google.android.gms.drive.realtime.Model;
 import com.google.android.gms.drive.realtime.Model.UndoRedoStateChangedEvent;
+import com.google.android.gms.drive.realtime.RealtimeConfiguration;
 import com.google.android.gms.drive.realtime.RealtimeDocument;
 import com.google.android.gms.drive.realtime.RealtimeDocument.ErrorEvent;
 import com.google.android.gms.drive.realtime.RealtimeDocument.DocumentSaveStateChangedEvent;
 import com.google.android.gms.drive.realtime.RealtimeEvent.Listener;
+import com.google.android.gms.drive.sample.realtimeplayground.CollaborativeCustomObjectFragment.Movie;
 
 import android.app.FragmentTransaction;
 import android.os.Bundle;
@@ -30,19 +33,25 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * An activity that displays a RealtimePlayground document.
  */
 public class PlaygroundDocumentActivity extends BaseDriveActivity {
     private static final String TAG = "PlaygroundDocumentActivity";
+    private final Set<String> customTypes = new HashSet<String>() {{
+        add("DemoMovie");
+    }};
 
     static final String EXTRA_DRIVE_ID = "driveId";
 
     static final String COLLAB_STRING_NAME = "demo_string";
     static final String COLLAB_LIST_NAME = "demo_list";
     static final String COLLAB_MAP_NAME = "demo_map";
+    static final String COLLAB_CUSTOM_OBJ_NAME = "demo_custom";
     static final String CURSORS_NAME = "demo_cursors";
     private static final int MAX_EVENTS = 50;
 
@@ -145,33 +154,39 @@ public class PlaygroundDocumentActivity extends BaseDriveActivity {
                         }
                         root.put(COLLAB_MAP_NAME, map);
 
+                        Movie movie = new Movie(model.createCustomObject("DemoMovie"));
+                        movie.setTitle("The Wolverine");
+                        movie.setDirectorName("James Mangold");
+                        root.put(COLLAB_CUSTOM_OBJ_NAME, movie.getCustomObject());
+
                         CollaborativeMap cursors = model.createMap();
                         root.put(CURSORS_NAME, cursors);
                     }
                 },
-                null).setResultCallback(new ResultCallback<DriveFile.RealtimeLoadResult>() {
-            @Override
-            public void onResult(DriveFile.RealtimeLoadResult result) {
-                if (result.getStatus().isSuccess()) {
-                    mRealtimeDocument = result.getRealtimeDocument();
-                    mRealtimeDocument.addErrorListener(new Listener<ErrorEvent>() {
-                        @Override
-                        public void onEvent(ErrorEvent event) {
+                new RealtimeConfiguration.Builder().registerCustomTypeNames(customTypes).build())
+                .setResultCallback(new ResultCallback<DriveFile.RealtimeLoadResult>() {
+                    @Override
+                    public void onResult(DriveFile.RealtimeLoadResult result) {
+                        if (result.getStatus().isSuccess()) {
+                            mRealtimeDocument = result.getRealtimeDocument();
+                            mRealtimeDocument.addErrorListener(new Listener<ErrorEvent>() {
+                                @Override
+                                public void onEvent(ErrorEvent event) {
+                                    Toast.makeText(
+                                            PlaygroundDocumentActivity.this,
+                                            "Realtime error: " + event.getError(),
+                                            Toast.LENGTH_LONG).show();
+                                }
+                            });
+                            onLoaded();
+                        } else {
                             Toast.makeText(
                                     PlaygroundDocumentActivity.this,
-                                    "Realtime error: " + event.getError(),
+                                    "Failed to load Realtime document " + result.getStatus(),
                                     Toast.LENGTH_LONG).show();
                         }
-                    });
-                    onLoaded();
-                } else {
-                    Toast.makeText(
-                            PlaygroundDocumentActivity.this,
-                            "Failed to load Realtime document " + result.getStatus(),
-                            Toast.LENGTH_LONG).show();
-                }
-            }
-        });
+                    }
+                });
     }
 
     private void onLoaded() {
@@ -252,6 +267,7 @@ public class PlaygroundDocumentActivity extends BaseDriveActivity {
             mFragments.add(new CollaborativeListFragment());
             mFragments.add(new CollaborativeMapFragment());
             mFragments.add(new CollaboratorsFragment());
+            mFragments.add(new CollaborativeCustomObjectFragment());
             mFragments.add(new EventsFragment());
         }
 

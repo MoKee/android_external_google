@@ -13,7 +13,6 @@ com.google.android.gms.analytics.ecommerce
 com.google.android.gms.appindexing
 com.google.android.gms.appstate
 com.google.android.gms.auth
-com.google.android.gms.auth.api
 com.google.android.gms.cast
 com.google.android.gms.common
 com.google.android.gms.common.annotation
@@ -44,12 +43,17 @@ com.google.android.gms.gcm
 com.google.android.gms.identity.intents
 com.google.android.gms.identity.intents.model
 com.google.android.gms.location
+com.google.android.gms.location.places
+com.google.android.gms.location.places.ui
 com.google.android.gms.maps
 com.google.android.gms.maps.model
+com.google.android.gms.nearby
+com.google.android.gms.nearby.connection
 com.google.android.gms.panorama
 com.google.android.gms.plus
 com.google.android.gms.plus.model.moments
 com.google.android.gms.plus.model.people
+com.google.android.gms.safetynet
 com.google.android.gms.security
 com.google.android.gms.tagmanager
 com.google.android.gms.wallet

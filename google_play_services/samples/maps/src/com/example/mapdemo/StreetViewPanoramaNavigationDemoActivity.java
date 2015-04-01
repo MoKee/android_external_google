@@ -16,6 +16,7 @@
 
 package com.example.mapdemo;
 
+import com.google.android.gms.maps.OnStreetViewPanoramaReadyCallback;
 import com.google.android.gms.maps.StreetViewPanorama;
 import com.google.android.gms.maps.SupportStreetViewPanoramaFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -49,9 +50,6 @@ public class StreetViewPanoramaNavigationDemoActivity extends FragmentActivity {
     // LatLng with no panorama
     private static final LatLng INVALID = new LatLng(-45.125783, 151.276417);
 
-
-    private static final long DEFAULT_ANIMATION_DURATION = 1000;
-
     /**
      * The amount in degrees by which to scroll the camera
      */
@@ -59,38 +57,39 @@ public class StreetViewPanoramaNavigationDemoActivity extends FragmentActivity {
 
     private static final float ZOOM_BY = 0.5f;
 
-    private StreetViewPanorama mSvp;
+    private StreetViewPanorama mStreetViewPanorama;
 
     private SeekBar mCustomDurationBar;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.street_view_panorama_navigation_demo);
 
-        setUpStreetViewPanoramaIfNeeded(savedInstanceState);
+        SupportStreetViewPanoramaFragment streetViewPanoramaFragment =
+                (SupportStreetViewPanoramaFragment)
+                        getSupportFragmentManager().findFragmentById(R.id.streetviewpanorama);
+        streetViewPanoramaFragment.getStreetViewPanoramaAsync(
+            new OnStreetViewPanoramaReadyCallback() {
+                @Override
+                public void onStreetViewPanoramaReady(StreetViewPanorama panorama) {
+                    mStreetViewPanorama = panorama;
+                    // Only set the panorama to SYDNEY on startup (when no panoramas have been
+                    // loaded which is when the savedInstanceState is null).
+                    if (savedInstanceState == null) {
+                        mStreetViewPanorama.setPosition(SYDNEY);
+                    }
+                }
+        });
         mCustomDurationBar = (SeekBar) findViewById(R.id.duration_bar);
     }
 
-    private void setUpStreetViewPanoramaIfNeeded(Bundle savedInstanceState) {
-        if (mSvp == null) {
-            mSvp = ((SupportStreetViewPanoramaFragment)
-                getSupportFragmentManager().findFragmentById(R.id.streetviewpanorama))
-                    .getStreetViewPanorama();
-            if (mSvp != null) {
-                if (savedInstanceState == null) {
-                    mSvp.setPosition(SYDNEY);
-                }
-            }
-        }
-    }
-
-    /**
+     /**
      * When the panorama is not ready the PanoramaView cannot be used. This should be called on
      * all entry points that call methods on the Panorama API.
      */
     private boolean checkReady() {
-        if (mSvp == null) {
+        if (mStreetViewPanorama == null) {
             Toast.makeText(this, R.string.panorama_not_ready, Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -104,7 +103,7 @@ public class StreetViewPanoramaNavigationDemoActivity extends FragmentActivity {
         if (!checkReady()) {
             return;
         }
-        mSvp.setPosition(SAN_FRAN, 30);
+        mStreetViewPanorama.setPosition(SAN_FRAN, 30);
     }
 
     /**
@@ -114,7 +113,7 @@ public class StreetViewPanoramaNavigationDemoActivity extends FragmentActivity {
         if (!checkReady()) {
             return;
         }
-        mSvp.setPosition(SYDNEY);
+        mStreetViewPanorama.setPosition(SYDNEY);
     }
 
     /**
@@ -124,7 +123,7 @@ public class StreetViewPanoramaNavigationDemoActivity extends FragmentActivity {
         if (!checkReady()) {
             return;
         }
-        mSvp.setPosition(SANTORINI);
+        mStreetViewPanorama.setPosition(SANTORINI);
     }
 
     /**
@@ -134,7 +133,7 @@ public class StreetViewPanoramaNavigationDemoActivity extends FragmentActivity {
         if (!checkReady()) {
             return;
         }
-        mSvp.setPosition(INVALID);
+        mStreetViewPanorama.setPosition(INVALID);
     }
 
     public void onZoomIn(View view) {
@@ -142,10 +141,12 @@ public class StreetViewPanoramaNavigationDemoActivity extends FragmentActivity {
             return;
         }
 
-        mSvp.animateTo(
-            new StreetViewPanoramaCamera.Builder().zoom(mSvp.getPanoramaCamera().zoom + ZOOM_BY)
-            .tilt(mSvp.getPanoramaCamera().tilt)
-            .bearing(mSvp.getPanoramaCamera().bearing).build(), getDuration());
+        mStreetViewPanorama.animateTo(
+            new StreetViewPanoramaCamera.Builder().zoom(
+                    mStreetViewPanorama.getPanoramaCamera().zoom + ZOOM_BY)
+            .tilt(mStreetViewPanorama.getPanoramaCamera().tilt)
+            .bearing(mStreetViewPanorama.getPanoramaCamera().bearing)
+            .build(), getDuration());
     }
 
     public void onZoomOut(View view) {
@@ -153,10 +154,12 @@ public class StreetViewPanoramaNavigationDemoActivity extends FragmentActivity {
             return;
         }
 
-        mSvp.animateTo(
-            new StreetViewPanoramaCamera.Builder().zoom(mSvp.getPanoramaCamera().zoom - ZOOM_BY)
-            .tilt(mSvp.getPanoramaCamera().tilt)
-            .bearing(mSvp.getPanoramaCamera().bearing).build(), getDuration());
+        mStreetViewPanorama.animateTo(
+            new StreetViewPanoramaCamera.Builder().zoom(
+                    mStreetViewPanorama.getPanoramaCamera().zoom - ZOOM_BY)
+            .tilt(mStreetViewPanorama.getPanoramaCamera().tilt)
+            .bearing(mStreetViewPanorama.getPanoramaCamera().bearing)
+            .build(), getDuration());
     }
 
     public void onPanLeft(View view) {
@@ -164,10 +167,12 @@ public class StreetViewPanoramaNavigationDemoActivity extends FragmentActivity {
             return;
         }
 
-        mSvp.animateTo(
-            new StreetViewPanoramaCamera.Builder().zoom(mSvp.getPanoramaCamera().zoom)
-            .tilt(mSvp.getPanoramaCamera().tilt)
-            .bearing(mSvp.getPanoramaCamera().bearing - PAN_BY_DEG).build(), getDuration());
+        mStreetViewPanorama.animateTo(
+            new StreetViewPanoramaCamera.Builder().zoom(
+                    mStreetViewPanorama.getPanoramaCamera().zoom)
+            .tilt(mStreetViewPanorama.getPanoramaCamera().tilt)
+            .bearing(mStreetViewPanorama.getPanoramaCamera().bearing - PAN_BY_DEG)
+            .build(), getDuration());
     }
 
     public void onPanRight(View view) {
@@ -175,10 +180,12 @@ public class StreetViewPanoramaNavigationDemoActivity extends FragmentActivity {
             return;
         }
 
-        mSvp.animateTo(
-            new StreetViewPanoramaCamera.Builder().zoom(mSvp.getPanoramaCamera().zoom)
-            .tilt(mSvp.getPanoramaCamera().tilt)
-            .bearing(mSvp.getPanoramaCamera().bearing + PAN_BY_DEG).build(), getDuration());
+        mStreetViewPanorama.animateTo(
+            new StreetViewPanoramaCamera.Builder().zoom(
+                    mStreetViewPanorama.getPanoramaCamera().zoom)
+            .tilt(mStreetViewPanorama.getPanoramaCamera().tilt)
+            .bearing(mStreetViewPanorama.getPanoramaCamera().bearing + PAN_BY_DEG)
+            .build(), getDuration());
 
     }
 
@@ -187,15 +194,17 @@ public class StreetViewPanoramaNavigationDemoActivity extends FragmentActivity {
             return;
         }
 
-        float currentTilt = mSvp.getPanoramaCamera().tilt;
+        float currentTilt = mStreetViewPanorama.getPanoramaCamera().tilt;
         float newTilt = currentTilt + PAN_BY_DEG;
 
         newTilt = (newTilt > 90) ? 90 : newTilt;
 
-        mSvp.animateTo(
-            new StreetViewPanoramaCamera.Builder().zoom(mSvp.getPanoramaCamera().zoom)
+        mStreetViewPanorama.animateTo(
+            new StreetViewPanoramaCamera.Builder()
+            .zoom(mStreetViewPanorama.getPanoramaCamera().zoom)
             .tilt(newTilt)
-            .bearing(mSvp.getPanoramaCamera().bearing).build(), getDuration());
+            .bearing(mStreetViewPanorama.getPanoramaCamera().bearing)
+            .build(), getDuration());
     }
 
     public void onPanDown(View view) {
@@ -203,33 +212,35 @@ public class StreetViewPanoramaNavigationDemoActivity extends FragmentActivity {
             return;
         }
 
-        float currentTilt = mSvp.getPanoramaCamera().tilt;
+        float currentTilt = mStreetViewPanorama.getPanoramaCamera().tilt;
         float newTilt = currentTilt - PAN_BY_DEG;
 
         newTilt = (newTilt < -90) ? -90 : newTilt;
 
-        mSvp.animateTo(
-            new StreetViewPanoramaCamera.Builder().zoom(mSvp.getPanoramaCamera().zoom)
+        mStreetViewPanorama.animateTo(
+            new StreetViewPanoramaCamera.Builder()
+            .zoom(mStreetViewPanorama.getPanoramaCamera().zoom)
             .tilt(newTilt)
-            .bearing(mSvp.getPanoramaCamera().bearing).build(), getDuration());
+            .bearing(mStreetViewPanorama.getPanoramaCamera().bearing)
+            .build(), getDuration());
     }
 
     public void onRequestPosition(View view) {
         if (!checkReady()){
             return;
         }
-        if (mSvp.getLocation() != null) {
-          Toast.makeText(view.getContext(), mSvp.getLocation().position.toString(),
+        if (mStreetViewPanorama.getLocation() != null) {
+          Toast.makeText(view.getContext(), mStreetViewPanorama.getLocation().position.toString(),
               Toast.LENGTH_SHORT).show();
         }
     }
 
     public void onMovePosition(View view) {
-        StreetViewPanoramaLocation location = mSvp.getLocation();
-        StreetViewPanoramaCamera camera = mSvp.getPanoramaCamera();
+        StreetViewPanoramaLocation location = mStreetViewPanorama.getLocation();
+        StreetViewPanoramaCamera camera = mStreetViewPanorama.getPanoramaCamera();
         if (location != null && location.links != null) {
             StreetViewPanoramaLink link = findClosestLinkToBearing(location.links, camera.bearing);
-            mSvp.setPosition(link.panoId);
+            mStreetViewPanorama.setPosition(link.panoId);
         }
     }
 

@@ -84,6 +84,20 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <html>
 <head>
 
@@ -99,7 +113,7 @@
 href="http://fonts.googleapis.com/css?family=Roboto+Condensed">
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:light,regular,medium,thin,italic,mediumitalic,bold"
   title="roboto">
-<link href="../../../../../../assets/css/default.css?v=2" rel="stylesheet" type="text/css">
+<link href="../../../../../../assets/css/default.css?v=5" rel="stylesheet" type="text/css">
 
 
 <!-- FULLSCREEN STYLESHEET -->
@@ -115,7 +129,9 @@ type="text/css">
   var metaTags = [];
   var devsite = false;
 </script>
-<script src="../../../../../../assets/js/docs.js?v=2" type="text/javascript"></script>
+<script src="../../../../../../assets/js/docs.js?v=3" type="text/javascript"></script>
+
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -132,16 +148,66 @@ type="text/css">
 </head>
 
 <body class="gc-documentation 
-  develop" itemscope itemtype="http://schema.org/Article">
+  develop reference" itemscope itemtype="http://schema.org/Article">
   <div id="doc-api-level" class="" style="display:none"></div>
   <a name="top"></a>
 
 
 <a name="top"></a>
 
+<!-- dialog to prompt lang pref change when loaded from hardcoded URL 
+<div id="langMessage" style="display:none">
+  <div>
+    <div class="lang en">
+      <p>You requested a page in English, would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang es">
+      <p>You requested a page in Spanish (Español), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ja">
+      <p>You requested a page in Japanese (日本語), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ko">
+      <p>You requested a page in Korean (한국어), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ru">
+      <p>You requested a page in Russian (Русский), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang zh-cn">
+      <p>You requested a page in Simplified Chinese (简体中文), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang zh-tw">
+      <p>You requested a page in Traditional Chinese (繁體中文), would you like to proceed with this language setting?</p>
+    </div>
+    <a href="#" class="button yes" onclick="return false;">
+      <span class="lang en">Yes</span>
+      <span class="lang es">Sí</span>
+      <span class="lang ja">Yes</span>
+      <span class="lang ko">Yes</span>
+      <span class="lang ru">Yes</span>
+      <span class="lang zh-cn">是的</span>
+      <span class="lang zh-tw">没有</span>
+    </a>
+    <a href="#" class="button" onclick="$('#langMessage').hide();return false;">
+      <span class="lang en">No</span>
+      <span class="lang es">No</span>
+      <span class="lang ja">No</span>
+      <span class="lang ko">No</span>
+      <span class="lang ru">No</span>
+      <span class="lang zh-cn">没有</span>
+      <span class="lang zh-tw">没有</span>
+    </a>
+  </div>
+</div> -->
+
+
   <!-- Header -->
   <div id="header-wrapper">
     <div id="header">
+
+    
+
+
       <div class="wrap" id="header-wrap">
         <div class="col-3 logo">
           <a href="../../../../../../index.html">
@@ -331,6 +397,7 @@ type="text/css">
                 <li><a href="../../../../../../distribute/users/index.html">Get Users</a></li>
                 <li><a href="../../../../../../distribute/engage/index.html">Engage &amp; Retain</a></li>
                 <li><a href="../../../../../../distribute/monetize/index.html">Monetize</a></li>
+                <li><a href="../../../../../../distribute/analyze/index.html">Analyze</a></li>
                 <li><a href="../../../../../../distribute/tools/index.html">Tools &amp; Reference</a></li>
                 <li><a href="../../../../../../distribute/stories/index.html">Developer Stories</a></li>
               </ul>
@@ -343,7 +410,12 @@ type="text/css">
   
     <!-- Secondary x-nav -->
     <div id="nav-x">
-        <div class="wrap">
+        <div class="wrap" style="position:relative;z-index:1">
+
+        
+        
+        
+
             <ul class="nav-x col-9 develop" style="width:100%">
                 <li class="training"><a href="../../../../../../training/index.html"
                   zh-tw-lang="訓練課程"
@@ -467,8 +539,6 @@ type="text/css">
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/auth/package-summary.html">com.google.android.gms.auth</a></li>
     <li class="api apilevel-">
-  <a href="../../../../../../reference/com/google/android/gms/auth/api/package-summary.html">com.google.android.gms.auth.api</a></li>
-    <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/cast/package-summary.html">com.google.android.gms.cast</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/common/package-summary.html">com.google.android.gms.common</a></li>
@@ -529,9 +599,17 @@ type="text/css">
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/location/package-summary.html">com.google.android.gms.location</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../../reference/com/google/android/gms/location/places/package-summary.html">com.google.android.gms.location.places</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../reference/com/google/android/gms/location/places/ui/package-summary.html">com.google.android.gms.location.places.ui</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/maps/package-summary.html">com.google.android.gms.maps</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/maps/model/package-summary.html">com.google.android.gms.maps.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../reference/com/google/android/gms/nearby/package-summary.html">com.google.android.gms.nearby</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../reference/com/google/android/gms/nearby/connection/package-summary.html">com.google.android.gms.nearby.connection</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/panorama/package-summary.html">com.google.android.gms.panorama</a></li>
     <li class="api apilevel-">
@@ -540,6 +618,8 @@ type="text/css">
   <a href="../../../../../../reference/com/google/android/gms/plus/model/moments/package-summary.html">com.google.android.gms.plus.model.moments</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/plus/model/people/package-summary.html">com.google.android.gms.plus.model.people</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../reference/com/google/android/gms/safetynet/package-summary.html">com.google.android.gms.safetynet</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../reference/com/google/android/gms/security/package-summary.html">com.google.android.gms.security</a></li>
     <li class="api apilevel-">
@@ -564,7 +644,6 @@ type="text/css">
     <li><h2>Interfaces</h2>
       <ul>
           <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/drive/DriveApi.html">DriveApi</a></li>
-          <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/drive/DriveApi.ContentsResult.html">DriveApi.ContentsResult</a></li>
           <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/drive/DriveApi.DriveContentsResult.html">DriveApi.DriveContentsResult</a></li>
           <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/drive/DriveApi.DriveIdResult.html">DriveApi.DriveIdResult</a></li>
           <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/drive/DriveApi.MetadataBufferResult.html">DriveApi.MetadataBufferResult</a></li>
@@ -574,14 +653,16 @@ type="text/css">
           <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/drive/DriveFolder.html">DriveFolder</a></li>
           <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/drive/DriveFolder.DriveFileResult.html">DriveFolder.DriveFileResult</a></li>
           <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/drive/DriveFolder.DriveFolderResult.html">DriveFolder.DriveFolderResult</a></li>
+          <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/drive/DrivePreferencesApi.html">DrivePreferencesApi</a></li>
+          <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/drive/DrivePreferencesApi.FileUploadPreferencesResult.html">DrivePreferencesApi.FileUploadPreferencesResult</a></li>
           <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/drive/DriveResource.html">DriveResource</a></li>
           <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/drive/DriveResource.MetadataResult.html">DriveResource.MetadataResult</a></li>
+          <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/drive/FileUploadPreferences.html">FileUploadPreferences</a></li>
       </ul>
     </li>
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/drive/Contents.html">Contents</a></li>
           <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/drive/CreateFileActivityBuilder.html">CreateFileActivityBuilder</a></li>
           <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/drive/Drive.html">Drive</a></li>
           <li class="api apilevel-"><a href="../../../../../../reference/com/google/android/gms/drive/DriveId.html">DriveId</a></li>
@@ -680,6 +761,9 @@ type="text/css">
   
 
 
+    
+
+
 </div><!-- end header -->
 
 <div id="naMessage"></div>
@@ -718,7 +802,7 @@ type="text/css">
  Any changes made to the <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveContents.html">DriveContents</a></code> through either their <code><a href="http://developer.android.com/reference/android/os/ParcelFileDescriptor.html">ParcelFileDescriptor</a></code>
  or <code><a href="http://developer.android.com/reference/java/io/OutputStream.html">OutputStream</a></code> will not be visible until either <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveContents.html#commit(com.google.android.gms.common.api.GoogleApiClient, com.google.android.gms.drive.MetadataChangeSet)">commit(GoogleApiClient, MetadataChangeSet)</a></code> is executed (for
  existing contents already associated to a <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveFile.html">DriveFile</a></code>), or a new file is created using this
- contents (through <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveFolder.html#createFile(com.google.android.gms.common.api.GoogleApiClient, com.google.android.gms.drive.MetadataChangeSet, com.google.android.gms.drive.Contents)">createFile(GoogleApiClient, MetadataChangeSet, Contents)</a></code> or <code><a href="../../../../../../reference/com/google/android/gms/drive/CreateFileActivityBuilder.html">CreateFileActivityBuilder</a></code>, for new
+ contents (through <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveFolder.html#createFile(com.google.android.gms.common.api.GoogleApiClient, com.google.android.gms.drive.MetadataChangeSet, com.google.android.gms.drive.DriveContents)">createFile(GoogleApiClient, MetadataChangeSet, DriveContents)</a></code> or <code><a href="../../../../../../reference/com/google/android/gms/drive/CreateFileActivityBuilder.html">CreateFileActivityBuilder</a></code>, for new
  contents).
 
  <p>
@@ -801,10 +885,15 @@ type="text/css">
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/drive/DriveContents.html#commit(com.google.android.gms.common.api.GoogleApiClient, com.google.android.gms.drive.MetadataChangeSet, com.google.android.gms.drive.ExecutionOptions)">commit</a></span>(<a href="../../../../../../reference/com/google/android/gms/common/api/GoogleApiClient.html">GoogleApiClient</a> apiClient, <a href="../../../../../../reference/com/google/android/gms/drive/MetadataChangeSet.html">MetadataChangeSet</a> changeSet, <a href="../../../../../../reference/com/google/android/gms/drive/ExecutionOptions.html">ExecutionOptions</a> executionOptions)</nobr>
         
-        <div class="jd-descrdiv">Advanced version of commit which commits this contents and updates the metadata (if provided)
+        <div class="jd-descrdiv">
+          Advanced version of commit which commits this contents and updates the metadata (if provided)
  of the file associated to this <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveContents.html">DriveContents</a></code> instance and allows the client to
  specify a conflict resolution strategy or request completion notifications via the
- <code>executionOptions</code> parameter.</div>
+ <code>executionOptions</code> parameter.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -822,8 +911,13 @@ type="text/css">
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/drive/DriveContents.html#commit(com.google.android.gms.common.api.GoogleApiClient, com.google.android.gms.drive.MetadataChangeSet)">commit</a></span>(<a href="../../../../../../reference/com/google/android/gms/common/api/GoogleApiClient.html">GoogleApiClient</a> apiClient, <a href="../../../../../../reference/com/google/android/gms/drive/MetadataChangeSet.html">MetadataChangeSet</a> changeSet)</nobr>
         
-        <div class="jd-descrdiv">Commits this contents and updates the metadata (if provided) of the file associated to this
- <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveContents.html">DriveContents</a></code> instance.</div>
+        <div class="jd-descrdiv">
+          Commits this contents and updates the metadata (if provided) of the file associated to this
+ <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveContents.html">DriveContents</a></code> instance.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -841,7 +935,12 @@ type="text/css">
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/drive/DriveContents.html#discard(com.google.android.gms.common.api.GoogleApiClient)">discard</a></span>(<a href="../../../../../../reference/com/google/android/gms/common/api/GoogleApiClient.html">GoogleApiClient</a> apiClient)</nobr>
         
-        <div class="jd-descrdiv">Discards this contents and any changes that were performed.</div>
+        <div class="jd-descrdiv">
+          Discards this contents and any changes that were performed.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -859,7 +958,12 @@ type="text/css">
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/drive/DriveContents.html#getDriveId()">getDriveId</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Gets the <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveId.html">DriveId</a></code> for the file that owns these contents.</div>
+        <div class="jd-descrdiv">
+          Gets the <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveId.html">DriveId</a></code> for the file that owns these contents.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -877,7 +981,12 @@ type="text/css">
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/drive/DriveContents.html#getInputStream()">getInputStream</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Returns an <code><a href="http://developer.android.com/reference/java/io/InputStream.html">InputStream</a></code> that allows you to read this file's contents.</div>
+        <div class="jd-descrdiv">
+          Returns an <code><a href="http://developer.android.com/reference/java/io/InputStream.html">InputStream</a></code> that allows you to read this file's contents.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -895,7 +1004,12 @@ type="text/css">
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/drive/DriveContents.html#getMode()">getMode</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Gets the mode the contents are opened in.</div>
+        <div class="jd-descrdiv">
+          Gets the mode the contents are opened in.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -913,7 +1027,12 @@ type="text/css">
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/drive/DriveContents.html#getOutputStream()">getOutputStream</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Returns an <code><a href="http://developer.android.com/reference/java/io/OutputStream.html">OutputStream</a></code> that allows you to write new contents.</div>
+        <div class="jd-descrdiv">
+          Returns an <code><a href="http://developer.android.com/reference/java/io/OutputStream.html">OutputStream</a></code> that allows you to write new contents.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -931,7 +1050,12 @@ type="text/css">
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/drive/DriveContents.html#getParcelFileDescriptor()">getParcelFileDescriptor</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Returns a <code><a href="http://developer.android.com/reference/android/os/ParcelFileDescriptor.html">ParcelFileDescriptor</a></code> that points to the Drive file's contents.</div>
+        <div class="jd-descrdiv">
+          Returns a <code><a href="http://developer.android.com/reference/android/os/ParcelFileDescriptor.html">ParcelFileDescriptor</a></code> that points to the Drive file's contents.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -949,7 +1073,12 @@ type="text/css">
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../reference/com/google/android/gms/drive/DriveContents.html#reopenForWrite(com.google.android.gms.common.api.GoogleApiClient)">reopenForWrite</a></span>(<a href="../../../../../../reference/com/google/android/gms/common/api/GoogleApiClient.html">GoogleApiClient</a> apiClient)</nobr>
         
-        <div class="jd-descrdiv">Closes this contents and returns a new contents opened in <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveFile.html#MODE_WRITE_ONLY">MODE_WRITE_ONLY</a></code>.</div>
+        <div class="jd-descrdiv">
+          Closes this contents and returns a new contents opened in <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveFile.html#MODE_WRITE_ONLY">MODE_WRITE_ONLY</a></code>.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1025,6 +1154,9 @@ type="text/css">
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Advanced version of commit which commits this contents and updates the metadata (if provided)
  of the file associated to this <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveContents.html">DriveContents</a></code> instance and allows the client to
  specify a conflict resolution strategy or request completion notifications via the
@@ -1063,7 +1195,10 @@ type="text/css">
           <th>executionOptions</td>
           <td>Contains any extra settings for this commit action, such as the
      strategy for handling conflicts or whether the client should be notified of failures when
-     applying this operation on the server. See <code><a href="../../../../../../reference/com/google/android/gms/drive/ExecutionOptions.html">ExecutionOptions</a></code> for more info.</td>
+     applying this operation on the server. See <code><a href="../../../../../../reference/com/google/android/gms/drive/ExecutionOptions.html">ExecutionOptions</a></code> for more info. When
+     <code>null</code> is provided, this method will use default <code><a href="../../../../../../reference/com/google/android/gms/drive/ExecutionOptions.html">ExecutionOptions</a></code>, that is
+     <code><a href="../../../../../../reference/com/google/android/gms/drive/ExecutionOptions.html#CONFLICT_STRATEGY_OVERWRITE_REMOTE">CONFLICT_STRATEGY_OVERWRITE_REMOTE</a></code> strategy, no completion event
+     requested and no operation tag.</td>
         </tr>
       </table>
   </div>
@@ -1115,15 +1250,19 @@ type="text/css">
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Commits this contents and updates the metadata (if provided) of the file associated to this
  <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveContents.html">DriveContents</a></code> instance. This method should only be used on <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveContents.html">DriveContents</a></code> that
  are already associated to a particular file (obtained through <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveFile.html#open(com.google.android.gms.common.api.GoogleApiClient, int, com.google.android.gms.drive.DriveFile.DownloadProgressListener)">open(GoogleApiClient, int, DriveFile.DownloadProgressListener)</a></code>).
 
  <p>
  This method behaves like
- <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveContents.html#commit(com.google.android.gms.common.api.GoogleApiClient, com.google.android.gms.drive.MetadataChangeSet, com.google.android.gms.drive.ExecutionOptions)">commit(GoogleApiClient, MetadataChangeSet, ExecutionOptions)</a></code> with the
- <code><a href="../../../../../../reference/com/google/android/gms/drive/ExecutionOptions.html">ExecutionOptions</a></code> having a <code><a href="../../../../../../reference/com/google/android/gms/drive/ExecutionOptions.html#CONFLICT_STRATEGY_OVERWRITE_REMOTE">CONFLICT_STRATEGY_OVERWRITE_REMOTE</a></code>
- strategy, no completion event requested and no operation tag. Use the advanced version of
+ <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveContents.html#commit(com.google.android.gms.common.api.GoogleApiClient, com.google.android.gms.drive.MetadataChangeSet, com.google.android.gms.drive.ExecutionOptions)">commit(GoogleApiClient, MetadataChangeSet, ExecutionOptions)</a></code> with <code>null</code>
+ <code><a href="../../../../../../reference/com/google/android/gms/drive/ExecutionOptions.html">ExecutionOptions</a></code>, which means
+ <code><a href="../../../../../../reference/com/google/android/gms/drive/ExecutionOptions.html#CONFLICT_STRATEGY_OVERWRITE_REMOTE">CONFLICT_STRATEGY_OVERWRITE_REMOTE</a></code> strategy, no completion event
+ requested and no operation tag. Use the advanced version of
  <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveContents.html#commit(com.google.android.gms.common.api.GoogleApiClient, com.google.android.gms.drive.MetadataChangeSet, com.google.android.gms.drive.ExecutionOptions)">commit</a></code> if you'd like to
  specify different <code><a href="../../../../../../reference/com/google/android/gms/drive/ExecutionOptions.html">ExecutionOptions</a></code>.
 
@@ -1193,6 +1332,9 @@ type="text/css">
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Discards this contents and any changes that were performed. Calling this method will not save
  any changes performed through this object.
 
@@ -1237,6 +1379,9 @@ type="text/css">
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Gets the <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveId.html">DriveId</a></code> for the file that owns these contents. Will be <code>null</code> if this
  instance corresponds to new contents (obtained through <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveApi.html#newDriveContents(com.google.android.gms.common.api.GoogleApiClient)">newDriveContents(GoogleApiClient)</a></code>}.
 </p></div>
@@ -1267,6 +1412,9 @@ type="text/css">
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Returns an <code><a href="http://developer.android.com/reference/java/io/InputStream.html">InputStream</a></code> that allows you to read this file's contents. This method may
  only be used with files opened with <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveFile.html#MODE_READ_ONLY">MODE_READ_ONLY</a></code>; to read/write from a
@@ -1302,6 +1450,9 @@ type="text/css">
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Gets the mode the contents are opened in.
 </p></div>
 
@@ -1331,6 +1482,9 @@ type="text/css">
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Returns an <code><a href="http://developer.android.com/reference/java/io/OutputStream.html">OutputStream</a></code> that allows you to write new contents. This method may only
  be used with files opened with <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveFile.html#MODE_WRITE_ONLY">MODE_WRITE_ONLY</a></code>; to read/write from a file
@@ -1366,6 +1520,9 @@ type="text/css">
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Returns a <code><a href="http://developer.android.com/reference/android/os/ParcelFileDescriptor.html">ParcelFileDescriptor</a></code> that points to the Drive file's contents. If this file
  was opened with <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveFile.html#MODE_READ_ONLY">MODE_READ_ONLY</a></code> or <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveFile.html#MODE_READ_WRITE">MODE_READ_WRITE</a></code>, the
  file referenced by the returned file descriptor will contain the most recent version of the
@@ -1398,6 +1555,9 @@ type="text/css">
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Closes this contents and returns a new contents opened in <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveFile.html#MODE_WRITE_ONLY">MODE_WRITE_ONLY</a></code>.
  The returned <code><a href="../../../../../../reference/com/google/android/gms/drive/DriveContents.html">DriveContents</a></code> are usable for conflict detection.
@@ -1457,7 +1617,7 @@ type="text/css">
   </div>
   <div id="build_info">
     
-    Android GmsCore 1501030&nbsp;r &mdash; 
+    Android GmsCore 1784785&nbsp;r &mdash; 
 <script src="../../../../../../timestamp.js" type="text/javascript"></script>
 <script>document.write(BUILD_TIMESTAMP)</script>
 

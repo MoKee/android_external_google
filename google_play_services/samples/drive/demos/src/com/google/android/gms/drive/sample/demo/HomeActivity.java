@@ -33,12 +33,14 @@ public class HomeActivity extends Activity {
     @SuppressWarnings("rawtypes")
     private final Class[] sActivities = new Class[] {
             CreateFileActivity.class,
+            CreateEmptyFileActivity.class,
             CreateFileInAppFolderActivity.class,
             CreateFolderActivity.class,
             RetrieveMetadataActivity.class,
             RetrieveContentsActivity.class,
             RetrieveContentsWithProgressDialogActivity.class,
             EditMetadataActivity.class,
+            InsertUpdateCustomPropertyActivity.class,
             EditContentsActivity.class,
             PinFileActivity.class,
             SyncRequestsActivity.class,
@@ -55,6 +57,7 @@ public class HomeActivity extends Activity {
             QuerySortedFilesActivity.class,
             QueryFilesSharedWithMeActivity.class,
             QueryFilesWithAInTitleActivity.class,
+            QueryFilesWithCustomPropertyActivity.class,
             QueryStarredTextFilesActivity.class,
             QueryTextOrHtmlFilesActivity.class,
             ListenChangeEventsForFilesActivity.class

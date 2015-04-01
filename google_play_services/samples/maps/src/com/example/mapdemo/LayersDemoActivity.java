@@ -23,6 +23,7 @@ import static com.google.android.gms.maps.GoogleMap.MAP_TYPE_SATELLITE;
 import static com.google.android.gms.maps.GoogleMap.MAP_TYPE_TERRAIN;
 
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 
 import android.os.Bundle;
@@ -39,7 +40,8 @@ import android.widget.Toast;
 /**
  * Demonstrates the different base layers of a map.
  */
-public class LayersDemoActivity extends FragmentActivity implements OnItemSelectedListener {
+public class LayersDemoActivity extends FragmentActivity
+        implements OnItemSelectedListener, OnMapReadyCallback {
 
     private GoogleMap mMap;
 
@@ -64,26 +66,19 @@ public class LayersDemoActivity extends FragmentActivity implements OnItemSelect
         mMyLocationCheckbox = (CheckBox) findViewById(R.id.my_location);
         mBuildingsCheckbox = (CheckBox) findViewById(R.id.buildings);
         mIndoorCheckbox = (CheckBox) findViewById(R.id.indoor);
-        setUpMapIfNeeded();
+
+        SupportMapFragment mapFragment =
+                (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        setUpMapIfNeeded();
-        if (mMap != null) {
-            updateTraffic();
-            updateMyLocation();
-            updateBuildings();
-            updateIndoor();
-        }
-    }
-
-    private void setUpMapIfNeeded() {
-        if (mMap == null) {
-            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
-                    .getMap();
-        }
+    public void onMapReady(GoogleMap map) {
+        mMap = map;
+        updateTraffic();
+        updateMyLocation();
+        updateBuildings();
+        updateIndoor();
     }
 
     private boolean checkReady() {
@@ -152,18 +147,22 @@ public class LayersDemoActivity extends FragmentActivity implements OnItemSelect
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-        setLayer((String) parent.getItemAtPosition(position));
+        // This is also called by the Android framework in onResume(). The map may not be created at
+        // this stage yet.
+        if (mMap != null) {
+            setLayer((String) parent.getItemAtPosition(position));
+        }
     }
 
     private void setLayer(String layerName) {
-        if (!checkReady()) {
-            return;
-        }
         if (layerName.equals(getString(R.string.normal))) {
             mMap.setMapType(MAP_TYPE_NORMAL);
         } else if (layerName.equals(getString(R.string.hybrid))) {
             mMap.setMapType(MAP_TYPE_HYBRID);
+
+
+
+
         } else if (layerName.equals(getString(R.string.satellite))) {
             mMap.setMapType(MAP_TYPE_SATELLITE);
         } else if (layerName.equals(getString(R.string.terrain))) {

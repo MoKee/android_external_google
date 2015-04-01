@@ -84,6 +84,20 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <html>
 <head>
 
@@ -99,7 +113,7 @@
 href="http://fonts.googleapis.com/css?family=Roboto+Condensed">
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:light,regular,medium,thin,italic,mediumitalic,bold"
   title="roboto">
-<link href="../../../../../../../../assets/css/default.css?v=2" rel="stylesheet" type="text/css">
+<link href="../../../../../../../../assets/css/default.css?v=5" rel="stylesheet" type="text/css">
 
 
 <!-- FULLSCREEN STYLESHEET -->
@@ -115,7 +129,9 @@ type="text/css">
   var metaTags = [];
   var devsite = false;
 </script>
-<script src="../../../../../../../../assets/js/docs.js?v=2" type="text/javascript"></script>
+<script src="../../../../../../../../assets/js/docs.js?v=3" type="text/javascript"></script>
+
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -132,16 +148,66 @@ type="text/css">
 </head>
 
 <body class="gc-documentation 
-  develop" itemscope itemtype="http://schema.org/Article">
+  develop reference" itemscope itemtype="http://schema.org/Article">
   <div id="doc-api-level" class="" style="display:none"></div>
   <a name="top"></a>
 
 
 <a name="top"></a>
 
+<!-- dialog to prompt lang pref change when loaded from hardcoded URL 
+<div id="langMessage" style="display:none">
+  <div>
+    <div class="lang en">
+      <p>You requested a page in English, would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang es">
+      <p>You requested a page in Spanish (Español), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ja">
+      <p>You requested a page in Japanese (日本語), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ko">
+      <p>You requested a page in Korean (한국어), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ru">
+      <p>You requested a page in Russian (Русский), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang zh-cn">
+      <p>You requested a page in Simplified Chinese (简体中文), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang zh-tw">
+      <p>You requested a page in Traditional Chinese (繁體中文), would you like to proceed with this language setting?</p>
+    </div>
+    <a href="#" class="button yes" onclick="return false;">
+      <span class="lang en">Yes</span>
+      <span class="lang es">Sí</span>
+      <span class="lang ja">Yes</span>
+      <span class="lang ko">Yes</span>
+      <span class="lang ru">Yes</span>
+      <span class="lang zh-cn">是的</span>
+      <span class="lang zh-tw">没有</span>
+    </a>
+    <a href="#" class="button" onclick="$('#langMessage').hide();return false;">
+      <span class="lang en">No</span>
+      <span class="lang es">No</span>
+      <span class="lang ja">No</span>
+      <span class="lang ko">No</span>
+      <span class="lang ru">No</span>
+      <span class="lang zh-cn">没有</span>
+      <span class="lang zh-tw">没有</span>
+    </a>
+  </div>
+</div> -->
+
+
   <!-- Header -->
   <div id="header-wrapper">
     <div id="header">
+
+    
+
+
       <div class="wrap" id="header-wrap">
         <div class="col-3 logo">
           <a href="../../../../../../../../index.html">
@@ -331,6 +397,7 @@ type="text/css">
                 <li><a href="../../../../../../../../distribute/users/index.html">Get Users</a></li>
                 <li><a href="../../../../../../../../distribute/engage/index.html">Engage &amp; Retain</a></li>
                 <li><a href="../../../../../../../../distribute/monetize/index.html">Monetize</a></li>
+                <li><a href="../../../../../../../../distribute/analyze/index.html">Analyze</a></li>
                 <li><a href="../../../../../../../../distribute/tools/index.html">Tools &amp; Reference</a></li>
                 <li><a href="../../../../../../../../distribute/stories/index.html">Developer Stories</a></li>
               </ul>
@@ -343,7 +410,12 @@ type="text/css">
   
     <!-- Secondary x-nav -->
     <div id="nav-x">
-        <div class="wrap">
+        <div class="wrap" style="position:relative;z-index:1">
+
+        
+        
+        
+
             <ul class="nav-x col-9 develop" style="width:100%">
                 <li class="training"><a href="../../../../../../../../training/index.html"
                   zh-tw-lang="訓練課程"
@@ -467,8 +539,6 @@ type="text/css">
     <li class="api apilevel-">
   <a href="../../../../../../../../reference/com/google/android/gms/auth/package-summary.html">com.google.android.gms.auth</a></li>
     <li class="api apilevel-">
-  <a href="../../../../../../../../reference/com/google/android/gms/auth/api/package-summary.html">com.google.android.gms.auth.api</a></li>
-    <li class="api apilevel-">
   <a href="../../../../../../../../reference/com/google/android/gms/cast/package-summary.html">com.google.android.gms.cast</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../../reference/com/google/android/gms/common/package-summary.html">com.google.android.gms.common</a></li>
@@ -529,9 +599,17 @@ type="text/css">
     <li class="api apilevel-">
   <a href="../../../../../../../../reference/com/google/android/gms/location/package-summary.html">com.google.android.gms.location</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../../../../reference/com/google/android/gms/location/places/package-summary.html">com.google.android.gms.location.places</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../reference/com/google/android/gms/location/places/ui/package-summary.html">com.google.android.gms.location.places.ui</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../../../../reference/com/google/android/gms/maps/package-summary.html">com.google.android.gms.maps</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../../reference/com/google/android/gms/maps/model/package-summary.html">com.google.android.gms.maps.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../reference/com/google/android/gms/nearby/package-summary.html">com.google.android.gms.nearby</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../reference/com/google/android/gms/nearby/connection/package-summary.html">com.google.android.gms.nearby.connection</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../../reference/com/google/android/gms/panorama/package-summary.html">com.google.android.gms.panorama</a></li>
     <li class="api apilevel-">
@@ -540,6 +618,8 @@ type="text/css">
   <a href="../../../../../../../../reference/com/google/android/gms/plus/model/moments/package-summary.html">com.google.android.gms.plus.model.moments</a></li>
     <li class="selected api apilevel-">
   <a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/package-summary.html">com.google.android.gms.plus.model.people</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../reference/com/google/android/gms/safetynet/package-summary.html">com.google.android.gms.safetynet</a></li>
     <li class="api apilevel-">
   <a href="../../../../../../../../reference/com/google/android/gms/security/package-summary.html">com.google.android.gms.security</a></li>
     <li class="api apilevel-">
@@ -702,10 +782,13 @@ Summary:
   
       implements 
       
-        <a href="../../../../../../../../reference/com/google/android/gms/common/data/Freezable.html">Freezable</a>&lt;T&gt; 
+        <a href="../../../../../../../../reference/com/google/android/gms/common/data/Freezable.html">Freezable</a>&lt;<a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html">Person</a>&gt; 
       
   
   
+
+
+    
 
 
 </div><!-- end header -->
@@ -774,7 +857,12 @@ Summary:
         
         interface</nobr></td>
       <td class="jd-linkcol"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.AgeRange.html">Person.AgeRange</a></td>
-      <td class="jd-descrcol" width="100%">The age range of the person.&nbsp;</td>
+      <td class="jd-descrcol" width="100%">
+        The age range of the person.&nbsp;
+        
+    
+
+      </td>
     </tr>
     
     
@@ -786,7 +874,12 @@ Summary:
         
         interface</nobr></td>
       <td class="jd-linkcol"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.Cover.html">Person.Cover</a></td>
-      <td class="jd-descrcol" width="100%">The cover photo content.&nbsp;</td>
+      <td class="jd-descrcol" width="100%">
+        The cover photo content.&nbsp;
+        
+    
+
+      </td>
     </tr>
     
     
@@ -798,7 +891,12 @@ Summary:
         
         class</nobr></td>
       <td class="jd-linkcol"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.Gender.html">Person.Gender</a></td>
-      <td class="jd-descrcol" width="100%">The person's gender.&nbsp;</td>
+      <td class="jd-descrcol" width="100%">
+        The person's gender.&nbsp;
+        
+    
+
+      </td>
     </tr>
     
     
@@ -810,7 +908,12 @@ Summary:
         
         interface</nobr></td>
       <td class="jd-linkcol"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.Image.html">Person.Image</a></td>
-      <td class="jd-descrcol" width="100%">The representation of the person's profile photo.&nbsp;</td>
+      <td class="jd-descrcol" width="100%">
+        The representation of the person's profile photo.&nbsp;
+        
+    
+
+      </td>
     </tr>
     
     
@@ -822,7 +925,12 @@ Summary:
         
         interface</nobr></td>
       <td class="jd-linkcol"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.Name.html">Person.Name</a></td>
-      <td class="jd-descrcol" width="100%">An object representation of the individual components of a person's name.&nbsp;</td>
+      <td class="jd-descrcol" width="100%">
+        An object representation of the individual components of a person's name.&nbsp;
+        
+    
+
+      </td>
     </tr>
     
     
@@ -834,7 +942,12 @@ Summary:
         
         class</nobr></td>
       <td class="jd-linkcol"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.ObjectType.html">Person.ObjectType</a></td>
-      <td class="jd-descrcol" width="100%">Type of person within Google+.&nbsp;</td>
+      <td class="jd-descrcol" width="100%">
+        Type of person within Google+.&nbsp;
+        
+    
+
+      </td>
     </tr>
     
     
@@ -846,7 +959,12 @@ Summary:
         
         interface</nobr></td>
       <td class="jd-linkcol"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.Organizations.html">Person.Organizations</a></td>
-      <td class="jd-descrcol" width="100%">&nbsp;</td>
+      <td class="jd-descrcol" width="100%">
+        &nbsp;
+        
+    
+
+      </td>
     </tr>
     
     
@@ -858,7 +976,12 @@ Summary:
         
         interface</nobr></td>
       <td class="jd-linkcol"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.PlacesLived.html">Person.PlacesLived</a></td>
-      <td class="jd-descrcol" width="100%">&nbsp;</td>
+      <td class="jd-descrcol" width="100%">
+        &nbsp;
+        
+    
+
+      </td>
     </tr>
     
     
@@ -870,7 +993,12 @@ Summary:
         
         class</nobr></td>
       <td class="jd-linkcol"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.RelationshipStatus.html">Person.RelationshipStatus</a></td>
-      <td class="jd-descrcol" width="100%">The person's relationship status.&nbsp;</td>
+      <td class="jd-descrcol" width="100%">
+        The person's relationship status.&nbsp;
+        
+    
+
+      </td>
     </tr>
     
     
@@ -882,7 +1010,12 @@ Summary:
         
         interface</nobr></td>
       <td class="jd-linkcol"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.Urls.html">Person.Urls</a></td>
-      <td class="jd-descrcol" width="100%">&nbsp;</td>
+      <td class="jd-descrcol" width="100%">
+        &nbsp;
+        
+    
+
+      </td>
     </tr>
     
     
@@ -931,7 +1064,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#getAboutMe()">getAboutMe</a></span>()</nobr>
         
-        <div class="jd-descrdiv">A short biography for this person.</div>
+        <div class="jd-descrdiv">
+          A short biography for this person.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -949,7 +1087,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#getAgeRange()">getAgeRange</a></span>()</nobr>
         
-        <div class="jd-descrdiv">The age range of the person.</div>
+        <div class="jd-descrdiv">
+          The age range of the person.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -967,7 +1110,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#getBirthday()">getBirthday</a></span>()</nobr>
         
-        <div class="jd-descrdiv">The person's date of birth, represented as YYYY-MM-DD.</div>
+        <div class="jd-descrdiv">
+          The person's date of birth, represented as YYYY-MM-DD.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -985,7 +1133,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#getBraggingRights()">getBraggingRights</a></span>()</nobr>
         
-        <div class="jd-descrdiv">The "bragging rights" line of this person.</div>
+        <div class="jd-descrdiv">
+          The "bragging rights" line of this person.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1003,8 +1156,13 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#getCircledByCount()">getCircledByCount</a></span>()</nobr>
         
-        <div class="jd-descrdiv">If a Google+ Page and for followers who are visible, the number of people who have added this
- page to a circle.</div>
+        <div class="jd-descrdiv">
+          If a Google+ Page and for followers who are visible, the number of people who have added this
+ page to a circle.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1022,7 +1180,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#getCover()">getCover</a></span>()</nobr>
         
-        <div class="jd-descrdiv">The cover photo content.</div>
+        <div class="jd-descrdiv">
+          The cover photo content.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1040,7 +1203,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#getCurrentLocation()">getCurrentLocation</a></span>()</nobr>
         
-        <div class="jd-descrdiv">The current location for this person.</div>
+        <div class="jd-descrdiv">
+          The current location for this person.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1058,7 +1226,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#getDisplayName()">getDisplayName</a></span>()</nobr>
         
-        <div class="jd-descrdiv">The name of this person, which is suitable for display.</div>
+        <div class="jd-descrdiv">
+          The name of this person, which is suitable for display.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1076,7 +1249,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#getGender()">getGender</a></span>()</nobr>
         
-        <div class="jd-descrdiv">The person's gender.</div>
+        <div class="jd-descrdiv">
+          The person's gender.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1094,7 +1272,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#getId()">getId</a></span>()</nobr>
         
-        <div class="jd-descrdiv">The ID of this person.</div>
+        <div class="jd-descrdiv">
+          The ID of this person.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1112,7 +1295,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#getImage()">getImage</a></span>()</nobr>
         
-        <div class="jd-descrdiv">The representation of the person's profile photo.</div>
+        <div class="jd-descrdiv">
+          The representation of the person's profile photo.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1130,7 +1318,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#getLanguage()">getLanguage</a></span>()</nobr>
         
-        <div class="jd-descrdiv">The user's preferred language for rendering.</div>
+        <div class="jd-descrdiv">
+          The user's preferred language for rendering.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1148,7 +1341,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#getName()">getName</a></span>()</nobr>
         
-        <div class="jd-descrdiv">An object representation of the individual components of a person's name.</div>
+        <div class="jd-descrdiv">
+          An object representation of the individual components of a person's name.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1166,7 +1364,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#getNickname()">getNickname</a></span>()</nobr>
         
-        <div class="jd-descrdiv">The nickname of this person.</div>
+        <div class="jd-descrdiv">
+          The nickname of this person.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1184,7 +1387,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#getObjectType()">getObjectType</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Type of person within Google+.</div>
+        <div class="jd-descrdiv">
+          Type of person within Google+.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1202,7 +1410,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#getOrganizations()">getOrganizations</a></span>()</nobr>
         
-        <div class="jd-descrdiv">A list of current or past organizations with which this person is associated.</div>
+        <div class="jd-descrdiv">
+          A list of current or past organizations with which this person is associated.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1220,7 +1433,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#getPlacesLived()">getPlacesLived</a></span>()</nobr>
         
-        <div class="jd-descrdiv">A list of places where this person has lived.</div>
+        <div class="jd-descrdiv">
+          A list of places where this person has lived.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1238,7 +1456,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#getPlusOneCount()">getPlusOneCount</a></span>()</nobr>
         
-        <div class="jd-descrdiv">If a Google+ Page, the number of people who have +1'd this page.</div>
+        <div class="jd-descrdiv">
+          If a Google+ Page, the number of people who have +1'd this page.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1256,7 +1479,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#getRelationshipStatus()">getRelationshipStatus</a></span>()</nobr>
         
-        <div class="jd-descrdiv">The person's relationship status.</div>
+        <div class="jd-descrdiv">
+          The person's relationship status.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1274,7 +1502,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#getTagline()">getTagline</a></span>()</nobr>
         
-        <div class="jd-descrdiv">The brief description (tagline) of this person.</div>
+        <div class="jd-descrdiv">
+          The brief description (tagline) of this person.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1292,7 +1525,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#getUrl()">getUrl</a></span>()</nobr>
         
-        <div class="jd-descrdiv">The URL of this person's profile.</div>
+        <div class="jd-descrdiv">
+          The URL of this person's profile.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1310,7 +1548,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#getUrls()">getUrls</a></span>()</nobr>
         
-        <div class="jd-descrdiv">A list of URLs for this person.</div>
+        <div class="jd-descrdiv">
+          A list of URLs for this person.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1328,7 +1571,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#hasAboutMe()">hasAboutMe</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates whether the "aboutMe" field is explicitly set to a value.</div>
+        <div class="jd-descrdiv">
+          Indicates whether the "aboutMe" field is explicitly set to a value.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1346,7 +1594,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#hasAgeRange()">hasAgeRange</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates whether the "ageRange" field is explicitly set to a value.</div>
+        <div class="jd-descrdiv">
+          Indicates whether the "ageRange" field is explicitly set to a value.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1364,7 +1617,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#hasBirthday()">hasBirthday</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates whether the "birthday" field is explicitly set to a value.</div>
+        <div class="jd-descrdiv">
+          Indicates whether the "birthday" field is explicitly set to a value.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1382,7 +1640,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#hasBraggingRights()">hasBraggingRights</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates whether the "braggingRights" field is explicitly set to a value.</div>
+        <div class="jd-descrdiv">
+          Indicates whether the "braggingRights" field is explicitly set to a value.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1400,7 +1663,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#hasCircledByCount()">hasCircledByCount</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates whether the "circledByCount" field is explicitly set to a value.</div>
+        <div class="jd-descrdiv">
+          Indicates whether the "circledByCount" field is explicitly set to a value.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1418,7 +1686,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#hasCover()">hasCover</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates whether the "cover" field is explicitly set to a value.</div>
+        <div class="jd-descrdiv">
+          Indicates whether the "cover" field is explicitly set to a value.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1436,7 +1709,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#hasCurrentLocation()">hasCurrentLocation</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates whether the "currentLocation" field is explicitly set to a value.</div>
+        <div class="jd-descrdiv">
+          Indicates whether the "currentLocation" field is explicitly set to a value.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1454,7 +1732,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#hasDisplayName()">hasDisplayName</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates whether the "displayName" field is explicitly set to a value.</div>
+        <div class="jd-descrdiv">
+          Indicates whether the "displayName" field is explicitly set to a value.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1472,7 +1755,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#hasGender()">hasGender</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates whether the "gender" field is explicitly set to a value.</div>
+        <div class="jd-descrdiv">
+          Indicates whether the "gender" field is explicitly set to a value.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1490,7 +1778,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#hasId()">hasId</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates whether the "id" field is explicitly set to a value.</div>
+        <div class="jd-descrdiv">
+          Indicates whether the "id" field is explicitly set to a value.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1508,7 +1801,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#hasImage()">hasImage</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates whether the "image" field is explicitly set to a value.</div>
+        <div class="jd-descrdiv">
+          Indicates whether the "image" field is explicitly set to a value.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1526,7 +1824,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#hasIsPlusUser()">hasIsPlusUser</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates whether the "isPlusUser" field is explicitly set to a value.</div>
+        <div class="jd-descrdiv">
+          Indicates whether the "isPlusUser" field is explicitly set to a value.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1544,7 +1847,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#hasLanguage()">hasLanguage</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates whether the "language" field is explicitly set to a value.</div>
+        <div class="jd-descrdiv">
+          Indicates whether the "language" field is explicitly set to a value.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1562,7 +1870,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#hasName()">hasName</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates whether the "name" field is explicitly set to a value.</div>
+        <div class="jd-descrdiv">
+          Indicates whether the "name" field is explicitly set to a value.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1580,7 +1893,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#hasNickname()">hasNickname</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates whether the "nickname" field is explicitly set to a value.</div>
+        <div class="jd-descrdiv">
+          Indicates whether the "nickname" field is explicitly set to a value.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1598,7 +1916,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#hasObjectType()">hasObjectType</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates whether the "objectType" field is explicitly set to a value.</div>
+        <div class="jd-descrdiv">
+          Indicates whether the "objectType" field is explicitly set to a value.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1616,7 +1939,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#hasOrganizations()">hasOrganizations</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates whether the "organizations" field is explicitly set to a value.</div>
+        <div class="jd-descrdiv">
+          Indicates whether the "organizations" field is explicitly set to a value.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1634,7 +1962,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#hasPlacesLived()">hasPlacesLived</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates whether the "placesLived" field is explicitly set to a value.</div>
+        <div class="jd-descrdiv">
+          Indicates whether the "placesLived" field is explicitly set to a value.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1652,7 +1985,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#hasPlusOneCount()">hasPlusOneCount</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates whether the "plusOneCount" field is explicitly set to a value.</div>
+        <div class="jd-descrdiv">
+          Indicates whether the "plusOneCount" field is explicitly set to a value.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1670,7 +2008,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#hasRelationshipStatus()">hasRelationshipStatus</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates whether the "relationshipStatus" field is explicitly set to a value.</div>
+        <div class="jd-descrdiv">
+          Indicates whether the "relationshipStatus" field is explicitly set to a value.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1688,7 +2031,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#hasTagline()">hasTagline</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates whether the "tagline" field is explicitly set to a value.</div>
+        <div class="jd-descrdiv">
+          Indicates whether the "tagline" field is explicitly set to a value.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1706,7 +2054,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#hasUrl()">hasUrl</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates whether the "url" field is explicitly set to a value.</div>
+        <div class="jd-descrdiv">
+          Indicates whether the "url" field is explicitly set to a value.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1724,7 +2077,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#hasUrls()">hasUrls</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates whether the "urls" field is explicitly set to a value.</div>
+        <div class="jd-descrdiv">
+          Indicates whether the "urls" field is explicitly set to a value.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1742,7 +2100,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#hasVerified()">hasVerified</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Indicates whether the "verified" field is explicitly set to a value.</div>
+        <div class="jd-descrdiv">
+          Indicates whether the "verified" field is explicitly set to a value.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1760,7 +2123,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#isPlusUser()">isPlusUser</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Whether this user has signed up for Google+.</div>
+        <div class="jd-descrdiv">
+          Whether this user has signed up for Google+.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1778,7 +2146,12 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html#isVerified()">isVerified</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Whether the person or Google+ Page has been verified.</div>
+        <div class="jd-descrdiv">
+          Whether the person or Google+ Page has been verified.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1825,12 +2198,17 @@ From interface
             
             
             
-            T</nobr>
+            <a href="../../../../../../../../reference/com/google/android/gms/plus/model/people/Person.html">Person</a></nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/common/data/Freezable.html#freeze()">freeze</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Freeze a volatile representation into an immutable representation.</div>
+        <div class="jd-descrdiv">
+          Freeze a volatile representation into an immutable representation.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1848,7 +2226,12 @@ From interface
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../../../reference/com/google/android/gms/common/data/Freezable.html#isDataValid()">isDataValid</a></span>()</nobr>
         
-        <div class="jd-descrdiv">Check to see if this object is valid for use.</div>
+        <div class="jd-descrdiv">
+          Check to see if this object is valid for use.
+          
+    
+
+        </div>
   
   </td></tr>
 
@@ -1924,6 +2307,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>A short biography for this person.
 </p></div>
 
@@ -1953,6 +2339,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The age range of the person.
 </p></div>
@@ -1984,6 +2373,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The person's date of birth, represented as YYYY-MM-DD.
 </p></div>
 
@@ -2014,6 +2406,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The "bragging rights" line of this person.
 </p></div>
 
@@ -2043,6 +2438,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>If a Google+ Page and for followers who are visible, the number of people who have added this
  page to a circle.
@@ -2075,6 +2473,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The cover photo content.
 </p></div>
 
@@ -2104,6 +2505,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The current location for this person.
 </p></div>
@@ -2135,6 +2539,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The name of this person, which is suitable for display.
 </p></div>
 
@@ -2164,6 +2571,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The person's gender. Possible values include, but are not limited to, the following values:
  - "male" - Male gender.
@@ -2198,6 +2608,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The ID of this person.
 </p></div>
 
@@ -2227,6 +2640,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The representation of the person's profile photo.
 </p></div>
@@ -2258,6 +2674,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The user's preferred language for rendering.
 </p></div>
 
@@ -2287,6 +2706,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>An object representation of the individual components of a person's name.
 </p></div>
@@ -2318,6 +2740,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The nickname of this person.
 </p></div>
 
@@ -2347,6 +2772,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Type of person within Google+. Possible values include, but are not limited to, the following
  values:
@@ -2381,6 +2809,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>A list of current or past organizations with which this person is associated.
 </p></div>
 
@@ -2410,6 +2841,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>A list of places where this person has lived.
 </p></div>
@@ -2441,6 +2875,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>If a Google+ Page, the number of people who have +1'd this page.
 </p></div>
 
@@ -2470,6 +2907,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The person's relationship status. Possible values include, but are not limited to, the
  following values:
@@ -2511,6 +2951,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>The brief description (tagline) of this person.
 </p></div>
 
@@ -2540,6 +2983,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>The URL of this person's profile.
 </p></div>
@@ -2571,6 +3017,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>A list of URLs for this person.
 </p></div>
 
@@ -2600,6 +3049,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the "aboutMe" field is explicitly set to a value.
 </p></div>
@@ -2631,6 +3083,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the "ageRange" field is explicitly set to a value.
 </p></div>
 
@@ -2660,6 +3115,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the "birthday" field is explicitly set to a value.
 </p></div>
@@ -2691,6 +3149,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the "braggingRights" field is explicitly set to a value.
 </p></div>
 
@@ -2720,6 +3181,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the "circledByCount" field is explicitly set to a value.
 </p></div>
@@ -2751,6 +3215,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the "cover" field is explicitly set to a value.
 </p></div>
 
@@ -2780,6 +3247,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the "currentLocation" field is explicitly set to a value.
 </p></div>
@@ -2811,6 +3281,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the "displayName" field is explicitly set to a value.
 </p></div>
 
@@ -2840,6 +3313,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the "gender" field is explicitly set to a value.
 </p></div>
@@ -2871,6 +3347,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the "id" field is explicitly set to a value.
 </p></div>
 
@@ -2900,6 +3379,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the "image" field is explicitly set to a value.
 </p></div>
@@ -2931,6 +3413,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the "isPlusUser" field is explicitly set to a value.
 </p></div>
 
@@ -2960,6 +3445,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the "language" field is explicitly set to a value.
 </p></div>
@@ -2991,6 +3479,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the "name" field is explicitly set to a value.
 </p></div>
 
@@ -3020,6 +3511,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the "nickname" field is explicitly set to a value.
 </p></div>
@@ -3051,6 +3545,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the "objectType" field is explicitly set to a value.
 </p></div>
 
@@ -3080,6 +3577,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the "organizations" field is explicitly set to a value.
 </p></div>
@@ -3111,6 +3611,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the "placesLived" field is explicitly set to a value.
 </p></div>
 
@@ -3140,6 +3643,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the "plusOneCount" field is explicitly set to a value.
 </p></div>
@@ -3171,6 +3677,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the "relationshipStatus" field is explicitly set to a value.
 </p></div>
 
@@ -3200,6 +3709,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the "tagline" field is explicitly set to a value.
 </p></div>
@@ -3231,6 +3743,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the "url" field is explicitly set to a value.
 </p></div>
 
@@ -3260,6 +3775,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the "urls" field is explicitly set to a value.
 </p></div>
@@ -3291,6 +3809,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Indicates whether the "verified" field is explicitly set to a value.
 </p></div>
 
@@ -3320,6 +3841,9 @@ From interface
 
       </div>
     <div class="jd-details-descr">
+      
+    
+
       
   <div class="jd-tagdata jd-tagdescr"><p>Whether this user has signed up for Google+.
 </p></div>
@@ -3351,6 +3875,9 @@ From interface
       </div>
     <div class="jd-details-descr">
       
+    
+
+      
   <div class="jd-tagdata jd-tagdescr"><p>Whether the person or Google+ Page has been verified.
 </p></div>
 
@@ -3380,7 +3907,7 @@ From interface
   </div>
   <div id="build_info">
     
-    Android GmsCore 1501030&nbsp;r &mdash; 
+    Android GmsCore 1784785&nbsp;r &mdash; 
 <script src="../../../../../../../../timestamp.js" type="text/javascript"></script>
 <script>document.write(BUILD_TIMESTAMP)</script>
 

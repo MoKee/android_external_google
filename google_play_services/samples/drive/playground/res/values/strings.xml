@@ -36,4 +36,15 @@
     <string name="map_put">Put key-value pair</string>
     <string name="map_key">Key:</string>
     <string name="map_value">Value:</string>
+
+    <string name="collab_custom_obj_descr">
+      Collaborative custom objects have properties whose state is shared across sessions. Events are
+      fired when property values are changed.</string>
+    <string name="collab_custom_obj_edit">
+      Modify properties of the demo Collaborative Custom Object</string>
+    <string name="custom_obj_name">Name:</string>
+    <string name="custom_obj_director_name">Director Name:</string>
+    <string name="custom_obj_notes">Notes:</string>
+    <string name="custom_obj_star_rating">Star Rating:</string>
+    <string name="custom_obj_save">Save custom object</string>
 </resources>

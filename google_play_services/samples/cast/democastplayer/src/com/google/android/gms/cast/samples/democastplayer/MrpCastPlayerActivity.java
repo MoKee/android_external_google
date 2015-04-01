@@ -64,6 +64,8 @@ public class MrpCastPlayerActivity extends BaseCastPlayerActivity {
         setAutoplayCheckboxVisible(false);
         setStreamVolumeControlsVisible(false);
         setSeekBehaviorControlsVisible(false);
+        setSelectTracksVisible(false);
+        setLoadMediaVisible(false);
         mDeviceMuteCheckBox.setVisibility(View.GONE);
         setCurrentDeviceName(null);
 
@@ -138,6 +140,11 @@ public class MrpCastPlayerActivity extends BaseCastPlayerActivity {
             mCurrentRoute.requestUpdateVolume((int) (delta * MAX_VOLUME_LEVEL));
             refreshDeviceVolume(mCurrentRoute.getVolume() / MAX_VOLUME_LEVEL, false);
         }
+    }
+
+    @Override
+    protected void onMediaSelected(final MediaInfo media) {
+        onPlayMedia(media);
     }
 
     @Override
@@ -549,7 +556,6 @@ public class MrpCastPlayerActivity extends BaseCastPlayerActivity {
         mSelectMediaButton.setEnabled(hasRoute && hasSession);
         mStopButton.setEnabled(hasMedia);
         setSeekBarEnabled(hasMedia);
-        updateVolume();
     }
 
     @Override
@@ -569,6 +575,7 @@ public class MrpCastPlayerActivity extends BaseCastPlayerActivity {
 
     private void updateVolume() {
         if (mCurrentRoute != null) {
+            Log.d(TAG, "Updating volume to current volume which is " + mCurrentRoute.getVolume());
             refreshDeviceVolume(mCurrentRoute.getVolume() / MAX_VOLUME_LEVEL, false);
         }
     }
