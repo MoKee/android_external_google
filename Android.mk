@@ -25,6 +25,16 @@ LOCAL_MODULE_PATH := $(TARGET_OUT)/fake_packages/$(LOCAL_SRC_FILES)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := admob_ads_sdk/GoogleAdMobAdsSdk-6.4.1$(COMMON_JAVA_PACKAGE_SUFFIX)
+LOCAL_MODULE := libGoogleAdMobAdsSdk
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE_PATH := $(TARGET_OUT)/fake_packages/$(LOCAL_SRC_FILES)
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := \
     play:google_play_services/libproject/google-play-services_lib/libs/google-play-services.jar
 
